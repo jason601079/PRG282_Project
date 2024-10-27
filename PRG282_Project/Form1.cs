@@ -6,5 +6,10 @@ namespace PRG282_Project
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string test;
+        }
     }
 }
