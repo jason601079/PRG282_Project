@@ -12,9 +12,12 @@ namespace PRG282_Project
 {
     public partial class Loading_Screen : Form
     {
-        public Loading_Screen()
+        private readonly IStudentService _studentService;
+
+        public Loading_Screen(IStudentService studentService)
         {
             InitializeComponent();
+            _studentService = studentService;
         }
 
         private void timerProgressBar_Tick(object sender, EventArgs e)
@@ -23,7 +26,7 @@ namespace PRG282_Project
 
             if (pnlProgressBar.Width >= 600) { 
                 timerProgressBar.Stop();
-                Form1 form1 = new Form1();
+                frmMain form1 = new frmMain(_studentService);
                 form1.Show();
                 this.Hide();
             }
