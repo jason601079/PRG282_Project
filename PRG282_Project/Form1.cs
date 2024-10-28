@@ -9,8 +9,7 @@ namespace PRG282_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string test;
-            int test2;
+           
         }
     }
 }
