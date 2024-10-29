@@ -58,6 +58,9 @@
             button5 = new Button();
             label4 = new Label();
             textBox3 = new TextBox();
+            button6 = new Button();
+            button7 = new Button();
+            panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tbpTable.SuspendLayout();
             panel2.SuspendLayout();
@@ -71,6 +74,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button7);
+            panel1.Controls.Add(button6);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -393,6 +398,24 @@
             textBox3.Size = new Size(271, 29);
             textBox3.TabIndex = 3;
             // 
+            // button6
+            // 
+            button6.Location = new Point(438, 17);
+            button6.Name = "button6";
+            button6.Size = new Size(75, 23);
+            button6.TabIndex = 0;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(545, 19);
+            button7.Name = "button7";
+            button7.Size = new Size(75, 23);
+            button7.TabIndex = 1;
+            button7.Text = "button7";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -404,6 +427,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
             Load += Form1_Load;
+            panel1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tbpTable.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -451,5 +475,7 @@
         private Button button5;
         private Label label4;
         private TextBox textBox3;
+        private Button button6;
+        private Button button7;
     }
 }
