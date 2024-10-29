@@ -68,12 +68,13 @@ namespace PRG282_Project.Presentation_Layer
             showSubmenu(panel_Student);
         }
 
+        
         private void Btn_reg_Click(object sender, EventArgs e)
         {
             //...
             //Code
             //...
-
+            
             hideSubMenu();
         }
 
@@ -169,6 +170,11 @@ namespace PRG282_Project.Presentation_Layer
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
