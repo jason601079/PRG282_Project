@@ -68,13 +68,12 @@ namespace PRG282_Project.Presentation_Layer
             showSubmenu(panel_Student);
         }
 
-        
+
         private void Btn_reg_Click(object sender, EventArgs e)
         {
-            //...
-            //Code
-            //...
-            
+
+            openChildForm(new Registration());
+
             hideSubMenu();
         }
 
@@ -177,6 +176,49 @@ namespace PRG282_Project.Presentation_Layer
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //show subform in main form
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Main_Middle.Controls.Add(childForm);
+            panel_Main_Middle.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Exit_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
