@@ -23,6 +23,9 @@ namespace PRG282_Project
             // Create an instance of UserInput, passing the student repository
             IStudentService studentService = new UserInput(studentRepository);
             Application.Run(new Loading_Screen(studentService));
+
+            //using for testing purposes of admin home page
+            //Application.Run(new Home());
         }
     }
 }
