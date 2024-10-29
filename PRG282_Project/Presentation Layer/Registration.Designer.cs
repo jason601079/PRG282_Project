@@ -83,7 +83,7 @@
             guna2DataGridView1.Location = new Point(3, 60);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.Size = new Size(853, 261);
+            guna2DataGridView1.Size = new Size(865, 261);
             guna2DataGridView1.TabIndex = 0;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -281,7 +281,7 @@
             btnClear.BackColor = Color.FromArgb(0, 71, 160);
             btnClear.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(325, 486);
+            btnClear.Location = new Point(325, 500);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(85, 40);
             btnClear.TabIndex = 17;
@@ -294,7 +294,7 @@
             btn_Add.BackColor = Color.FromArgb(0, 71, 160);
             btn_Add.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Add.ForeColor = Color.White;
-            btn_Add.Location = new Point(456, 486);
+            btn_Add.Location = new Point(456, 500);
             btn_Add.Name = "btn_Add";
             btn_Add.Size = new Size(83, 40);
             btn_Add.TabIndex = 18;
@@ -307,7 +307,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(868, 538);
+            ClientSize = new Size(868, 561);
             Controls.Add(btn_Add);
             Controls.Add(btnClear);
             Controls.Add(btnUpload);

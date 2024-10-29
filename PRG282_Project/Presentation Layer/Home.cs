@@ -79,9 +79,7 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Mng_Click(object sender, EventArgs e)
         {
-            //...
-            //Code
-            //...
+            openChildForm(new ManageFrm());
 
             hideSubMenu();
         }
