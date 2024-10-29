@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             Panel_Home = new Panel();
             Btn_Exit = new Button();
             Panel_Score = new Panel();
@@ -47,14 +48,34 @@
             Btn_reg = new Button();
             Btn_Student = new Button();
             Panel_logo = new Panel();
-            label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panel1 = new Panel();
+            label12 = new Label();
+            panel2 = new Panel();
+            lbl_role = new Label();
+            lbl_user = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            panel3 = new Panel();
+            comboBox1 = new ComboBox();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            pictureBox1 = new PictureBox();
             Panel_Home.SuspendLayout();
             Panel_Score.SuspendLayout();
             Panel_Course.SuspendLayout();
             panel_Student.SuspendLayout();
             Panel_logo.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Panel_Home
@@ -361,16 +382,16 @@
             Panel_logo.Size = new Size(181, 123);
             Panel_logo.TabIndex = 0;
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Broadway", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(41, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 55);
-            label1.TabIndex = 0;
-            label1.Text = "BC";
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(1, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(177, 19);
+            label3.TabIndex = 2;
+            label3.Text = "Student Management";
             // 
             // label2
             // 
@@ -384,22 +405,219 @@
             label2.Text = "System";
             label2.Click += label2_Click;
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(1, 55);
-            label3.Name = "label3";
-            label3.Size = new Size(177, 19);
-            label3.TabIndex = 2;
-            label3.Text = "Student Management";
+            label1.AutoSize = true;
+            label1.Font = new Font("Broadway", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(41, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 55);
+            label1.TabIndex = 0;
+            label1.Text = "BC";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label12);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(198, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(857, 55);
+            panel1.TabIndex = 1;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.FromArgb(0, 71, 200);
+            label12.Location = new Point(3, 18);
+            label12.Margin = new Padding(0);
+            label12.Name = "label12";
+            label12.Size = new Size(310, 19);
+            label12.TabIndex = 1;
+            label12.Text = "Belgium Campus ITversity, Stellenbosch";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 71, 160);
+            panel2.Controls.Add(lbl_role);
+            panel2.Controls.Add(lbl_user);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(198, 55);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(857, 76);
+            panel2.TabIndex = 2;
+            // 
+            // lbl_role
+            // 
+            lbl_role.AutoSize = true;
+            lbl_role.Font = new Font("Century Gothic", 12F);
+            lbl_role.ForeColor = Color.White;
+            lbl_role.Location = new Point(56, 47);
+            lbl_role.Name = "lbl_role";
+            lbl_role.Size = new Size(62, 21);
+            lbl_role.TabIndex = 3;
+            lbl_role.Text = "Admin";
+            // 
+            // lbl_user
+            // 
+            lbl_user.AutoSize = true;
+            lbl_user.Font = new Font("Century Gothic", 12F);
+            lbl_user.ForeColor = Color.White;
+            lbl_user.Location = new Point(93, 13);
+            lbl_user.Name = "lbl_user";
+            lbl_user.Size = new Size(42, 21);
+            lbl_user.TabIndex = 2;
+            lbl_user.Text = "User";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 12F);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(3, 47);
+            label5.Name = "label5";
+            label5.Size = new Size(47, 21);
+            label5.TabIndex = 1;
+            label5.Text = "Role:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(3, 13);
+            label4.Margin = new Padding(0);
+            label4.Name = "label4";
+            label4.Size = new Size(87, 21);
+            label4.TabIndex = 0;
+            label4.Text = "Welcome:";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 71, 160);
+            panel3.Controls.Add(comboBox1);
+            panel3.Controls.Add(label11);
+            panel3.Controls.Add(label10);
+            panel3.Controls.Add(label9);
+            panel3.Controls.Add(label8);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(label6);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(198, 506);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(857, 90);
+            panel3.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(683, 8);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 23);
+            comboBox1.TabIndex = 7;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(575, 10);
+            label11.Margin = new Padding(0);
+            label11.Name = "label11";
+            label11.Size = new Size(105, 21);
+            label11.TabIndex = 6;
+            label11.Text = "Select Class:";
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(575, 52);
+            label10.Margin = new Padding(0);
+            label10.Name = "label10";
+            label10.Size = new Size(53, 21);
+            label10.TabIndex = 5;
+            label10.Text = "Male:";
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(695, 52);
+            label9.Margin = new Padding(0);
+            label9.Name = "label9";
+            label9.Size = new Size(71, 21);
+            label9.TabIndex = 4;
+            label9.Text = "Female:";
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label8.AutoSize = true;
+            label8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(31, 52);
+            label8.Margin = new Padding(0);
+            label8.Name = "label8";
+            label8.Size = new Size(53, 21);
+            label8.TabIndex = 3;
+            label8.Text = "Male:";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(156, 52);
+            label7.Margin = new Padding(0);
+            label7.Name = "label7";
+            label7.Size = new Size(71, 21);
+            label7.TabIndex = 2;
+            label7.Text = "Female:";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(31, 10);
+            label6.Margin = new Padding(0);
+            label6.Name = "label6";
+            label6.Size = new Size(126, 21);
+            label6.TabIndex = 1;
+            label6.Text = "Total Students:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(198, 137);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(857, 363);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1055, 596);
+            Controls.Add(pictureBox1);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(Panel_Home);
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
@@ -411,6 +629,13 @@
             panel_Student.ResumeLayout(false);
             Panel_logo.ResumeLayout(false);
             Panel_logo.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -438,5 +663,21 @@
         private Label label2;
         private Label label1;
         private Label label3;
+        private Panel panel1;
+        private Panel panel2;
+        private Label lbl_role;
+        private Label lbl_user;
+        private Label label5;
+        private Label label4;
+        private Panel panel3;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private ComboBox comboBox1;
+        private PictureBox pictureBox1;
+        private Label label12;
     }
 }
