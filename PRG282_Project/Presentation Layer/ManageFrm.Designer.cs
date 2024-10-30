@@ -38,15 +38,12 @@
             btnClear = new Button();
             btnUpload = new Button();
             pictureBox1 = new PictureBox();
-            textBox4 = new TextBox();
             label6 = new Label();
             textBox3 = new TextBox();
             label5 = new Label();
             radio_Female = new RadioButton();
             radio_Male = new RadioButton();
             label4 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label3 = new Label();
             textBox2 = new TextBox();
             label2 = new Label();
             textBox1 = new TextBox();
@@ -54,6 +51,7 @@
             btn_Delete = new Button();
             btn_Search = new Button();
             textBox5 = new TextBox();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -63,6 +61,7 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2DataGridView1.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
@@ -123,6 +122,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
@@ -134,6 +134,7 @@
             // 
             // btn_Update
             // 
+            btn_Update.Anchor = AnchorStyles.Bottom;
             btn_Update.BackColor = Color.FromArgb(0, 71, 160);
             btn_Update.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Update.ForeColor = Color.White;
@@ -146,6 +147,7 @@
             // 
             // btnClear
             // 
+            btnClear.Anchor = AnchorStyles.Bottom;
             btnClear.BackColor = Color.FromArgb(0, 71, 160);
             btnClear.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btnClear.ForeColor = Color.White;
@@ -158,6 +160,7 @@
             // 
             // btnUpload
             // 
+            btnUpload.Anchor = AnchorStyles.Bottom;
             btnUpload.BackColor = Color.FromArgb(0, 71, 160);
             btnUpload.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpload.ForeColor = Color.White;
@@ -170,6 +173,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Bottom;
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.Location = new Point(681, 343);
             pictureBox1.Name = "pictureBox1";
@@ -177,15 +181,9 @@
             pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(387, 407);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(101, 23);
-            textBox4.TabIndex = 31;
-            // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 71, 160);
@@ -197,6 +195,7 @@
             // 
             // textBox3
             // 
+            textBox3.Anchor = AnchorStyles.Bottom;
             textBox3.Location = new Point(141, 407);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(101, 23);
@@ -204,6 +203,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Bottom;
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(0, 71, 160);
@@ -215,6 +215,7 @@
             // 
             // radio_Female
             // 
+            radio_Female.Anchor = AnchorStyles.Bottom;
             radio_Female.AutoSize = true;
             radio_Female.ForeColor = Color.Black;
             radio_Female.Location = new Point(596, 407);
@@ -227,9 +228,10 @@
             // 
             // radio_Male
             // 
+            radio_Male.Anchor = AnchorStyles.Bottom;
             radio_Male.AutoSize = true;
             radio_Male.ForeColor = Color.Black;
-            radio_Male.Location = new Point(596, 364);
+            radio_Male.Location = new Point(596, 361);
             radio_Male.Name = "radio_Male";
             radio_Male.Size = new Size(51, 19);
             radio_Male.TabIndex = 26;
@@ -239,6 +241,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Bottom;
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
@@ -248,26 +251,9 @@
             label4.TabIndex = 25;
             label4.Text = "Gender:";
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(141, 452);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(203, 23);
-            dateTimePicker1.TabIndex = 24;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(0, 71, 160);
-            label3.Location = new Point(21, 454);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 19);
-            label3.TabIndex = 23;
-            label3.Text = "Date of Birth:";
-            // 
             // textBox2
             // 
+            textBox2.Anchor = AnchorStyles.Bottom;
             textBox2.Location = new Point(387, 358);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(104, 23);
@@ -275,6 +261,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(0, 71, 160);
@@ -286,6 +273,7 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Bottom;
             textBox1.Location = new Point(141, 357);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(101, 23);
@@ -293,6 +281,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 71, 160);
@@ -304,6 +293,7 @@
             // 
             // btn_Delete
             // 
+            btn_Delete.Anchor = AnchorStyles.Bottom;
             btn_Delete.BackColor = Color.FromArgb(0, 71, 160);
             btn_Delete.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Delete.ForeColor = Color.White;
@@ -316,6 +306,7 @@
             // 
             // btn_Search
             // 
+            btn_Search.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Search.BackColor = Color.FromArgb(0, 71, 160);
             btn_Search.ForeColor = Color.WhiteSmoke;
             btn_Search.Location = new Point(763, 62);
@@ -327,11 +318,21 @@
             // 
             // textBox5
             // 
+            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox5.Location = new Point(625, 72);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(130, 23);
             textBox5.TabIndex = 37;
             textBox5.Text = "Search by StudentID";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Bottom;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(387, 407);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(104, 23);
+            comboBox1.TabIndex = 39;
             // 
             // ManageFrm
             // 
@@ -339,6 +340,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(868, 564);
+            Controls.Add(comboBox1);
             Controls.Add(btn_Search);
             Controls.Add(textBox5);
             Controls.Add(btn_Delete);
@@ -346,15 +348,12 @@
             Controls.Add(btnClear);
             Controls.Add(btnUpload);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox4);
             Controls.Add(label6);
             Controls.Add(textBox3);
             Controls.Add(label5);
             Controls.Add(radio_Female);
             Controls.Add(radio_Male);
             Controls.Add(label4);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
@@ -381,15 +380,12 @@
         private Button btnClear;
         private Button btnUpload;
         private PictureBox pictureBox1;
-        private TextBox textBox4;
         private Label label6;
         private TextBox textBox3;
         private Label label5;
         private RadioButton radio_Female;
         private RadioButton radio_Male;
         private Label label4;
-        private DateTimePicker dateTimePicker1;
-        private Label label3;
         private TextBox textBox2;
         private Label label2;
         private TextBox textBox1;
@@ -397,5 +393,6 @@
         private Button btn_Delete;
         private Button btn_Search;
         private TextBox textBox5;
+        private ComboBox comboBox1;
     }
 }

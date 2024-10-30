@@ -84,20 +84,11 @@ namespace PRG282_Project.Presentation_Layer
             hideSubMenu();
         }
 
-        private void Btn_Status_Click(object sender, EventArgs e)
-        {
-            //...
-            //Code
-            //...
-
-            hideSubMenu();
-        }
+        
 
         private void Btn_Prnt_Std_Click(object sender, EventArgs e)
         {
-            //...
-            //Code
-            //...
+            openChildForm(new PrintFrm());
 
             hideSubMenu();
         }
@@ -216,7 +207,9 @@ namespace PRG282_Project.Presentation_Layer
 
         private void Btn_Exit_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+        
     }
 }

@@ -38,19 +38,17 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
-            label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             label4 = new Label();
             radio_Male = new RadioButton();
             radio_Female = new RadioButton();
             label5 = new Label();
             textBox3 = new TextBox();
-            textBox4 = new TextBox();
             label6 = new Label();
             pictureBox1 = new PictureBox();
             btnUpload = new Button();
             btnClear = new Button();
             btn_Add = new Button();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -60,6 +58,7 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2DataGridView1.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
@@ -120,6 +119,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
@@ -131,6 +131,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 71, 160);
@@ -142,6 +143,7 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Bottom;
             textBox1.Location = new Point(132, 341);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(101, 23);
@@ -149,6 +151,7 @@
             // 
             // textBox2
             // 
+            textBox2.Anchor = AnchorStyles.Bottom;
             textBox2.Location = new Point(378, 342);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(104, 23);
@@ -156,6 +159,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(0, 71, 160);
@@ -165,26 +169,9 @@
             label2.TabIndex = 4;
             label2.Text = "Last Name:";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(0, 71, 160);
-            label3.Location = new Point(12, 438);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 19);
-            label3.TabIndex = 6;
-            label3.Text = "Date of Birth:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(132, 436);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(203, 23);
-            dateTimePicker1.TabIndex = 7;
-            // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Bottom;
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
@@ -196,6 +183,7 @@
             // 
             // radio_Male
             // 
+            radio_Male.Anchor = AnchorStyles.Bottom;
             radio_Male.AutoSize = true;
             radio_Male.ForeColor = Color.Black;
             radio_Male.Location = new Point(587, 348);
@@ -208,6 +196,7 @@
             // 
             // radio_Female
             // 
+            radio_Female.Anchor = AnchorStyles.Bottom;
             radio_Female.AutoSize = true;
             radio_Female.ForeColor = Color.Black;
             radio_Female.Location = new Point(587, 391);
@@ -220,6 +209,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Bottom;
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(0, 71, 160);
@@ -231,20 +221,15 @@
             // 
             // textBox3
             // 
+            textBox3.Anchor = AnchorStyles.Bottom;
             textBox3.Location = new Point(132, 391);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(101, 23);
             textBox3.TabIndex = 12;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(378, 391);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(101, 23);
-            textBox4.TabIndex = 14;
-            // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 71, 160);
@@ -256,6 +241,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Bottom;
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.Location = new Point(672, 327);
             pictureBox1.Name = "pictureBox1";
@@ -265,6 +251,7 @@
             // 
             // btnUpload
             // 
+            btnUpload.Anchor = AnchorStyles.Bottom;
             btnUpload.BackColor = Color.FromArgb(0, 71, 160);
             btnUpload.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpload.ForeColor = Color.White;
@@ -278,6 +265,7 @@
             // 
             // btnClear
             // 
+            btnClear.Anchor = AnchorStyles.Bottom;
             btnClear.BackColor = Color.FromArgb(0, 71, 160);
             btnClear.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btnClear.ForeColor = Color.White;
@@ -291,6 +279,7 @@
             // 
             // btn_Add
             // 
+            btn_Add.Anchor = AnchorStyles.Bottom;
             btn_Add.BackColor = Color.FromArgb(0, 71, 160);
             btn_Add.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Add.ForeColor = Color.White;
@@ -302,25 +291,32 @@
             btn_Add.UseVisualStyleBackColor = false;
             btn_Add.Click += btn_Add_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Bottom;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(378, 391);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(104, 23);
+            comboBox1.TabIndex = 19;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(868, 561);
+            Controls.Add(comboBox1);
             Controls.Add(btn_Add);
             Controls.Add(btnClear);
             Controls.Add(btnUpload);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox4);
             Controls.Add(label6);
             Controls.Add(textBox3);
             Controls.Add(label5);
             Controls.Add(radio_Female);
             Controls.Add(radio_Male);
             Controls.Add(label4);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
@@ -348,19 +344,17 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label2;
-        private Label label3;
-        private DateTimePicker dateTimePicker1;
         private Label label4;
         private RadioButton radio_Male;
         private RadioButton radio_Female;
         private Label label5;
         private TextBox textBox3;
         private Label label7;
-        private TextBox textBox4;
         private Label label6;
         private PictureBox pictureBox1;
         private Button btnUpload;
         private Button btnClear;
         private Button btn_Add;
+        private ComboBox comboBox1;
     }
 }
