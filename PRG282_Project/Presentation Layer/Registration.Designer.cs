@@ -28,53 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
             label7 = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
             label2 = new Label();
             label4 = new Label();
             radio_Male = new RadioButton();
             radio_Female = new RadioButton();
-            label5 = new Label();
-            textBox3 = new TextBox();
             label6 = new Label();
             btnClear = new Button();
             btn_Add = new Button();
-            comboBox1 = new ComboBox();
+            cmbCourse = new ComboBox();
+            nudAge = new NumericUpDown();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudAge).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2DataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             guna2DataGridView1.ColumnHeadersHeight = 4;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.Location = new Point(3, 60);
             guna2DataGridView1.Name = "guna2DataGridView1";
@@ -138,21 +141,21 @@
             label1.TabIndex = 2;
             label1.Text = "First Name:";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            textBox1.Anchor = AnchorStyles.Bottom;
-            textBox1.Location = new Point(132, 341);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(101, 23);
-            textBox1.TabIndex = 3;
+            txtFirstName.Anchor = AnchorStyles.Bottom;
+            txtFirstName.Location = new Point(132, 341);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(101, 23);
+            txtFirstName.TabIndex = 3;
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.Anchor = AnchorStyles.Bottom;
-            textBox2.Location = new Point(456, 342);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(104, 23);
-            textBox2.TabIndex = 5;
+            txtLastName.Anchor = AnchorStyles.Bottom;
+            txtLastName.Location = new Point(456, 342);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(104, 23);
+            txtLastName.TabIndex = 5;
             // 
             // label2
             // 
@@ -172,7 +175,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(678, 348);
+            label4.Location = new Point(653, 348);
             label4.Name = "label4";
             label4.Size = new Size(72, 19);
             label4.TabIndex = 8;
@@ -183,9 +186,9 @@
             radio_Male.Anchor = AnchorStyles.Bottom;
             radio_Male.AutoSize = true;
             radio_Male.ForeColor = Color.Black;
-            radio_Male.Location = new Point(785, 348);
+            radio_Male.Location = new Point(16, 28);
             radio_Male.Name = "radio_Male";
-            radio_Male.Size = new Size(51, 19);
+            radio_Male.Size = new Size(62, 25);
             radio_Male.TabIndex = 9;
             radio_Male.TabStop = true;
             radio_Male.Text = "Male";
@@ -196,34 +199,13 @@
             radio_Female.Anchor = AnchorStyles.Bottom;
             radio_Female.AutoSize = true;
             radio_Female.ForeColor = Color.Black;
-            radio_Female.Location = new Point(785, 397);
+            radio_Female.Location = new Point(16, 73);
             radio_Female.Name = "radio_Female";
-            radio_Female.Size = new Size(63, 19);
+            radio_Female.Size = new Size(78, 25);
             radio_Female.TabIndex = 10;
             radio_Female.TabStop = true;
             radio_Female.Text = "Female";
             radio_Female.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Bottom;
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(0, 71, 160);
-            label5.Location = new Point(20, 395);
-            label5.Name = "label5";
-            label5.Size = new Size(85, 19);
-            label5.TabIndex = 11;
-            label5.Text = "StudentID:";
-            label5.Click += label5_Click;
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.Bottom;
-            textBox3.Location = new Point(132, 391);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(101, 23);
-            textBox3.TabIndex = 12;
             // 
             // label6
             // 
@@ -231,7 +213,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 71, 160);
-            label6.Location = new Point(325, 390);
+            label6.Location = new Point(308, 410);
             label6.Name = "label6";
             label6.Size = new Size(66, 19);
             label6.TabIndex = 13;
@@ -265,14 +247,45 @@
             btn_Add.UseVisualStyleBackColor = false;
             btn_Add.Click += btn_Add_Click;
             // 
-            // comboBox1
+            // cmbCourse
             // 
-            comboBox1.Anchor = AnchorStyles.Bottom;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(456, 391);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(104, 23);
-            comboBox1.TabIndex = 19;
+            cmbCourse.Anchor = AnchorStyles.Bottom;
+            cmbCourse.FormattingEnabled = true;
+            cmbCourse.Items.AddRange(new object[] { "BI", "BCOMP", "DIPLOMA" });
+            cmbCourse.Location = new Point(456, 409);
+            cmbCourse.Name = "cmbCourse";
+            cmbCourse.Size = new Size(104, 23);
+            cmbCourse.TabIndex = 19;
+            // 
+            // nudAge
+            // 
+            nudAge.Location = new Point(132, 410);
+            nudAge.Name = "nudAge";
+            nudAge.Size = new Size(101, 23);
+            nudAge.TabIndex = 20;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Bottom;
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(0, 71, 160);
+            label3.Location = new Point(12, 410);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 19);
+            label3.TabIndex = 21;
+            label3.Text = "Age:";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radio_Male);
+            groupBox1.Controls.Add(radio_Female);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(752, 327);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(91, 132);
+            groupBox1.TabIndex = 22;
+            groupBox1.TabStop = false;
             // 
             // Registration
             // 
@@ -280,18 +293,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(868, 561);
-            Controls.Add(comboBox1);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
+            Controls.Add(nudAge);
+            Controls.Add(cmbCourse);
             Controls.Add(btn_Add);
             Controls.Add(btnClear);
             Controls.Add(label6);
-            Controls.Add(textBox3);
-            Controls.Add(label5);
-            Controls.Add(radio_Female);
-            Controls.Add(radio_Male);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtLastName);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtFirstName);
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(guna2DataGridView1);
@@ -303,6 +315,9 @@
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudAge).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -312,8 +327,8 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Panel panel1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtFirstName;
+        private TextBox txtLastName;
         private Label label2;
         private Label label4;
         private RadioButton radio_Male;
@@ -324,6 +339,9 @@
         private Label label6;
         private Button btnClear;
         private Button btn_Add;
-        private ComboBox comboBox1;
+        private ComboBox cmbCourse;
+        private NumericUpDown nudAge;
+        private Label label3;
+        private GroupBox groupBox1;
     }
 }

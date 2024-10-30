@@ -21,7 +21,7 @@ namespace PRG282_Project
             IStudentRepository studentRepository = new DatabaseHelper(connectionString); // Pass the connection string
 
             // Create an instance of UserInput, passing the student repository
-            IStudentService studentService = new UserInput(studentRepository);
+           
             //Application.Run(new Loading_Screen(studentService));
 
             //using for testing purposes of admin home page

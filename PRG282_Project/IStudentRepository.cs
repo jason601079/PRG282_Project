@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project.Business_Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,7 @@ namespace PRG282_Project
 {
     public interface IStudentRepository
     {
-        void InsertStudent(string studentName, int studentAge, string course);
-
-        bool DeleteStudent(string studentId);
+        void InsertStudent(Student student);
+        string GetLastStudentNumber();
     }
 }

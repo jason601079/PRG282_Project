@@ -5,12 +5,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PRG282_Project.Business_Logic_Layer;
 
 namespace PRG282_Project
 {
     internal class DatabaseHelper : IStudentRepository
     {
-        private string _connectionString;
+
+
+        private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
 
         public DatabaseHelper(string connectionString)
         {
@@ -57,61 +60,28 @@ namespace PRG282_Project
             }
         }
 
-        private string GenerateNextStudentNumber(string lastStudentNumber)
+        public void InsertStudent(Student student)
         {
-            if (string.IsNullOrEmpty(lastStudentNumber))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                return "S001"; // Start from S001 if no records exist
-            }
+                connection.Open();
+                string query = "INSERT INTO Students ([Student number], [First name], [Last name], [Gender], [Student Age], [Course]) " +
+                               "VALUES (@StudentNumber, @FirstName, @LastName, @Gender, @Age, @Course)";
 
-            // Extract the numeric part, increment, and format with leading zeros
-            int numericPart = int.Parse(lastStudentNumber.Substring(1)) + 1;
-            return "S" + numericPart.ToString("D3");
-        }
-
-        public void InsertStudent(string studentName, int studentAge, string course)
-        {
-            string lastStudentNumber = GetLastStudentNumber();
-            string newStudentNumber = GenerateNextStudentNumber(lastStudentNumber);
-
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                string query = @"
-            INSERT INTO Students ([Student number], [Student Name], [Student Age], [Course])
-            VALUES (@StudentNumber, @StudentName, @StudentAge, @Course);";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@StudentNumber", newStudentNumber);
-                cmd.Parameters.AddWithValue("@StudentName", studentName);
-                cmd.Parameters.AddWithValue("@StudentAge", studentAge);
-                cmd.Parameters.AddWithValue("@Course", course);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-
-
-            }
-        }
-
-        public bool DeleteStudent(string studentId)
-        {
-            try
-            {
-                // Assume using connection and command objects
-                using (SqlConnection conn = new SqlConnection(_connectionString))
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM Students WHERE [Student number] = @StudentId", conn))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@StudentId", studentId);
-                    conn.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                    command.Parameters.AddWithValue("@StudentNumber", student.StudentNumber);
+                    command.Parameters.AddWithValue("@FirstName", student.FirstName);
+                    command.Parameters.AddWithValue("@LastName", student.LastName);
+                    command.Parameters.AddWithValue("@Gender", student.Gender);
+                    command.Parameters.AddWithValue("@Age", student.Age);
+                    command.Parameters.AddWithValue("@Course", student.Course);
+
+                    command.ExecuteNonQuery();
                 }
             }
-            catch (Exception)
-            {
-                // Log or handle exceptions as necessary
-                return false;
-            }
         }
+
+       
     }
 }
