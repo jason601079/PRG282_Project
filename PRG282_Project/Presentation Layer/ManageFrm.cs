@@ -65,17 +65,21 @@ namespace PRG282_Project.Presentation_Layer
 
         private void textBox5_Enter(object sender, EventArgs e)
         {
-            if (textBox5.Text == "Search by StudentID")
+            if (txtSearchStudentID.Text == "Search by StudentID")
             {
+
                 textBox5.Text = string.Empty;
                 textBox5.ForeColor = Color.Black;
+
             }
         }
 
         private void textBox5_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox5.Text))
+            if (string.IsNullOrWhiteSpace(txtSearchStudentID.Text))
             {
+
+
                 textBox5.Text = "Search by StudentID";
                 textBox5.ForeColor = Color.Gray;
             }
@@ -142,7 +146,154 @@ namespace PRG282_Project.Presentation_Layer
             catch (Exception ex)
             {
                 MessageBox.Show("Error updating student: " + ex.Message);
+
             }
+        }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Ensure a row is selected
+            {
+                DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
+
+                _selectedStudentNumber = row.Cells["Student number"].Value.ToString();
+
+                // Textboxes for First Name and Last Name
+                txtFirstName.Text = row.Cells["First name"].Value.ToString();
+                txtLastName.Text = row.Cells["Last name"].Value.ToString();
+
+                // NumericUpDown for Age
+                nudAge.Value = Convert.ToInt32(row.Cells["Student age"].Value);
+
+                // ComboBox for Course
+                cmbCourses.SelectedItem = row.Cells["Course"].Value.ToString();
+
+                // RadioButtons for Gender
+                string gender = row.Cells["Gender"].Value.ToString();
+                if (gender == "Male")
+                {
+                    radio_Male.Checked = true;
+                }
+                else if (gender == "Female")
+                {
+                    radio_Female.Checked = true;
+                }
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_selectedStudentNumber))
+            {
+                MessageBox.Show("Please select a student to update.");
+                return;
+            }
+
+            // Collect the updated details from the form
+            var updatedStudent = new Student
+            {
+                StudentNumber = _selectedStudentNumber,
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                Age = (int)nudAge.Value,
+                Course = cmbCourses.SelectedItem.ToString(),
+                Gender = radio_Male.Checked ? "Male" : "Female"
+            };
+
+            IStudentService studentService = new StudentService();
+
+            try
+            {
+                studentService.UpdateStudent(updatedStudent);
+                MessageBox.Show("Student updated successfully.");
+                _dbHelper.LoadStudentData(guna2DataGridView1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating student: " + ex.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtStudentNumber.Text = string.Empty;
+
+
+            nudAge.Value = nudAge.Minimum;
+
+
+            cmbCourses.SelectedIndex = -1;
+
+
+            radio_Male.Checked = false;
+            radio_Female.Checked = false;
+
+
+            _selectedStudentNumber = null;
+
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            string searchStudentNumber = txtSearchStudentID.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchStudentNumber))
+            {
+                MessageBox.Show("Please enter a student number to search.");
+                return;
+            }
+
+            // Iterate through the rows in the DataGridView to find the matching student number
+            bool found = false;
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                // Check if the current row's "Student number" cell matches the search text
+                if (row.Cells["Student number"].Value != null &&
+                    row.Cells["Student number"].Value.ToString().Equals(searchStudentNumber, StringComparison.OrdinalIgnoreCase))
+                {
+                    // Select and scroll to the row if a match is found
+                    row.Selected = true;
+                    guna2DataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                    found = true;
+                    break;
+                }
+            }
+
+            // Display a message if no matching student number was found
+            if (!found)
+            {
+                MessageBox.Show("Student number not found.");
+            }
+        }
+
+        private void txtStudentNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtStudentNumber.Text == "Enter a student number")
+            {
+                txtStudentNumber.Text = string.Empty;
+                txtStudentNumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtStudentNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtStudentNumber.Text == "Enter a student number")
+            {
+                txtStudentNumber.Text = string.Empty;
+                txtStudentNumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtStudentNumber.Text = string.Empty;
         }
     }
 }
+
+
+
+
