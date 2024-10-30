@@ -363,6 +363,7 @@
             Name = "ManageFrm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManageFrm";
+            Load += ManageFrm_Load;
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
