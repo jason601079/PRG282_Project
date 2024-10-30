@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
             label7 = new Label();
@@ -44,40 +44,37 @@
             label5 = new Label();
             textBox3 = new TextBox();
             label6 = new Label();
-            pictureBox1 = new PictureBox();
-            btnUpload = new Button();
             btnClear = new Button();
             btn_Add = new Button();
             comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2DataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             guna2DataGridView1.ColumnHeadersHeight = 4;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.Location = new Point(3, 60);
             guna2DataGridView1.Name = "guna2DataGridView1";
@@ -152,7 +149,7 @@
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Bottom;
-            textBox2.Location = new Point(378, 342);
+            textBox2.Location = new Point(456, 342);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(104, 23);
             textBox2.TabIndex = 5;
@@ -163,7 +160,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(0, 71, 160);
-            label2.Location = new Point(257, 346);
+            label2.Location = new Point(297, 348);
             label2.Name = "label2";
             label2.Size = new Size(94, 19);
             label2.TabIndex = 4;
@@ -175,7 +172,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(500, 346);
+            label4.Location = new Point(678, 348);
             label4.Name = "label4";
             label4.Size = new Size(72, 19);
             label4.TabIndex = 8;
@@ -186,7 +183,7 @@
             radio_Male.Anchor = AnchorStyles.Bottom;
             radio_Male.AutoSize = true;
             radio_Male.ForeColor = Color.Black;
-            radio_Male.Location = new Point(587, 348);
+            radio_Male.Location = new Point(785, 348);
             radio_Male.Name = "radio_Male";
             radio_Male.Size = new Size(51, 19);
             radio_Male.TabIndex = 9;
@@ -199,7 +196,7 @@
             radio_Female.Anchor = AnchorStyles.Bottom;
             radio_Female.AutoSize = true;
             radio_Female.ForeColor = Color.Black;
-            radio_Female.Location = new Point(587, 391);
+            radio_Female.Location = new Point(785, 397);
             radio_Female.Name = "radio_Female";
             radio_Female.Size = new Size(63, 19);
             radio_Female.TabIndex = 10;
@@ -213,11 +210,12 @@
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(0, 71, 160);
-            label5.Location = new Point(12, 395);
+            label5.Location = new Point(20, 395);
             label5.Name = "label5";
-            label5.Size = new Size(81, 19);
+            label5.Size = new Size(85, 19);
             label5.TabIndex = 11;
-            label5.Text = "StudentID";
+            label5.Text = "StudentID:";
+            label5.Click += label5_Click;
             // 
             // textBox3
             // 
@@ -233,35 +231,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 71, 160);
-            label6.Location = new Point(266, 395);
+            label6.Location = new Point(325, 390);
             label6.Name = "label6";
             label6.Size = new Size(66, 19);
             label6.TabIndex = 13;
             label6.Text = "Course:";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Bottom;
-            pictureBox1.BackColor = Color.WhiteSmoke;
-            pictureBox1.Location = new Point(672, 327);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(166, 99);
-            pictureBox1.TabIndex = 15;
-            pictureBox1.TabStop = false;
-            // 
-            // btnUpload
-            // 
-            btnUpload.Anchor = AnchorStyles.Bottom;
-            btnUpload.BackColor = Color.FromArgb(0, 71, 160);
-            btnUpload.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpload.ForeColor = Color.White;
-            btnUpload.Location = new Point(723, 432);
-            btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(67, 30);
-            btnUpload.TabIndex = 16;
-            btnUpload.Text = "Upload";
-            btnUpload.UseVisualStyleBackColor = false;
-            btnUpload.Click += button1_Click;
             // 
             // btnClear
             // 
@@ -295,7 +269,7 @@
             // 
             comboBox1.Anchor = AnchorStyles.Bottom;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(378, 391);
+            comboBox1.Location = new Point(456, 391);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(104, 23);
             comboBox1.TabIndex = 19;
@@ -309,8 +283,6 @@
             Controls.Add(comboBox1);
             Controls.Add(btn_Add);
             Controls.Add(btnClear);
-            Controls.Add(btnUpload);
-            Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(textBox3);
             Controls.Add(label5);
@@ -331,7 +303,6 @@
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -351,8 +322,6 @@
         private TextBox textBox3;
         private Label label7;
         private Label label6;
-        private PictureBox pictureBox1;
-        private Button btnUpload;
         private Button btnClear;
         private Button btn_Add;
         private ComboBox comboBox1;
