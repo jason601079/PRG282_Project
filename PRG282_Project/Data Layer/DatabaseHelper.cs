@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PRG282_Project.Business_Logic_Layer;
+using System.Windows.Forms;
 
 namespace PRG282_Project
 {
@@ -57,6 +58,8 @@ namespace PRG282_Project
 
                 object result = cmd.ExecuteScalar();
                 return result != null ? result.ToString() : null;
+
+               
             }
         }
 
@@ -64,24 +67,53 @@ namespace PRG282_Project
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                connection.Open();
-                string query = "INSERT INTO Students ([Student number], [First name], [Last name], [Gender], [Student Age], [Course]) " +
-                               "VALUES (@StudentNumber, @FirstName, @LastName, @Gender, @Age, @Course)";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                
+                try
                 {
-                    command.Parameters.AddWithValue("@StudentNumber", student.StudentNumber);
-                    command.Parameters.AddWithValue("@FirstName", student.FirstName);
-                    command.Parameters.AddWithValue("@LastName", student.LastName);
-                    command.Parameters.AddWithValue("@Gender", student.Gender);
-                    command.Parameters.AddWithValue("@Age", student.Age);
-                    command.Parameters.AddWithValue("@Course", student.Course);
+                    connection.Open();
+                    string query = "INSERT INTO Students ([Student number], [First name], [Last name], [Gender], [Student Age], [Course]) " +
+                                   "VALUES (@StudentNumber, @FirstName, @LastName, @Gender, @Age, @Course)";
 
-                    command.ExecuteNonQuery();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StudentNumber", student.StudentNumber);
+                        command.Parameters.AddWithValue("@FirstName", student.FirstName);
+                        command.Parameters.AddWithValue("@LastName", student.LastName);
+                        command.Parameters.AddWithValue("@Gender", student.Gender);
+                        command.Parameters.AddWithValue("@Age", student.Age);
+                        command.Parameters.AddWithValue("@Course", student.Course);
+
+                        command.ExecuteNonQuery();
+
+
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            
+        }
+
+        public void DeleteStudent(string studentNumber)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                string query = "DELETE FROM Students WHERE [Student number] = @StudentNumber";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@StudentNumber", studentNumber);
+
+                cmd.ExecuteNonQuery(); // Execute the delete command
             }
         }
 
-       
+
     }
 }

@@ -46,7 +46,7 @@
             label4 = new Label();
             textBox2 = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtStudentNumber = new TextBox();
             label1 = new Label();
             btn_Delete = new Button();
             btn_Search = new Button();
@@ -271,13 +271,13 @@
             label2.TabIndex = 21;
             label2.Text = "Last Name:";
             // 
-            // textBox1
+            // txtStudentNumber
             // 
-            textBox1.Anchor = AnchorStyles.Bottom;
-            textBox1.Location = new Point(141, 357);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(101, 23);
-            textBox1.TabIndex = 20;
+            txtStudentNumber.Anchor = AnchorStyles.Bottom;
+            txtStudentNumber.Location = new Point(518, 487);
+            txtStudentNumber.Name = "txtStudentNumber";
+            txtStudentNumber.Size = new Size(101, 23);
+            txtStudentNumber.TabIndex = 20;
             // 
             // label1
             // 
@@ -303,6 +303,7 @@
             btn_Delete.TabIndex = 36;
             btn_Delete.Text = "Delete";
             btn_Delete.UseVisualStyleBackColor = false;
+            btn_Delete.Click += btn_Delete_Click;
             // 
             // btn_Search
             // 
@@ -324,6 +325,8 @@
             textBox5.Size = new Size(130, 23);
             textBox5.TabIndex = 37;
             textBox5.Text = "Search by StudentID";
+            textBox5.Enter += textBox5_Enter;
+            textBox5.Leave += textBox5_Leave;
             // 
             // comboBox1
             // 
@@ -356,7 +359,7 @@
             Controls.Add(label4);
             Controls.Add(textBox2);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtStudentNumber);
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(guna2DataGridView1);
@@ -389,7 +392,7 @@
         private Label label4;
         private TextBox textBox2;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtStudentNumber;
         private Label label1;
         private Button btn_Delete;
         private Button btn_Search;

@@ -11,5 +11,7 @@ namespace PRG282_Project
     {
         void InsertStudent(Student student);
         string GetLastStudentNumber();
+
+        void DeleteStudent(string studentNumber);
     }
 }
