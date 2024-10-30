@@ -12,9 +12,42 @@ namespace PRG282_Project.Presentation_Layer
 {
     public partial class PrintFrm : Form
     {
+        private DatabaseHelper _dbHelper;
         public PrintFrm()
         {
             InitializeComponent();
+            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            _dbHelper = new DatabaseHelper(connectionString);
+        }
+
+        private void PrintFrm_Load(object sender, EventArgs e)
+        {
+            _dbHelper.LoadStudentData(guna2DataGridView1);
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            guna2DataGridView1.ColumnHeadersHeight = 30;
+            guna2DataGridView1.DefaultCellStyle.BackColor = Color.White;
+            guna2DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+        }
+
+        // Event handler for RadioButton changes
+      
+
+
+        private void radio_Male_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void radio_Female_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void radio_All_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
