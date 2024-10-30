@@ -13,5 +13,7 @@ namespace PRG282_Project
         string GetLastStudentNumber();
 
         void DeleteStudent(string studentNumber);
+
+        void UpdateStudent(Student student);
     }
 }

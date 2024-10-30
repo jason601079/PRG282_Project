@@ -226,6 +226,7 @@
             ForeColor = Color.FromArgb(0, 71, 160);
             Name = "PrintFrm";
             Text = "PrintFrm";
+            Load += PrintFrm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
