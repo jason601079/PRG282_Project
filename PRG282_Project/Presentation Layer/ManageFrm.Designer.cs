@@ -209,9 +209,9 @@
             label5.ForeColor = Color.FromArgb(0, 71, 160);
             label5.Location = new Point(21, 411);
             label5.Name = "label5";
-            label5.Size = new Size(81, 19);
+            label5.Size = new Size(85, 19);
             label5.TabIndex = 28;
-            label5.Text = "StudentID";
+            label5.Text = "StudentID:";
             // 
             // radio_Female
             // 
