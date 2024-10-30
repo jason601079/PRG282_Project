@@ -43,7 +43,6 @@
             Btn_Course = new Button();
             panel_Student = new Panel();
             Btn_Prnt_Std = new Button();
-            Btn_Status = new Button();
             btn_Mng = new Button();
             Btn_reg = new Button();
             Btn_Student = new Button();
@@ -107,7 +106,7 @@
             Btn_Exit.FlatStyle = FlatStyle.Flat;
             Btn_Exit.Font = new Font("Century Gothic", 12F);
             Btn_Exit.ForeColor = Color.White;
-            Btn_Exit.Location = new Point(0, 722);
+            Btn_Exit.Location = new Point(0, 678);
             Btn_Exit.Name = "Btn_Exit";
             Btn_Exit.Padding = new Padding(10, 0, 0, 0);
             Btn_Exit.Size = new Size(181, 63);
@@ -124,7 +123,7 @@
             Panel_Score.Controls.Add(Btn_ManageScore);
             Panel_Score.Controls.Add(Btn_NewScore);
             Panel_Score.Dock = DockStyle.Top;
-            Panel_Score.Location = new Point(0, 600);
+            Panel_Score.Location = new Point(0, 556);
             Panel_Score.Name = "Panel_Score";
             Panel_Score.Size = new Size(181, 122);
             Panel_Score.TabIndex = 6;
@@ -187,7 +186,7 @@
             Btn_Score.FlatStyle = FlatStyle.Flat;
             Btn_Score.Font = new Font("Century Gothic", 12F);
             Btn_Score.ForeColor = Color.White;
-            Btn_Score.Location = new Point(0, 537);
+            Btn_Score.Location = new Point(0, 493);
             Btn_Score.Name = "Btn_Score";
             Btn_Score.Padding = new Padding(10, 0, 0, 0);
             Btn_Score.Size = new Size(181, 63);
@@ -204,7 +203,7 @@
             Panel_Course.Controls.Add(Btn_ManageCourse);
             Panel_Course.Controls.Add(Btn_NewCOurse);
             Panel_Course.Dock = DockStyle.Top;
-            Panel_Course.Location = new Point(0, 413);
+            Panel_Course.Location = new Point(0, 369);
             Panel_Course.Name = "Panel_Course";
             Panel_Course.Size = new Size(181, 124);
             Panel_Course.TabIndex = 4;
@@ -268,7 +267,7 @@
             Btn_Course.FlatStyle = FlatStyle.Flat;
             Btn_Course.Font = new Font("Century Gothic", 12F);
             Btn_Course.ForeColor = Color.White;
-            Btn_Course.Location = new Point(0, 350);
+            Btn_Course.Location = new Point(0, 306);
             Btn_Course.Name = "Btn_Course";
             Btn_Course.Padding = new Padding(10, 0, 0, 0);
             Btn_Course.Size = new Size(181, 63);
@@ -282,13 +281,12 @@
             // 
             panel_Student.BackColor = Color.FromArgb(0, 71, 200);
             panel_Student.Controls.Add(Btn_Prnt_Std);
-            panel_Student.Controls.Add(Btn_Status);
             panel_Student.Controls.Add(btn_Mng);
             panel_Student.Controls.Add(Btn_reg);
             panel_Student.Dock = DockStyle.Top;
             panel_Student.Location = new Point(0, 186);
             panel_Student.Name = "panel_Student";
-            panel_Student.Size = new Size(181, 164);
+            panel_Student.Size = new Size(181, 120);
             panel_Student.TabIndex = 2;
             // 
             // Btn_Prnt_Std
@@ -298,7 +296,7 @@
             Btn_Prnt_Std.FlatStyle = FlatStyle.Flat;
             Btn_Prnt_Std.Font = new Font("Century Gothic", 12F);
             Btn_Prnt_Std.ForeColor = Color.White;
-            Btn_Prnt_Std.Location = new Point(0, 120);
+            Btn_Prnt_Std.Location = new Point(0, 80);
             Btn_Prnt_Std.Name = "Btn_Prnt_Std";
             Btn_Prnt_Std.Padding = new Padding(35, 0, 0, 0);
             Btn_Prnt_Std.Size = new Size(181, 40);
@@ -307,23 +305,6 @@
             Btn_Prnt_Std.TextAlign = ContentAlignment.MiddleLeft;
             Btn_Prnt_Std.UseVisualStyleBackColor = true;
             Btn_Prnt_Std.Click += Btn_Prnt_Std_Click;
-            // 
-            // Btn_Status
-            // 
-            Btn_Status.Dock = DockStyle.Top;
-            Btn_Status.FlatAppearance.BorderSize = 0;
-            Btn_Status.FlatStyle = FlatStyle.Flat;
-            Btn_Status.Font = new Font("Century Gothic", 12F);
-            Btn_Status.ForeColor = Color.White;
-            Btn_Status.Location = new Point(0, 80);
-            Btn_Status.Name = "Btn_Status";
-            Btn_Status.Padding = new Padding(35, 0, 0, 0);
-            Btn_Status.Size = new Size(181, 40);
-            Btn_Status.TabIndex = 2;
-            Btn_Status.Text = "Status";
-            Btn_Status.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_Status.UseVisualStyleBackColor = true;
-            Btn_Status.Click += Btn_Status_Click;
             // 
             // btn_Mng
             // 
@@ -444,6 +425,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackColor = Color.FromArgb(0, 71, 160);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 132);
@@ -471,6 +453,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(636, 13);
             comboBox1.Name = "comboBox1";
@@ -479,6 +462,7 @@
             // 
             // label14
             // 
+            label14.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label14.AutoSize = true;
             label14.Font = new Font("Century Gothic", 12F);
             label14.ForeColor = Color.White;
@@ -490,6 +474,7 @@
             // 
             // label13
             // 
+            label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label13.AutoSize = true;
             label13.Font = new Font("Century Gothic", 12F);
             label13.ForeColor = Color.White;
@@ -501,6 +486,7 @@
             // 
             // label12
             // 
+            label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label12.AutoSize = true;
             label12.Font = new Font("Century Gothic", 12F);
             label12.ForeColor = Color.White;
@@ -513,6 +499,7 @@
             // 
             // label11
             // 
+            label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label11.AutoSize = true;
             label11.Font = new Font("Century Gothic", 12F);
             label11.ForeColor = Color.White;
@@ -524,6 +511,7 @@
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 12F);
             label10.ForeColor = Color.White;
@@ -535,6 +523,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12F);
             label5.ForeColor = Color.White;
@@ -658,7 +647,6 @@
         private Button Btn_Student;
         private Panel Panel_logo;
         private Button Btn_Prnt_Std;
-        private Button Btn_Status;
         private Button btn_Mng;
         private Button Btn_reg;
         private Button Btn_Exit;
