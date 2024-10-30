@@ -10,7 +10,7 @@ namespace PRG282_Project
     public partial class frmMain : Form
     {
         private DatabaseHelper _dbHelper;
-        private StudentController _studentController;
+        
         private IStudentService studentService;
 
 
@@ -19,7 +19,7 @@ namespace PRG282_Project
             InitializeComponent();
             string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             _dbHelper = new DatabaseHelper(connectionString);
-            _studentController = new StudentController(studentService);
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -105,7 +105,7 @@ SWT271
             }
 
             // Use the service to add the student
-            _studentController.AddStudent(studentName, studentAge, course);
+           
 
 
 
@@ -125,34 +125,6 @@ SWT271
         private void button2_Click(object sender, EventArgs e)
         {
 
-            string studentId = txtDeleteStudentNumber.Text;
-
-            // Ensure that the input is not empty or null
-            if (!string.IsNullOrEmpty(studentId))
-            {
-                try
-                {
-                    // Call the delete method from the service layer with the student ID
-                    bool isDeleted = studentService.DeleteStudent(studentId);
-
-                    if (isDeleted)
-                    {
-                        MessageBox.Show("Student record deleted successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to delete student record.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while deleting the student: {ex.Message}");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid student number.");
-            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
