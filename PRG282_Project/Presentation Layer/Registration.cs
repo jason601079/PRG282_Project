@@ -12,9 +12,17 @@ namespace PRG282_Project.Presentation_Layer
 {
     public partial class Registration : Form
     {
-        public Registration()
+        private DatabaseHelper _dbHelper;
+        private StudentController _studentController;
+        private IStudentService studentService;
+
+
+        public Registration(IStudentService studentService)
         {
             InitializeComponent();
+            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            _dbHelper = new DatabaseHelper(connectionString);
+            _studentController = new StudentController(studentService);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +46,8 @@ namespace PRG282_Project.Presentation_Layer
         }
         private void Registration_Load(object sender, EventArgs e)
         {
+
+            _dbHelper.LoadStudentData(guna2DataGridView1);
             /*
              //testing purposes
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;

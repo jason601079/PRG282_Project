@@ -154,6 +154,11 @@ SWT271
                 MessageBox.Show("Please enter a valid student number.");
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

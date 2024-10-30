@@ -13,6 +13,7 @@ namespace PRG282_Project.Presentation_Layer
 {
     public partial class Home : Form
     {
+        private IStudentService studentService;
         public Home()
         {
             InitializeComponent();
@@ -72,7 +73,7 @@ namespace PRG282_Project.Presentation_Layer
         private void Btn_reg_Click(object sender, EventArgs e)
         {
 
-            openChildForm(new Registration());
+            openChildForm(new Registration(studentService));
 
             hideSubMenu();
         }

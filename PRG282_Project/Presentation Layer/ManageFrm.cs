@@ -21,5 +21,10 @@ namespace PRG282_Project.Presentation_Layer
         {
 
         }
+
+        private void ManageFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
