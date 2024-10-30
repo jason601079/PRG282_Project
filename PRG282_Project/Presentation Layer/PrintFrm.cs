@@ -30,24 +30,5 @@ namespace PRG282_Project.Presentation_Layer
             guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.Blue;
             guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
         }
-
-        // Event handler for RadioButton changes
-      
-
-
-        private void radio_Male_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void radio_Female_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void radio_All_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

@@ -44,7 +44,9 @@
             label1 = new Label();
             btn_Delete = new Button();
             btn_Search = new Button();
-            txtSearchStudentID = new TextBox();
+
+            textBox5 = new TextBox();
+
             cmbCourses = new ComboBox();
             txtFirstName = new TextBox();
             label3 = new Label();
@@ -52,19 +54,23 @@
             groupBox1 = new GroupBox();
             radio_Female = new RadioButton();
             radio_Male = new RadioButton();
+
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             label8 = new Label();
             tabPage2 = new TabPage();
             label5 = new Label();
             button1 = new Button();
+
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAge).BeginInit();
             groupBox1.SuspendLayout();
+
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+
             SuspendLayout();
             // 
             // guna2DataGridView1
@@ -169,7 +175,9 @@
             btnClear.TabIndex = 34;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+
             btnClear.Click += btnClear_Click;
+
             // 
             // label6
             // 
@@ -198,10 +206,16 @@
             // txtLastName
             // 
             txtLastName.Anchor = AnchorStyles.Bottom;
+
             txtLastName.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtLastName.Location = new Point(407, 35);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(104, 27);
+
+            txtLastName.Location = new Point(387, 358);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(104, 23);
+
             txtLastName.TabIndex = 22;
             // 
             // label2
@@ -343,6 +357,69 @@
             radio_Female.Text = "Female";
             radio_Female.UseVisualStyleBackColor = true;
             // 
+
+            // cmbCourses
+            // 
+            cmbCourses.Anchor = AnchorStyles.Bottom;
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Items.AddRange(new object[] { "BI", "BCOMP", "DIPLOMA" });
+            cmbCourses.Location = new Point(387, 407);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(104, 23);
+            cmbCourses.TabIndex = 39;
+            // 
+            // txtFirstName
+            // 
+            txtFirstName.Anchor = AnchorStyles.Bottom;
+            txtFirstName.Location = new Point(141, 362);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(104, 23);
+            txtFirstName.TabIndex = 40;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Bottom;
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(0, 71, 160);
+            label3.Location = new Point(21, 408);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 19);
+            label3.TabIndex = 42;
+            label3.Text = "Age:";
+            // 
+            // nudAge
+            // 
+            nudAge.Location = new Point(141, 408);
+            nudAge.Name = "nudAge";
+            nudAge.Size = new Size(101, 23);
+            nudAge.TabIndex = 41;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radio_Female);
+            groupBox1.Controls.Add(radio_Male);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(605, 358);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(110, 93);
+            groupBox1.TabIndex = 43;
+            groupBox1.TabStop = false;
+            // 
+            // radio_Female
+            // 
+            radio_Female.Anchor = AnchorStyles.Bottom;
+            radio_Female.AutoSize = true;
+            radio_Female.ForeColor = Color.Black;
+            radio_Female.Location = new Point(20, 54);
+            radio_Female.Name = "radio_Female";
+            radio_Female.Size = new Size(78, 25);
+            radio_Female.TabIndex = 10;
+            radio_Female.TabStop = true;
+            radio_Female.Text = "Female";
+            radio_Female.UseVisualStyleBackColor = true;
+            // 
+
             // radio_Male
             // 
             radio_Male.Anchor = AnchorStyles.Bottom;
@@ -355,6 +432,7 @@
             radio_Male.TabStop = true;
             radio_Male.Text = "Male";
             radio_Male.UseVisualStyleBackColor = true;
+
             // 
             // tabControl1
             // 
@@ -440,6 +518,7 @@
             button1.Text = "Clear";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+
             // 
             // ManageFrm
             // 
@@ -447,9 +526,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(868, 564);
-            Controls.Add(tabControl1);
+
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
+            Controls.Add(nudAge);
+            Controls.Add(txtFirstName);
+            Controls.Add(cmbCourses);
             Controls.Add(btn_Search);
-            Controls.Add(txtSearchStudentID);
+            Controls.Add(textBox5);
+            Controls.Add(btn_Delete);
+            Controls.Add(btn_Update);
+            Controls.Add(btnClear);
+            Controls.Add(label6);
+            Controls.Add(label4);
+            Controls.Add(txtLastName);
+            Controls.Add(label2);
+            Controls.Add(txtStudentNumber);
+            Controls.Add(label1);
+
             Controls.Add(panel1);
             Controls.Add(guna2DataGridView1);
             Name = "ManageFrm";
@@ -462,11 +556,13 @@
             ((System.ComponentModel.ISupportInitialize)nudAge).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+
             ResumeLayout(false);
             PerformLayout();
         }
@@ -486,7 +582,9 @@
         private Label label1;
         private Button btn_Delete;
         private Button btn_Search;
-        private TextBox txtSearchStudentID;
+
+        private TextBox textBox5;
+
         private ComboBox cmbCourses;
         private TextBox txtFirstName;
         private Label label3;
@@ -494,11 +592,13 @@
         private GroupBox groupBox1;
         private RadioButton radio_Female;
         private RadioButton radio_Male;
+
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private Button button1;
         private Label label8;
         private Label label5;
+
     }
 }
