@@ -65,7 +65,8 @@ namespace PRG282_Project.Presentation_Layer
 
             // Call the business layer to add the student with a generated student number
             IStudentService studentService = new StudentService();
-            studentService.AddStudent(student); 
+            studentService.AddStudent(student);
+            _dbHelper.LoadStudentData(guna2DataGridView1);
 
         }
 

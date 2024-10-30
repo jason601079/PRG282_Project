@@ -10,6 +10,7 @@ namespace PRG282_Project
     public interface IStudentService
     {
         void AddStudent(Student student);
+        void DeleteStudent(string studentNumber);
     }
 }
 

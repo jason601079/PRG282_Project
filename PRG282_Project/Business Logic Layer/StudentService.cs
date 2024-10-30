@@ -43,5 +43,16 @@ namespace PRG282_Project.Business_Logic_Layer
             int numericPart = int.Parse(lastStudentNumber.Substring(1)) + 1;
             return "S" + numericPart.ToString("D3");
         }
+
+        public void DeleteStudent(string studentNumber)
+        {
+            if (string.IsNullOrWhiteSpace(studentNumber))
+            {
+                throw new ArgumentException("Student number is required.");
+            }
+
+            // Call the data layer to delete the student
+            _studentRepository.DeleteStudent(studentNumber);
+        }
     }
 }
