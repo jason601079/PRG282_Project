@@ -54,5 +54,10 @@ namespace PRG282_Project.Business_Logic_Layer
             // Call the data layer to delete the student
             _studentRepository.DeleteStudent(studentNumber);
         }
+
+        public void UpdateStudent(Student student)
+        {
+            _studentRepository.UpdateStudent(student);
+        }
     }
 }

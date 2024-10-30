@@ -36,25 +36,26 @@
             label7 = new Label();
             btn_Update = new Button();
             btnClear = new Button();
-            btnUpload = new Button();
-            pictureBox1 = new PictureBox();
             label6 = new Label();
-            textBox3 = new TextBox();
-            label5 = new Label();
-            radio_Female = new RadioButton();
-            radio_Male = new RadioButton();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtLastName = new TextBox();
             label2 = new Label();
             txtStudentNumber = new TextBox();
             label1 = new Label();
             btn_Delete = new Button();
             btn_Search = new Button();
             textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
+            cmbCourses = new ComboBox();
+            txtFirstName = new TextBox();
+            label3 = new Label();
+            nudAge = new NumericUpDown();
+            groupBox1 = new GroupBox();
+            radio_Female = new RadioButton();
+            radio_Male = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudAge).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2DataGridView1
@@ -108,6 +109,7 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.CellClick += guna2DataGridView1_CellClick;
             guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
             // panel1
@@ -144,6 +146,7 @@
             btn_Update.TabIndex = 35;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // btnClear
             // 
@@ -158,29 +161,6 @@
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
             // 
-            // btnUpload
-            // 
-            btnUpload.Anchor = AnchorStyles.Bottom;
-            btnUpload.BackColor = Color.FromArgb(0, 71, 160);
-            btnUpload.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpload.ForeColor = Color.White;
-            btnUpload.Location = new Point(732, 448);
-            btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(67, 30);
-            btnUpload.TabIndex = 33;
-            btnUpload.Text = "Upload";
-            btnUpload.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Bottom;
-            pictureBox1.BackColor = Color.WhiteSmoke;
-            pictureBox1.Location = new Point(681, 343);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(166, 99);
-            pictureBox1.TabIndex = 32;
-            pictureBox1.TabStop = false;
-            // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Bottom;
@@ -192,52 +172,6 @@
             label6.Size = new Size(66, 19);
             label6.TabIndex = 30;
             label6.Text = "Course:";
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.Bottom;
-            textBox3.Location = new Point(141, 407);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(101, 23);
-            textBox3.TabIndex = 29;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Bottom;
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(0, 71, 160);
-            label5.Location = new Point(21, 411);
-            label5.Name = "label5";
-            label5.Size = new Size(85, 19);
-            label5.TabIndex = 28;
-            label5.Text = "StudentID:";
-            // 
-            // radio_Female
-            // 
-            radio_Female.Anchor = AnchorStyles.Bottom;
-            radio_Female.AutoSize = true;
-            radio_Female.ForeColor = Color.Black;
-            radio_Female.Location = new Point(596, 407);
-            radio_Female.Name = "radio_Female";
-            radio_Female.Size = new Size(63, 19);
-            radio_Female.TabIndex = 27;
-            radio_Female.TabStop = true;
-            radio_Female.Text = "Female";
-            radio_Female.UseVisualStyleBackColor = true;
-            // 
-            // radio_Male
-            // 
-            radio_Male.Anchor = AnchorStyles.Bottom;
-            radio_Male.AutoSize = true;
-            radio_Male.ForeColor = Color.Black;
-            radio_Male.Location = new Point(596, 361);
-            radio_Male.Name = "radio_Male";
-            radio_Male.Size = new Size(51, 19);
-            radio_Male.TabIndex = 26;
-            radio_Male.TabStop = true;
-            radio_Male.Text = "Male";
-            radio_Male.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -251,13 +185,13 @@
             label4.TabIndex = 25;
             label4.Text = "Gender:";
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.Anchor = AnchorStyles.Bottom;
-            textBox2.Location = new Point(387, 358);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(104, 23);
-            textBox2.TabIndex = 22;
+            txtLastName.Anchor = AnchorStyles.Bottom;
+            txtLastName.Location = new Point(387, 358);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(104, 23);
+            txtLastName.TabIndex = 22;
             // 
             // label2
             // 
@@ -328,14 +262,79 @@
             textBox5.Enter += textBox5_Enter;
             textBox5.Leave += textBox5_Leave;
             // 
-            // comboBox1
+            // cmbCourses
             // 
-            comboBox1.Anchor = AnchorStyles.Bottom;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(387, 407);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(104, 23);
-            comboBox1.TabIndex = 39;
+            cmbCourses.Anchor = AnchorStyles.Bottom;
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Items.AddRange(new object[] { "BI", "BCOMP", "DIPLOMA" });
+            cmbCourses.Location = new Point(387, 407);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(104, 23);
+            cmbCourses.TabIndex = 39;
+            // 
+            // txtFirstName
+            // 
+            txtFirstName.Anchor = AnchorStyles.Bottom;
+            txtFirstName.Location = new Point(141, 362);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(104, 23);
+            txtFirstName.TabIndex = 40;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Bottom;
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(0, 71, 160);
+            label3.Location = new Point(21, 408);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 19);
+            label3.TabIndex = 42;
+            label3.Text = "Age:";
+            // 
+            // nudAge
+            // 
+            nudAge.Location = new Point(141, 408);
+            nudAge.Name = "nudAge";
+            nudAge.Size = new Size(101, 23);
+            nudAge.TabIndex = 41;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radio_Female);
+            groupBox1.Controls.Add(radio_Male);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(605, 358);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(110, 93);
+            groupBox1.TabIndex = 43;
+            groupBox1.TabStop = false;
+            // 
+            // radio_Female
+            // 
+            radio_Female.Anchor = AnchorStyles.Bottom;
+            radio_Female.AutoSize = true;
+            radio_Female.ForeColor = Color.Black;
+            radio_Female.Location = new Point(20, 54);
+            radio_Female.Name = "radio_Female";
+            radio_Female.Size = new Size(78, 25);
+            radio_Female.TabIndex = 10;
+            radio_Female.TabStop = true;
+            radio_Female.Text = "Female";
+            radio_Female.UseVisualStyleBackColor = true;
+            // 
+            // radio_Male
+            // 
+            radio_Male.Anchor = AnchorStyles.Bottom;
+            radio_Male.AutoSize = true;
+            radio_Male.ForeColor = Color.Black;
+            radio_Male.Location = new Point(20, 23);
+            radio_Male.Name = "radio_Male";
+            radio_Male.Size = new Size(62, 25);
+            radio_Male.TabIndex = 9;
+            radio_Male.TabStop = true;
+            radio_Male.Text = "Male";
+            radio_Male.UseVisualStyleBackColor = true;
             // 
             // ManageFrm
             // 
@@ -343,21 +342,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(868, 564);
-            Controls.Add(comboBox1);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
+            Controls.Add(nudAge);
+            Controls.Add(txtFirstName);
+            Controls.Add(cmbCourses);
             Controls.Add(btn_Search);
             Controls.Add(textBox5);
             Controls.Add(btn_Delete);
             Controls.Add(btn_Update);
             Controls.Add(btnClear);
-            Controls.Add(btnUpload);
-            Controls.Add(pictureBox1);
             Controls.Add(label6);
-            Controls.Add(textBox3);
-            Controls.Add(label5);
-            Controls.Add(radio_Female);
-            Controls.Add(radio_Male);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtLastName);
             Controls.Add(label2);
             Controls.Add(txtStudentNumber);
             Controls.Add(label1);
@@ -370,7 +367,9 @@
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudAge).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -382,21 +381,21 @@
         private Label label7;
         private Button btn_Update;
         private Button btnClear;
-        private Button btnUpload;
-        private PictureBox pictureBox1;
         private Label label6;
-        private TextBox textBox3;
-        private Label label5;
-        private RadioButton radio_Female;
-        private RadioButton radio_Male;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtLastName;
         private Label label2;
         private TextBox txtStudentNumber;
         private Label label1;
         private Button btn_Delete;
         private Button btn_Search;
         private TextBox textBox5;
-        private ComboBox comboBox1;
+        private ComboBox cmbCourses;
+        private TextBox txtFirstName;
+        private Label label3;
+        private NumericUpDown nudAge;
+        private GroupBox groupBox1;
+        private RadioButton radio_Female;
+        private RadioButton radio_Male;
     }
 }

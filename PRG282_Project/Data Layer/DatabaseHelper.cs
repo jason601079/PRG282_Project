@@ -114,6 +114,27 @@ namespace PRG282_Project
             }
         }
 
+        public void UpdateStudent(Student student)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE Students SET [First name] = @FirstName, [Last name] = @LastName, " +
+                               "[Student age] = @Age, [Course] = @Course, [Gender] = @Gender " +
+                               "WHERE [Student number] = @StudentNumber";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@FirstName", student.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", student.LastName);
+                cmd.Parameters.AddWithValue("@Age", student.Age);
+                cmd.Parameters.AddWithValue("@Course", student.Course);
+                cmd.Parameters.AddWithValue("@Gender", student.Gender);
+                cmd.Parameters.AddWithValue("@StudentNumber", student.StudentNumber);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
 
     }
 }
