@@ -48,12 +48,10 @@
             nudAge = new NumericUpDown();
             label3 = new Label();
             groupBox1 = new GroupBox();
-            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAge).BeginInit();
             groupBox1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // guna2DataGridView1
@@ -137,7 +135,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 71, 160);
-            label1.Location = new Point(32, 21);
+            label1.Location = new Point(12, 346);
             label1.Name = "label1";
             label1.Size = new Size(93, 19);
             label1.TabIndex = 2;
@@ -146,17 +144,17 @@
             // txtFirstName
             // 
             txtFirstName.Anchor = AnchorStyles.Bottom;
-            txtFirstName.Location = new Point(131, 20);
+            txtFirstName.Location = new Point(132, 341);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(164, 23);
+            txtFirstName.Size = new Size(101, 23);
             txtFirstName.TabIndex = 3;
             // 
             // txtLastName
             // 
             txtLastName.Anchor = AnchorStyles.Bottom;
-            txtLastName.Location = new Point(444, 15);
+            txtLastName.Location = new Point(456, 342);
             txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(150, 23);
+            txtLastName.Size = new Size(104, 23);
             txtLastName.TabIndex = 5;
             // 
             // label2
@@ -165,7 +163,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(0, 71, 160);
-            label2.Location = new Point(338, 19);
+            label2.Location = new Point(297, 348);
             label2.Name = "label2";
             label2.Size = new Size(94, 19);
             label2.TabIndex = 4;
@@ -177,7 +175,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(624, 50);
+            label4.Location = new Point(653, 348);
             label4.Name = "label4";
             label4.Size = new Size(72, 19);
             label4.TabIndex = 8;
@@ -188,7 +186,7 @@
             radio_Male.Anchor = AnchorStyles.Bottom;
             radio_Male.AutoSize = true;
             radio_Male.ForeColor = Color.Black;
-            radio_Male.Location = new Point(7, 15);
+            radio_Male.Location = new Point(16, 28);
             radio_Male.Name = "radio_Male";
             radio_Male.Size = new Size(62, 25);
             radio_Male.TabIndex = 9;
@@ -201,7 +199,7 @@
             radio_Female.Anchor = AnchorStyles.Bottom;
             radio_Female.AutoSize = true;
             radio_Female.ForeColor = Color.Black;
-            radio_Female.Location = new Point(7, 46);
+            radio_Female.Location = new Point(16, 73);
             radio_Female.Name = "radio_Female";
             radio_Female.Size = new Size(78, 25);
             radio_Female.TabIndex = 10;
@@ -215,7 +213,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 71, 160);
-            label6.Location = new Point(338, 73);
+            label6.Location = new Point(308, 410);
             label6.Name = "label6";
             label6.Size = new Size(66, 19);
             label6.TabIndex = 13;
@@ -227,7 +225,7 @@
             btnClear.BackColor = Color.FromArgb(0, 71, 160);
             btnClear.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(9, 129);
+            btnClear.Location = new Point(325, 500);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(85, 40);
             btnClear.TabIndex = 17;
@@ -241,7 +239,7 @@
             btn_Add.BackColor = Color.FromArgb(0, 71, 160);
             btn_Add.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Add.ForeColor = Color.White;
-            btn_Add.Location = new Point(749, 129);
+            btn_Add.Location = new Point(456, 500);
             btn_Add.Name = "btn_Add";
             btn_Add.Size = new Size(83, 40);
             btn_Add.TabIndex = 18;
@@ -254,14 +252,14 @@
             cmbCourse.Anchor = AnchorStyles.Bottom;
             cmbCourse.FormattingEnabled = true;
             cmbCourse.Items.AddRange(new object[] { "BI", "BCOMP", "DIPLOMA" });
-            cmbCourse.Location = new Point(444, 69);
+            cmbCourse.Location = new Point(456, 409);
             cmbCourse.Name = "cmbCourse";
             cmbCourse.Size = new Size(104, 23);
             cmbCourse.TabIndex = 19;
             // 
             // nudAge
             // 
-            nudAge.Location = new Point(194, 69);
+            nudAge.Location = new Point(132, 410);
             nudAge.Name = "nudAge";
             nudAge.Size = new Size(101, 23);
             nudAge.TabIndex = 20;
@@ -272,7 +270,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(0, 71, 160);
-            label3.Location = new Point(32, 67);
+            label3.Location = new Point(12, 410);
             label3.Name = "label3";
             label3.Size = new Size(46, 19);
             label3.TabIndex = 21;
@@ -283,30 +281,11 @@
             groupBox1.Controls.Add(radio_Male);
             groupBox1.Controls.Add(radio_Female);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(719, 15);
+            groupBox1.Location = new Point(752, 327);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(91, 77);
+            groupBox1.Size = new Size(91, 132);
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(btn_Add);
-            panel2.Controls.Add(groupBox1);
-            panel2.Controls.Add(btnClear);
-            panel2.Controls.Add(txtFirstName);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(nudAge);
-            panel2.Controls.Add(txtLastName);
-            panel2.Controls.Add(cmbCourse);
-            panel2.Controls.Add(label6);
-            panel2.Location = new Point(0, 397);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(856, 172);
-            panel2.TabIndex = 23;
             // 
             // Registration
             // 
@@ -314,7 +293,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(868, 561);
-            Controls.Add(panel2);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
+            Controls.Add(nudAge);
+            Controls.Add(cmbCourse);
+            Controls.Add(btn_Add);
+            Controls.Add(btnClear);
+            Controls.Add(label6);
+            Controls.Add(label4);
+            Controls.Add(txtLastName);
+            Controls.Add(label2);
+            Controls.Add(txtFirstName);
+            Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(guna2DataGridView1);
             ForeColor = Color.White;
@@ -328,9 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)nudAge).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -354,6 +343,5 @@
         private NumericUpDown nudAge;
         private Label label3;
         private GroupBox groupBox1;
-        private Panel panel2;
     }
 }
