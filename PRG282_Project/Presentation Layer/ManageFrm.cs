@@ -144,5 +144,134 @@ namespace PRG282_Project.Presentation_Layer
                 MessageBox.Show("Error updating student: " + ex.Message);
             }
         }
+
+        private void btn_Update_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_selectedStudentNumber))
+            {
+                MessageBox.Show("Please select a student to update.");
+                return;
+            }
+
+            // Collect the updated details from the form
+            var updatedStudent = new Student
+            {
+                StudentNumber = _selectedStudentNumber,
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                Age = (int)nudAge.Value,
+                Course = cmbCourses.SelectedItem.ToString(),
+                Gender = radio_Male.Checked ? "Male" : "Female"
+            };
+
+            IStudentService studentService = new StudentService();
+
+            try
+            {
+                studentService.UpdateStudent(updatedStudent);
+                MessageBox.Show("Student updated successfully.");
+                _dbHelper.LoadStudentData(guna2DataGridView1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating student: " + ex.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtStudentNumber.Text = string.Empty;
+
+
+            nudAge.Value = nudAge.Minimum;
+
+
+            cmbCourses.SelectedIndex = -1;
+
+
+            radio_Male.Checked = false;
+            radio_Female.Checked = false;
+
+
+            _selectedStudentNumber = null;
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+
+            string searchStudentNumber = textBox5.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchStudentNumber))
+            {
+                MessageBox.Show("Please enter a student number to search.");
+                return;
+            }
+
+            // Iterate through the rows in the DataGridView to find the matching student number
+            bool found = false;
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                // Check if the current row's "Student number" cell matches the search text
+                if (row.Cells["Student number"].Value != null &&
+                    row.Cells["Student number"].Value.ToString().Equals(searchStudentNumber, StringComparison.OrdinalIgnoreCase))
+                {
+                    // Select and scroll to the row if a match is found
+                    row.Selected = true;
+                    guna2DataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                    found = true;
+                    break;
+                }
+            }
+
+            // Display a message if no matching student number was found
+            if (!found)
+            {
+                MessageBox.Show("Student number not found.");
+            }
+        }
+
+        private void btn_Delete_Click_1(object sender, EventArgs e)
+        {
+            string studentNumber = txtStudentNumber.Text; // Assuming you have a TextBox for student number
+
+            // Call the business layer to delete the student
+            IStudentService studentService = new StudentService();
+
+            try
+            {
+                studentService.DeleteStudent(studentNumber);
+                MessageBox.Show("Student deleted successfully.");
+                _dbHelper.LoadStudentData(guna2DataGridView1);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting student: " + ex.Message);
+            }
+        }
+
+        private void txtStudentNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtStudentNumber.Text == "Enter a student number")
+            {
+                txtStudentNumber.Text = string.Empty;
+                txtStudentNumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtStudentNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtStudentNumber.Text == "Enter a student number")
+            {
+                txtStudentNumber.Text = string.Empty;
+                txtStudentNumber.ForeColor = Color.Black;
+            }
+        }
     }
+
 }
