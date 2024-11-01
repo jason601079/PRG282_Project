@@ -41,31 +41,7 @@ namespace PRG282_Project.Data_Layer
             return nextId;
         }
 
-        public bool ApplicantExists(string saIdNumber)
-        {
-            if (!File.Exists(filePath))
-            {
-                return false; 
-            }
 
-            
-            string[] lines = File.ReadAllLines(filePath);
-
-            
-            foreach (var line in lines)
-            {
-                
-                string[] fields = line.Split(',');
-
-                // Check if the SA ID number matches
-                if (fields.Length > 1 && fields[1].Equals(saIdNumber, StringComparison.OrdinalIgnoreCase))
-                {
-                    return true; 
-                }
-            }
-
-            return false; `
-        }
 
 
     }

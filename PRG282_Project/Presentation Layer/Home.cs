@@ -85,7 +85,7 @@ namespace PRG282_Project.Presentation_Layer
             hideSubMenu();
         }
 
-        
+
 
         private void Btn_Prnt_Std_Click(object sender, EventArgs e)
         {
@@ -211,6 +211,9 @@ namespace PRG282_Project.Presentation_Layer
 
         }
 
-        
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
