@@ -30,8 +30,6 @@
         {
             Panel_Home = new Panel();
             btnExit = new Button();
-            btnSubmit = new Button();
-            btnSupportingDocuments = new Button();
             btnApplicantDetails = new Button();
             Panel_logo = new Panel();
             label3 = new Label();
@@ -50,8 +48,6 @@
             Panel_Home.AutoScroll = true;
             Panel_Home.BackColor = Color.FromArgb(51, 51, 51);
             Panel_Home.Controls.Add(btnExit);
-            Panel_Home.Controls.Add(btnSubmit);
-            Panel_Home.Controls.Add(btnSupportingDocuments);
             Panel_Home.Controls.Add(btnApplicantDetails);
             Panel_Home.Controls.Add(Panel_logo);
             Panel_Home.Dock = DockStyle.Left;
@@ -68,7 +64,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Century Gothic", 12F);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 294);
+            btnExit.Location = new Point(0, 168);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(10, 0, 0, 0);
             btnExit.Size = new Size(198, 63);
@@ -76,42 +72,6 @@
             btnExit.Text = "Exit";
             btnExit.TextAlign = ContentAlignment.MiddleLeft;
             btnExit.UseVisualStyleBackColor = false;
-            // 
-            // btnSubmit
-            // 
-            btnSubmit.BackColor = Color.FromArgb(51, 51, 51);
-            btnSubmit.Dock = DockStyle.Top;
-            btnSubmit.FlatAppearance.BorderSize = 0;
-            btnSubmit.FlatStyle = FlatStyle.Flat;
-            btnSubmit.Font = new Font("Century Gothic", 12F);
-            btnSubmit.ForeColor = Color.White;
-            btnSubmit.Location = new Point(0, 231);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Padding = new Padding(10, 0, 0, 0);
-            btnSubmit.Size = new Size(198, 63);
-            btnSubmit.TabIndex = 5;
-            btnSubmit.Text = "Submit";
-            btnSubmit.TextAlign = ContentAlignment.MiddleLeft;
-            btnSubmit.UseVisualStyleBackColor = false;
-            btnSubmit.Click += btnSubmit_Click;
-            // 
-            // btnSupportingDocuments
-            // 
-            btnSupportingDocuments.BackColor = Color.FromArgb(51, 51, 51);
-            btnSupportingDocuments.Dock = DockStyle.Top;
-            btnSupportingDocuments.FlatAppearance.BorderSize = 0;
-            btnSupportingDocuments.FlatStyle = FlatStyle.Flat;
-            btnSupportingDocuments.Font = new Font("Century Gothic", 12F);
-            btnSupportingDocuments.ForeColor = Color.White;
-            btnSupportingDocuments.Location = new Point(0, 168);
-            btnSupportingDocuments.Name = "btnSupportingDocuments";
-            btnSupportingDocuments.Padding = new Padding(10, 0, 0, 0);
-            btnSupportingDocuments.Size = new Size(198, 63);
-            btnSupportingDocuments.TabIndex = 3;
-            btnSupportingDocuments.Text = "Supporting documents";
-            btnSupportingDocuments.TextAlign = ContentAlignment.MiddleLeft;
-            btnSupportingDocuments.UseVisualStyleBackColor = false;
-            btnSupportingDocuments.Click += btnSupportingDocuments_Click;
             // 
             // btnApplicantDetails
             // 
@@ -216,8 +176,6 @@
 
         private Panel Panel_Home;
         private Button btnExit;
-        private Button btnSubmit;
-        private Button btnSupportingDocuments;
         private Button btnApplicantDetails;
         private Panel Panel_logo;
         private Label label3;
