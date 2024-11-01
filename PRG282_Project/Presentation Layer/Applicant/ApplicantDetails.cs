@@ -74,7 +74,6 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             string gender = GetSelectedGender();
             string course = cmbCourses.SelectedItem?.ToString() ?? string.Empty;
 
-
          
             // Call the business layer to save the applicant
             try
