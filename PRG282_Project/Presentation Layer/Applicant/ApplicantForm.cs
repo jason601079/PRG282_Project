@@ -51,14 +51,13 @@ namespace PRG282_Project.Presentation_Layer
             openChildForm(new ApplicantDetails());
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Submit());
-        }
+       
 
-        private void btnSupportingDocuments_Click(object sender, EventArgs e)
+        
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            openChildForm(new SupportingDocuments());
+
         }
     }
 }

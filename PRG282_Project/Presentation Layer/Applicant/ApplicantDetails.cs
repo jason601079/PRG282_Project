@@ -8,6 +8,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
     public partial class ApplicantDetails : Form
     {
         private ApplicantManager applicantManager;
+       
         private string uploadedDocumentPath;
         private bool isFormValid; // Flag to check if the form is valid
 
@@ -73,8 +74,8 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             string gender = GetSelectedGender();
             string course = cmbCourses.SelectedItem?.ToString() ?? string.Empty;
 
-           
 
+         
             // Call the business layer to save the applicant
             try
             {
