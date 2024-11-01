@@ -73,7 +73,11 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             string gender = GetSelectedGender();
             string course = cmbCourses.SelectedItem?.ToString() ?? string.Empty;
 
-           
+            if (applicantManager.ApplicantExists(saIdNumber))
+            {
+                MessageBox.Show("An application with this SA ID number already exists.");
+                return; // Exit the method without saving
+            }
 
             // Call the business layer to save the applicant
             try
