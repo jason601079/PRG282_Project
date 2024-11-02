@@ -331,9 +331,6 @@ WHERE s.Course = 'Diploma'";
 
         }
 
-       
-
-
 
     }
 }

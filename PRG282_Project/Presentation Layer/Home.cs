@@ -194,10 +194,7 @@ namespace PRG282_Project.Presentation_Layer
         {
             hideSubMenu();
             this.Close();
-            
 
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
 
 
         }
