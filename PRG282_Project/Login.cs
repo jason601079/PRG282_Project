@@ -30,8 +30,12 @@ namespace PRG282_Project
                 if (txtUsername.Text == "")
                 {
                     txtUsername.Text = "Enter username";
+                    txtUsername.ForeColor = Color.Gray;
+                } else
+                {
+                    txtUsername.ForeColor = Color.White;
                 }
-                txtUsername.ForeColor = Color.White;
+                
                 pnlUsernameError.Visible = false;
             }
             catch { }
@@ -45,8 +49,12 @@ namespace PRG282_Project
                 if (txtPassword.Text == "")
                 {
                     txtPassword.Text = "Password";
+                    txtPassword.ForeColor = Color.Gray;
+                } else
+                {
+                    txtPassword.ForeColor = Color.White;
                 }
-                txtPassword.ForeColor = Color.White;
+               
                 pnlPassowrdError.Visible = false;
 
             }
@@ -102,6 +110,31 @@ namespace PRG282_Project
             form1.Show();
             this.Hide();
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximise_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void bnMinimise_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState= FormWindowState.Minimized;
+            }
         }
     }
 }

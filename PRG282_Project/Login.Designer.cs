@@ -29,8 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            label7 = new Label();
+            panel5 = new Panel();
+            btnMaximise = new Button();
+            btnClose = new Button();
+            bnMinimise = new Button();
             pnlLogo = new Panel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            label6 = new Label();
             pnlLogin = new Panel();
             linkLabel1 = new LinkLabel();
             btnLogin = new Button();
@@ -51,6 +60,10 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
+            panel1.SuspendLayout();
+            panel5.SuspendLayout();
+            pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             pnlLogin.SuspendLayout();
             panel6.SuspendLayout();
             pnlPassowrdError.SuspendLayout();
@@ -65,20 +78,106 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(17, 53, 71);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(panel5);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(5, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 72);
             panel1.TabIndex = 0;
             // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(164, 13);
+            label7.Name = "label7";
+            label7.Size = new Size(594, 46);
+            label7.TabIndex = 2;
+            label7.Text = "THE MANAGEMENT SYSTEM";
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel5.BackColor = Color.FromArgb(17, 53, 71);
+            panel5.Controls.Add(btnMaximise);
+            panel5.Controls.Add(btnClose);
+            panel5.Controls.Add(bnMinimise);
+            panel5.Location = new Point(810, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(87, 25);
+            panel5.TabIndex = 0;
+            // 
+            // btnMaximise
+            // 
+            btnMaximise.Dock = DockStyle.Fill;
+            btnMaximise.FlatStyle = FlatStyle.Flat;
+            btnMaximise.Image = (Image)resources.GetObject("btnMaximise.Image");
+            btnMaximise.Location = new Point(25, 0);
+            btnMaximise.Name = "btnMaximise";
+            btnMaximise.Size = new Size(37, 25);
+            btnMaximise.TabIndex = 3;
+            btnMaximise.UseVisualStyleBackColor = true;
+            btnMaximise.Click += btnMaximise_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.Dock = DockStyle.Right;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Image = (Image)resources.GetObject("btnClose.Image");
+            btnClose.Location = new Point(62, 0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(25, 25);
+            btnClose.TabIndex = 1;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // bnMinimise
+            // 
+            bnMinimise.Dock = DockStyle.Left;
+            bnMinimise.FlatStyle = FlatStyle.Flat;
+            bnMinimise.Image = (Image)resources.GetObject("bnMinimise.Image");
+            bnMinimise.Location = new Point(0, 0);
+            bnMinimise.Name = "bnMinimise";
+            bnMinimise.Size = new Size(25, 25);
+            bnMinimise.TabIndex = 2;
+            bnMinimise.UseVisualStyleBackColor = true;
+            bnMinimise.Click += bnMinimise_Click;
+            // 
             // pnlLogo
             // 
             pnlLogo.BackColor = Color.FromArgb(17, 53, 71);
+            pnlLogo.Controls.Add(guna2PictureBox1);
+            pnlLogo.Controls.Add(label6);
             pnlLogo.Dock = DockStyle.Left;
             pnlLogo.Location = new Point(5, 77);
             pnlLogo.Name = "pnlLogo";
             pnlLogo.Size = new Size(317, 442);
             pnlLogo.TabIndex = 1;
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges1;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(63, 103);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2PictureBox1.Size = new Size(200, 200);
+            guna2PictureBox1.TabIndex = 2;
+            guna2PictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Broadway", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(118, 45);
+            label6.Name = "label6";
+            label6.Size = new Size(94, 55);
+            label6.TabIndex = 1;
+            label6.Text = "BC";
             // 
             // pnlLogin
             // 
@@ -101,6 +200,7 @@
             // linkLabel1
             // 
             linkLabel1.ActiveLinkColor = Color.Lime;
+            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.White;
             linkLabel1.Location = new Point(321, 349);
@@ -113,6 +213,7 @@
             // 
             // btnLogin
             // 
+            btnLogin.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnLogin.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 0);
             btnLogin.FlatAppearance.BorderSize = 2;
             btnLogin.FlatAppearance.MouseOverBackColor = Color.Lime;
@@ -130,6 +231,7 @@
             // 
             // panel6
             // 
+            panel6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel6.Controls.Add(pnlPassowrdError);
             panel6.Controls.Add(panel8);
             panel6.Location = new Point(196, 167);
@@ -155,9 +257,9 @@
             label4.ForeColor = Color.Red;
             label4.Location = new Point(0, 0);
             label4.Name = "label4";
-            label4.Size = new Size(108, 15);
+            label4.Size = new Size(127, 15);
             label4.TabIndex = 6;
-            label4.Text = "Invalid User Name";
+            label4.Text = "Invalid Passord Name";
             // 
             // panel8
             // 
@@ -195,6 +297,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(20, 170);
             pictureBox2.Name = "pictureBox2";
@@ -204,6 +307,7 @@
             // 
             // panel4
             // 
+            panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel4.Controls.Add(pnlUsernameError);
             panel4.Controls.Add(panel2);
             panel4.Location = new Point(196, 89);
@@ -270,26 +374,29 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(83, 181);
             label5.Name = "label5";
-            label5.Size = new Size(96, 20);
+            label5.Size = new Size(93, 20);
             label5.TabIndex = 6;
-            label5.Text = "Username :";
+            label5.Text = "Password :";
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(236, 25);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(275, 34);
             label1.Name = "label1";
-            label1.Size = new Size(48, 20);
+            label1.Size = new Size(67, 24);
             label1.TabIndex = 1;
-            label1.Text = "Login";
+            label1.Text = "LOGIN";
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(20, 92);
             pictureBox1.Name = "pictureBox1";
@@ -299,6 +406,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(83, 103);
@@ -322,6 +430,12 @@
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel5.ResumeLayout(false);
+            pnlLogo.ResumeLayout(false);
+            pnlLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             pnlLogin.ResumeLayout(false);
             pnlLogin.PerformLayout();
             panel6.ResumeLayout(false);
@@ -363,5 +477,12 @@
         private Label label5;
         private Button btnLogin;
         private LinkLabel linkLabel1;
+        private Panel panel5;
+        private Button btnClose;
+        private Button btnMaximise;
+        private Button bnMinimise;
+        private Label label7;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Label label6;
     }
 }
