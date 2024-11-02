@@ -13,11 +13,15 @@ namespace PRG282_Project.Presentation_Layer
 {
     public partial class Home : Form
     {
+        DatabaseHelper _dbHelper;
+
         private IStudentService studentService;
         public Home()
         {
             InitializeComponent();
             customeDesign();
+            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            _dbHelper = new DatabaseHelper(connectionString);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -27,7 +31,7 @@ namespace PRG282_Project.Presentation_Layer
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            _dbHelper.LoadHomePageData(label10, label11);
         }
 
         private void customeDesign()
@@ -194,8 +198,6 @@ namespace PRG282_Project.Presentation_Layer
         {
             hideSubMenu();
             this.Close();
-
-
 
         }
     }

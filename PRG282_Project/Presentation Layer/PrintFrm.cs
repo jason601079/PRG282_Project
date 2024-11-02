@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace PRG282_Project.Presentation_Layer
 {
@@ -29,6 +30,11 @@ namespace PRG282_Project.Presentation_Layer
             guna2DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.Blue;
             guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

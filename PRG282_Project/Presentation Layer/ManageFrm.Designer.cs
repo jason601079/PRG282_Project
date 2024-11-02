@@ -170,17 +170,19 @@
             // 
             // tabControl1
             // 
+            tabControl1.Anchor = AnchorStyles.Bottom;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tabControl1.Location = new Point(12, 342);
+            tabControl1.Location = new Point(5, 317);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(838, 243);
+            tabControl1.Size = new Size(856, 243);
             tabControl1.TabIndex = 45;
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.FromArgb(0, 71, 200);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(txtFirstName);
             tabPage1.Controls.Add(groupBox1);
@@ -195,19 +197,20 @@
             tabPage1.Controls.Add(cmbCourses);
             tabPage1.Controls.Add(label6);
             tabPage1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tabPage1.ForeColor = Color.White;
             tabPage1.Location = new Point(4, 39);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(830, 200);
+            tabPage1.Size = new Size(848, 200);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "UPDATE ";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.FromArgb(0, 71, 200);
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Black;
+            label8.ForeColor = Color.White;
             label8.Location = new Point(292, 19);
             label8.Name = "label8";
             label8.Size = new Size(255, 25);
@@ -218,7 +221,7 @@
             // 
             txtFirstName.Anchor = AnchorStyles.Bottom;
             txtFirstName.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFirstName.Location = new Point(138, 70);
+            txtFirstName.Location = new Point(153, 66);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(149, 27);
             txtFirstName.TabIndex = 40;
@@ -228,7 +231,7 @@
             groupBox1.Controls.Add(radio_Female);
             groupBox1.Controls.Add(radio_Male);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(640, 76);
+            groupBox1.Location = new Point(709, 62);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(110, 66);
             groupBox1.TabIndex = 43;
@@ -238,35 +241,38 @@
             // 
             radio_Female.Anchor = AnchorStyles.Bottom;
             radio_Female.AutoSize = true;
-            radio_Female.ForeColor = Color.Black;
+            radio_Female.BackColor = Color.FromArgb(0, 71, 200);
+            radio_Female.ForeColor = Color.White;
             radio_Female.Location = new Point(22, 35);
             radio_Female.Name = "radio_Female";
             radio_Female.Size = new Size(78, 25);
             radio_Female.TabIndex = 10;
             radio_Female.TabStop = true;
             radio_Female.Text = "Female";
-            radio_Female.UseVisualStyleBackColor = true;
+            radio_Female.UseVisualStyleBackColor = false;
             // 
             // radio_Male
             // 
             radio_Male.Anchor = AnchorStyles.Bottom;
             radio_Male.AutoSize = true;
-            radio_Male.ForeColor = Color.Black;
+            radio_Male.BackColor = Color.FromArgb(0, 71, 200);
+            radio_Male.ForeColor = Color.White;
             radio_Male.Location = new Point(22, 4);
             radio_Male.Name = "radio_Male";
             radio_Male.Size = new Size(62, 25);
             radio_Male.TabIndex = 9;
             radio_Male.TabStop = true;
             radio_Male.Text = "Male";
-            radio_Male.UseVisualStyleBackColor = true;
+            radio_Male.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Bottom;
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(0, 71, 200);
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(0, 71, 160);
-            label1.Location = new Point(21, 73);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(36, 69);
             label1.Name = "label1";
             label1.Size = new Size(93, 19);
             label1.TabIndex = 19;
@@ -276,9 +282,10 @@
             // 
             label3.Anchor = AnchorStyles.Bottom;
             label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(0, 71, 200);
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(0, 71, 160);
-            label3.Location = new Point(21, 109);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(70, 109);
             label3.Name = "label3";
             label3.Size = new Size(46, 19);
             label3.TabIndex = 42;
@@ -290,7 +297,7 @@
             btnClear.BackColor = Color.FromArgb(0, 71, 160);
             btnClear.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(6, 143);
+            btnClear.Location = new Point(8, 157);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(95, 40);
             btnClear.TabIndex = 34;
@@ -304,7 +311,7 @@
             btn_Update.BackColor = Color.FromArgb(0, 71, 160);
             btn_Update.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(729, 142);
+            btn_Update.Location = new Point(762, 154);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(95, 40);
             btn_Update.TabIndex = 35;
@@ -316,9 +323,10 @@
             // 
             label2.Anchor = AnchorStyles.Bottom;
             label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(0, 71, 200);
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(0, 71, 160);
-            label2.Location = new Point(304, 72);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(319, 68);
             label2.Name = "label2";
             label2.Size = new Size(94, 19);
             label2.TabIndex = 21;
@@ -327,7 +335,7 @@
             // nudAge
             // 
             nudAge.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nudAge.Location = new Point(186, 109);
+            nudAge.Location = new Point(153, 109);
             nudAge.Name = "nudAge";
             nudAge.Size = new Size(101, 27);
             nudAge.TabIndex = 41;
@@ -336,7 +344,7 @@
             // 
             txtLastName.Anchor = AnchorStyles.Bottom;
             txtLastName.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtLastName.Location = new Point(404, 69);
+            txtLastName.Location = new Point(433, 65);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(166, 27);
             txtLastName.TabIndex = 22;
@@ -345,9 +353,10 @@
             // 
             label4.Anchor = AnchorStyles.Bottom;
             label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(0, 71, 200);
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(0, 71, 160);
-            label4.Location = new Point(550, 114);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(621, 68);
             label4.Name = "label4";
             label4.Size = new Size(72, 19);
             label4.TabIndex = 25;
@@ -359,7 +368,7 @@
             cmbCourses.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCourses.FormattingEnabled = true;
             cmbCourses.Items.AddRange(new object[] { "BI", "BCOMP", "DIPLOMA" });
-            cmbCourses.Location = new Point(404, 114);
+            cmbCourses.Location = new Point(433, 111);
             cmbCourses.Name = "cmbCourses";
             cmbCourses.Size = new Size(104, 28);
             cmbCourses.TabIndex = 39;
@@ -368,9 +377,10 @@
             // 
             label6.Anchor = AnchorStyles.Bottom;
             label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(0, 71, 200);
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(0, 71, 160);
-            label6.Location = new Point(304, 114);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(347, 110);
             label6.Name = "label6";
             label6.Size = new Size(66, 19);
             label6.TabIndex = 30;
@@ -378,6 +388,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.FromArgb(0, 71, 200);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(txtStudentNumber);
@@ -385,17 +396,16 @@
             tabPage2.Location = new Point(4, 39);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(830, 200);
+            tabPage2.Size = new Size(848, 200);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "DELETE";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Red;
-            label5.Location = new Point(299, 23);
+            label5.ForeColor = Color.DarkRed;
+            label5.Location = new Point(335, 22);
             label5.Name = "label5";
             label5.Size = new Size(199, 30);
             label5.TabIndex = 37;
@@ -407,7 +417,7 @@
             button1.BackColor = Color.FromArgb(0, 71, 160);
             button1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(246, 115);
+            button1.Location = new Point(2, 154);
             button1.Name = "button1";
             button1.Size = new Size(95, 40);
             button1.TabIndex = 35;
@@ -418,7 +428,7 @@
             // 
             txtStudentNumber.Anchor = AnchorStyles.Bottom;
             txtStudentNumber.ForeColor = Color.Gray;
-            txtStudentNumber.Location = new Point(282, 74);
+            txtStudentNumber.Location = new Point(311, 66);
             txtStudentNumber.Name = "txtStudentNumber";
             txtStudentNumber.Size = new Size(237, 35);
             txtStudentNumber.TabIndex = 20;
@@ -432,7 +442,7 @@
             btn_Delete.BackColor = Color.FromArgb(0, 71, 160);
             btn_Delete.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
             btn_Delete.ForeColor = Color.White;
-            btn_Delete.Location = new Point(455, 115);
+            btn_Delete.Location = new Point(756, 154);
             btn_Delete.Name = "btn_Delete";
             btn_Delete.Size = new Size(92, 40);
             btn_Delete.TabIndex = 36;
@@ -444,7 +454,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(0, 71, 200);
             ClientSize = new Size(868, 564);
             Controls.Add(tabControl1);
             Controls.Add(btn_Search);

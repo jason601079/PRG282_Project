@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label7 = new Label();
             btn_Search = new Button();
@@ -90,28 +90,28 @@
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2DataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             guna2DataGridView1.ColumnHeadersHeight = 4;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.Location = new Point(0, 116);
             guna2DataGridView1.Name = "guna2DataGridView1";
@@ -152,13 +152,14 @@
             btn_Print.TabIndex = 42;
             btn_Print.Text = "Print";
             btn_Print.UseVisualStyleBackColor = false;
+            btn_Print.Click += btn_Print_Click;
             // 
             // radio_Male
             // 
             radio_Male.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             radio_Male.AutoSize = true;
             radio_Male.Font = new Font("Century Gothic", 9F);
-            radio_Male.ForeColor = Color.FromArgb(0, 71, 160);
+            radio_Male.ForeColor = Color.White;
             radio_Male.Location = new Point(159, 523);
             radio_Male.Name = "radio_Male";
             radio_Male.Size = new Size(56, 21);
@@ -172,7 +173,7 @@
             radio_All.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             radio_All.AutoSize = true;
             radio_All.Font = new Font("Century Gothic", 9F);
-            radio_All.ForeColor = Color.FromArgb(0, 71, 160);
+            radio_All.ForeColor = Color.White;
             radio_All.Location = new Point(90, 523);
             radio_All.Name = "radio_All";
             radio_All.Size = new Size(41, 21);
@@ -186,7 +187,7 @@
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(0, 71, 160);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(12, 523);
             label4.Name = "label4";
             label4.Size = new Size(72, 19);
@@ -198,7 +199,7 @@
             radio_Female.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             radio_Female.AutoSize = true;
             radio_Female.Font = new Font("Century Gothic", 9F);
-            radio_Female.ForeColor = Color.FromArgb(0, 71, 160);
+            radio_Female.ForeColor = Color.White;
             radio_Female.Location = new Point(243, 523);
             radio_Female.Name = "radio_Female";
             radio_Female.Size = new Size(70, 21);
@@ -211,7 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(0, 71, 200);
             ClientSize = new Size(868, 564);
             Controls.Add(radio_Female);
             Controls.Add(radio_Male);
