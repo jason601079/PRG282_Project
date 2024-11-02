@@ -15,16 +15,20 @@ namespace PRG282_Project
         {
             
             ApplicationConfiguration.Initialize();
+
             
             
             IStudentService studentService = new StudentService();
             
 
+
             //Application.Run(new Loading_Screen(studentService));
 
             //using for testing purposes of admin home page
+
             Application.Run(new Login());
             //Application.Run(new ApplicantForm());
+
         }
     }
 }
