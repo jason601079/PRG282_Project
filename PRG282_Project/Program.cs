@@ -1,3 +1,4 @@
+using PRG282_Project.Business_Logic_Layer;
 using PRG282_Project.Presentation_Layer;
 using System;
 using System.Windows.Forms;
@@ -14,18 +15,20 @@ namespace PRG282_Project
         {
             
             ApplicationConfiguration.Initialize();
-            // Define your connection string
-            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;"; ; // Replace with your actual connection string
 
-            // Create an instance of your student repository with the connection string
-            IStudentRepository studentRepository = new DatabaseHelper(connectionString); // Pass the connection string
+            
+            
+            IStudentService studentService = new StudentService();
+            
 
-            // Create an instance of UserInput, passing the student repository
-           
+
             //Application.Run(new Loading_Screen(studentService));
 
             //using for testing purposes of admin home page
-            Application.Run(new Home());
+
+            Application.Run(new Login());
+            //Application.Run(new ApplicantForm());
+
         }
     }
 }

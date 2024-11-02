@@ -120,6 +120,7 @@
             Name = "Loading_Screen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Loading_Screen";
+            Load += Loading_Screen_Load;
             pnlStationary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

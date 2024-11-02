@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project.Presentation_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,12 +25,18 @@ namespace PRG282_Project
         {
             pnlProgressBar.Width += 3;
 
-            if (pnlProgressBar.Width >= 600) { 
+            if (pnlProgressBar.Width >= 600)
+            {
                 timerProgressBar.Stop();
-                frmMain form1 = new frmMain(_studentService);
+                Home form1 = new Home();
                 form1.Show();
                 this.Hide();
             }
+        }
+
+        private void Loading_Screen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
