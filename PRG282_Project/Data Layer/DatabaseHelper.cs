@@ -281,9 +281,6 @@ WHERE s.Course = 'Diploma'";
             }
         }
 
-
-
-
         public void PopulateDoughnutChart(Chart chart2)
         {
             // Connection string to your database
@@ -331,6 +328,34 @@ WHERE s.Course = 'Diploma'";
 
         }
 
+        public void top5FailedModules(DataGridView dgv)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"SELECT TOP 8 m.Module, COUNT(m.Mark) AS Failed
+FROM dbo.Modules m
+WHERE m.Mark < 50
+GROUP BY m.Module
+ORDER BY Failed DESC";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
 
     }
 }
