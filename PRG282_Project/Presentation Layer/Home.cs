@@ -34,7 +34,7 @@ namespace PRG282_Project.Presentation_Layer
         {
             panel_Student.Visible = false;
             Panel_Course.Visible = false;
-            Panel_Score.Visible = false;
+
         }
 
         private void hideSubMenu()
@@ -45,8 +45,7 @@ namespace PRG282_Project.Presentation_Layer
             if (Panel_Course.Visible == true)
                 Panel_Course.Visible = false;
 
-            if (Panel_Score.Visible == true)
-                Panel_Score.Visible = false;
+
 
         }
 
@@ -85,7 +84,7 @@ namespace PRG282_Project.Presentation_Layer
             hideSubMenu();
         }
 
-        
+
 
         private void Btn_Prnt_Std_Click(object sender, EventArgs e)
         {
@@ -97,7 +96,9 @@ namespace PRG282_Project.Presentation_Layer
         private void Btn_Course_Click(object sender, EventArgs e)
         {
             showSubmenu(Panel_Course);
+
         }
+
 
         private void Btn_NewCOurse_Click(object sender, EventArgs e)
         {
@@ -126,37 +127,13 @@ namespace PRG282_Project.Presentation_Layer
             hideSubMenu();
         }
 
-        private void Btn_Score_Click(object sender, EventArgs e)
-        {
-            showSubmenu(Panel_Score);
-        }
 
-        private void Btn_NewScore_Click(object sender, EventArgs e)
-        {
-            //...
-            //Code
-            //...
 
-            hideSubMenu();
-        }
 
-        private void Btn_ManageScore_Click(object sender, EventArgs e)
-        {
-            //...
-            //Code
-            //...
 
-            hideSubMenu();
-        }
 
-        private void Btn_PrntScore_Click(object sender, EventArgs e)
-        {
-            //...
-            //Code
-            //...
 
-            hideSubMenu();
-        }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -206,11 +183,17 @@ namespace PRG282_Project.Presentation_Layer
 
         }
 
-        private void Btn_Exit_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new DashBoardfrm());
+            hideSubMenu();
         }
 
-        
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            this.Close();
+            
+        }
     }
 }

@@ -30,12 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             Panel_Home = new Panel();
-            Btn_Exit = new Button();
-            Panel_Score = new Panel();
-            Btn_PrntScore = new Button();
-            Btn_ManageScore = new Button();
-            Btn_NewScore = new Button();
-            Btn_Score = new Button();
+            btnExit = new Button();
+            btnDashboard = new Button();
             Panel_Course = new Panel();
             Btn_PrintCourse = new Button();
             Btn_ManageCourse = new Button();
@@ -69,7 +65,6 @@
             panel1 = new Panel();
             label4 = new Label();
             Panel_Home.SuspendLayout();
-            Panel_Score.SuspendLayout();
             Panel_Course.SuspendLayout();
             panel_Student.SuspendLayout();
             Panel_logo.SuspendLayout();
@@ -85,9 +80,8 @@
             // 
             Panel_Home.AutoScroll = true;
             Panel_Home.BackColor = Color.FromArgb(0, 71, 160);
-            Panel_Home.Controls.Add(Btn_Exit);
-            Panel_Home.Controls.Add(Panel_Score);
-            Panel_Home.Controls.Add(Btn_Score);
+            Panel_Home.Controls.Add(btnExit);
+            Panel_Home.Controls.Add(btnDashboard);
             Panel_Home.Controls.Add(Panel_Course);
             Panel_Home.Controls.Add(Btn_Course);
             Panel_Home.Controls.Add(panel_Student);
@@ -99,102 +93,39 @@
             Panel_Home.Size = new Size(198, 596);
             Panel_Home.TabIndex = 0;
             // 
-            // Btn_Exit
+            // btnExit
             // 
-            Btn_Exit.Dock = DockStyle.Top;
-            Btn_Exit.FlatAppearance.BorderSize = 0;
-            Btn_Exit.FlatStyle = FlatStyle.Flat;
-            Btn_Exit.Font = new Font("Century Gothic", 12F);
-            Btn_Exit.ForeColor = Color.White;
-            Btn_Exit.Location = new Point(0, 678);
-            Btn_Exit.Name = "Btn_Exit";
-            Btn_Exit.Padding = new Padding(10, 0, 0, 0);
-            Btn_Exit.Size = new Size(181, 63);
-            Btn_Exit.TabIndex = 7;
-            Btn_Exit.Text = "Exit";
-            Btn_Exit.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_Exit.UseVisualStyleBackColor = true;
-            Btn_Exit.Click += Btn_Exit_Click;
+            btnExit.Dock = DockStyle.Top;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Century Gothic", 12F);
+            btnExit.ForeColor = Color.White;
+            btnExit.Location = new Point(0, 556);
+            btnExit.Name = "btnExit";
+            btnExit.Padding = new Padding(10, 0, 0, 0);
+            btnExit.Size = new Size(181, 63);
+            btnExit.TabIndex = 7;
+            btnExit.Text = "Exit";
+            btnExit.TextAlign = ContentAlignment.MiddleLeft;
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
-            // Panel_Score
+            // btnDashboard
             // 
-            Panel_Score.BackColor = Color.FromArgb(0, 71, 200);
-            Panel_Score.Controls.Add(Btn_PrntScore);
-            Panel_Score.Controls.Add(Btn_ManageScore);
-            Panel_Score.Controls.Add(Btn_NewScore);
-            Panel_Score.Dock = DockStyle.Top;
-            Panel_Score.Location = new Point(0, 556);
-            Panel_Score.Name = "Panel_Score";
-            Panel_Score.Size = new Size(181, 122);
-            Panel_Score.TabIndex = 6;
-            // 
-            // Btn_PrntScore
-            // 
-            Btn_PrntScore.Dock = DockStyle.Top;
-            Btn_PrntScore.FlatAppearance.BorderSize = 0;
-            Btn_PrntScore.FlatStyle = FlatStyle.Flat;
-            Btn_PrntScore.Font = new Font("Century Gothic", 12F);
-            Btn_PrntScore.ForeColor = Color.White;
-            Btn_PrntScore.Location = new Point(0, 80);
-            Btn_PrntScore.Name = "Btn_PrntScore";
-            Btn_PrntScore.Padding = new Padding(35, 0, 0, 0);
-            Btn_PrntScore.Size = new Size(181, 40);
-            Btn_PrntScore.TabIndex = 3;
-            Btn_PrntScore.Text = "Print";
-            Btn_PrntScore.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_PrntScore.UseVisualStyleBackColor = true;
-            Btn_PrntScore.Click += Btn_PrntScore_Click;
-            // 
-            // Btn_ManageScore
-            // 
-            Btn_ManageScore.Dock = DockStyle.Top;
-            Btn_ManageScore.FlatAppearance.BorderSize = 0;
-            Btn_ManageScore.FlatStyle = FlatStyle.Flat;
-            Btn_ManageScore.Font = new Font("Century Gothic", 12F);
-            Btn_ManageScore.ForeColor = Color.White;
-            Btn_ManageScore.Location = new Point(0, 40);
-            Btn_ManageScore.Name = "Btn_ManageScore";
-            Btn_ManageScore.Padding = new Padding(35, 0, 0, 0);
-            Btn_ManageScore.Size = new Size(181, 40);
-            Btn_ManageScore.TabIndex = 1;
-            Btn_ManageScore.Text = "Manage Score";
-            Btn_ManageScore.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_ManageScore.UseVisualStyleBackColor = true;
-            Btn_ManageScore.Click += Btn_ManageScore_Click;
-            // 
-            // Btn_NewScore
-            // 
-            Btn_NewScore.Dock = DockStyle.Top;
-            Btn_NewScore.FlatAppearance.BorderSize = 0;
-            Btn_NewScore.FlatStyle = FlatStyle.Flat;
-            Btn_NewScore.Font = new Font("Century Gothic", 12F);
-            Btn_NewScore.ForeColor = Color.White;
-            Btn_NewScore.Location = new Point(0, 0);
-            Btn_NewScore.Name = "Btn_NewScore";
-            Btn_NewScore.Padding = new Padding(35, 0, 0, 0);
-            Btn_NewScore.Size = new Size(181, 40);
-            Btn_NewScore.TabIndex = 0;
-            Btn_NewScore.Text = "New Score";
-            Btn_NewScore.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_NewScore.UseVisualStyleBackColor = true;
-            Btn_NewScore.Click += Btn_NewScore_Click;
-            // 
-            // Btn_Score
-            // 
-            Btn_Score.Dock = DockStyle.Top;
-            Btn_Score.FlatAppearance.BorderSize = 0;
-            Btn_Score.FlatStyle = FlatStyle.Flat;
-            Btn_Score.Font = new Font("Century Gothic", 12F);
-            Btn_Score.ForeColor = Color.White;
-            Btn_Score.Location = new Point(0, 493);
-            Btn_Score.Name = "Btn_Score";
-            Btn_Score.Padding = new Padding(10, 0, 0, 0);
-            Btn_Score.Size = new Size(181, 63);
-            Btn_Score.TabIndex = 5;
-            Btn_Score.Text = "Score";
-            Btn_Score.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_Score.UseVisualStyleBackColor = true;
-            Btn_Score.Click += Btn_Score_Click;
+            btnDashboard.Dock = DockStyle.Top;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.Font = new Font("Century Gothic", 12F);
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Location = new Point(0, 493);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Padding = new Padding(10, 0, 0, 0);
+            btnDashboard.Size = new Size(181, 63);
+            btnDashboard.TabIndex = 5;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.TextAlign = ContentAlignment.MiddleLeft;
+            btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // Panel_Course
             // 
@@ -623,7 +554,6 @@
             Text = "Home Page";
             Load += Home_Load;
             Panel_Home.ResumeLayout(false);
-            Panel_Score.ResumeLayout(false);
             Panel_Course.ResumeLayout(false);
             panel_Student.ResumeLayout(false);
             Panel_logo.ResumeLayout(false);
@@ -649,12 +579,6 @@
         private Button Btn_Prnt_Std;
         private Button btn_Mng;
         private Button Btn_reg;
-        private Button Btn_Exit;
-        private Panel Panel_Score;
-        private Button Btn_PrntScore;
-        private Button Btn_ManageScore;
-        private Button Btn_NewScore;
-        private Button Btn_Score;
         private Panel Panel_Course;
         private Button Btn_PrintCourse;
         private Button Btn_ManageCourse;
@@ -681,5 +605,7 @@
         private ComboBox comboBox1;
         private Label label14;
         private Label label13;
+        private Button btnExit;
+        private Button btnDashboard;
     }
 }

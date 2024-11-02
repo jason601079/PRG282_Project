@@ -20,7 +20,7 @@ namespace PRG282_Project.Presentation_Layer
         public ManageFrm()
         {
             InitializeComponent();
-            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             _dbHelper = new DatabaseHelper(connectionString);
         }
 

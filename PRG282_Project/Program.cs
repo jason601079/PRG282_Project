@@ -15,7 +15,7 @@ namespace PRG282_Project
             
             ApplicationConfiguration.Initialize();
             // Define your connection string
-            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;"; ; // Replace with your actual connection string
+            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;"; ; // Replace with your actual connection string
 
             // Create an instance of your student repository with the connection string
             IStudentRepository studentRepository = new DatabaseHelper(connectionString); // Pass the connection string
@@ -25,7 +25,7 @@ namespace PRG282_Project
             //Application.Run(new Loading_Screen(studentService));
 
             //using for testing purposes of admin home page
-            Application.Run(new ApplicantForm());
+            Application.Run(new Home());
         }
     }
 }

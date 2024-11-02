@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using PRG282_Project.Business_Logic_Layer;
 using System.Windows.Forms;
+using System.Collections;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Diagnostics;
 
 namespace PRG282_Project
 {
@@ -14,7 +17,7 @@ namespace PRG282_Project
     {
 
 
-        private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        private readonly string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
 
         public DatabaseHelper(string connectionString)
         {
@@ -59,7 +62,7 @@ namespace PRG282_Project
                 object result = cmd.ExecuteScalar();
                 return result != null ? result.ToString() : null;
 
-               
+
             }
         }
 
@@ -67,7 +70,7 @@ namespace PRG282_Project
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                
+
                 try
                 {
                     connection.Open();
@@ -98,7 +101,7 @@ namespace PRG282_Project
                 }
             }
 
-            
+
         }
 
         public void DeleteStudent(string studentNumber)
@@ -134,6 +137,202 @@ namespace PRG282_Project
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void LoadTop5Achievers(DataGridView dgv)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"SELECT TOP 5 m.[Student number],CONCAT(s.[First name], ' ', s.[Last name]) AS FullName,AVG(m.Mark) AS AverageMark
+FROM dbo.Modules AS m
+JOIN dbo.Students AS s
+ON 
+m.[Student number] = s.[Student number]
+GROUP BY 
+    m.[Student number], 
+    s.[First name], 
+    s.[Last name]
+ORDER BY 
+    AverageMark DESC";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public void bcomStd(Label lbl)
+        {
+            string connectionString = _connectionString;
+            string query = @"SELECT COUNT(s.Course)
+FROM dbo.Students s
+WHERE s.Course = 'BCOMP'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+
+                try
+                {
+
+                    connection.Open();
+
+                    // Execute the query and get the result
+                    object result = command.ExecuteScalar();
+
+                    // Set the label's text to the result (handle null values)
+                    if (result != DBNull.Value)
+                    {
+                        lbl.Text = result.ToString();
+                    }
+                    else
+                    {
+                        lbl.Text = "No data available.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+        public void biStd(Label lbl)
+        {
+            string connectionString = _connectionString;
+            string query = @"SELECT COUNT(s.Course)
+FROM dbo.Students s
+WHERE s.Course = 'BI'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+
+                try
+                {
+
+                    connection.Open();
+
+                    // Execute the query and get the result
+                    object result = command.ExecuteScalar();
+
+                    // Set the label's text to the result (handle null values)
+                    if (result != DBNull.Value)
+                    {
+                        lbl.Text = result.ToString();
+                    }
+                    else
+                    {
+                        lbl.Text = "No data available.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+        public void diplomaStd(Label lbl)
+        {
+            string connectionString = _connectionString;
+            string query = @"SELECT COUNT(s.Course)
+FROM dbo.Students s
+WHERE s.Course = 'Diploma'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+
+                try
+                {
+
+                    connection.Open();
+
+                    // Execute the query and get the result
+                    object result = command.ExecuteScalar();
+
+                    // Set the label's text to the result (handle null values)
+                    if (result != DBNull.Value)
+                    {
+                        lbl.Text = result.ToString();
+                    }
+                    else
+                    {
+                        lbl.Text = "No data available.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+        public void PopulateDoughnutChart(Chart chart2)
+        {
+            // Connection string to your database
+            string connectionString = _connectionString;
+
+            // SQL query to get the top 7 modules with counts of passed marks
+            string query = @"SELECT TOP 7 m.Module, COUNT(m.Mark) as passed
+                     FROM dbo.Modules m
+                     WHERE m.Mark > 49
+                     GROUP BY m.Module
+                     ORDER BY passed DESC";
+
+            // Initialize database connection
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Create a SqlCommand to execute the query
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+
+                // Fill the DataTable with the query result
+                adapter.Fill(dt);
+
+                // Clear existing data points in the series
+                chart2.Series["s1"].Points.Clear();
+
+                // Loop through the DataTable rows and add data points to the series
+                foreach (DataRow row in dt.Rows)
+                {
+                    string moduleName = row["Module"].ToString();
+                    int passedCount = Convert.ToInt32(row["passed"]);
+
+                    // Add data point
+                    chart2.Series["s1"].Points.AddXY(moduleName, passedCount);
+                }
+
+                // Set chart type to Doughnut
+                chart2.Series["s1"].ChartType = SeriesChartType.Doughnut;
+
+                // Optional: Customize the Doughnut chart appearance
+                chart2.Series["s1"]["PieLabelStyle"] = "Inside";
+                chart2.Series["s1"].IsValueShownAsLabel = true;
+                chart2.Series["s1"].LabelForeColor = System.Drawing.Color.White;
+            }
+
+        }
+
+       
+
 
 
     }
