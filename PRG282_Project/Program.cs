@@ -19,7 +19,7 @@ namespace PRG282_Project
             
             
             IStudentService studentService = new StudentService();
-            
+
 
 
             //Application.Run(new Loading_Screen(studentService));
@@ -28,6 +28,7 @@ namespace PRG282_Project
 
             Application.Run(new Login());
             //Application.Run(new ApplicantForm());
+            
 
         }
     }
