@@ -26,8 +26,9 @@ namespace PRG282_Project
 
             //using for testing purposes of admin home page
 
-            Application.Run(new Login());
+            //Application.Run(new Login());
             //Application.Run(new ApplicantForm());
+            Application.Run(new Home());
             
 
         }

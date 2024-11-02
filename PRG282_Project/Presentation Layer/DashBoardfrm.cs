@@ -33,6 +33,8 @@ namespace PRG282_Project.Presentation_Layer
             _dbHelper.PopulateDoughnutChart(chart2);
             dataGridView_Top5.ScrollBars = ScrollBars.None;
             UpdateProgressBar();
+            _dbHelper.top5FailedModules(dgvFailed);
+            dgvFailed.ScrollBars = ScrollBars.None;
 
         }
 
@@ -63,7 +65,7 @@ namespace PRG282_Project.Presentation_Layer
             }
             else
             {
-                pBar.ForeColor = Color.Green; // Change to green otherwise
+                pBar.ForeColor = Color.White; // Change to green otherwise
             }
         }
 
