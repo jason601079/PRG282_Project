@@ -81,9 +81,9 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(0, 71, 160);
             panel1.Controls.Add(label7);
-            panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(868, 61);
@@ -104,6 +104,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(0, 71, 160);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(lbl_BCOM);
@@ -147,6 +148,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(0, 71, 160);
             panel3.Controls.Add(pictureBox4);
             panel3.Controls.Add(lbl_BI);
@@ -190,6 +192,7 @@
             // 
             // panel4
             // 
+            panel4.Anchor = AnchorStyles.None;
             panel4.BackColor = Color.FromArgb(0, 71, 160);
             panel4.Controls.Add(pictureBox2);
             panel4.Controls.Add(lbl_Diploma);
@@ -233,6 +236,7 @@
             // 
             // panel5
             // 
+            panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.FromArgb(0, 71, 160);
             panel5.Controls.Add(dataGridView_Top5);
             panel5.Controls.Add(label8);
@@ -290,6 +294,7 @@
             // 
             // chart2
             // 
+            chart2.Anchor = AnchorStyles.None;
             chart2.BackColor = Color.FromArgb(0, 71, 160);
             chartArea1.BackColor = Color.FromArgb(0, 71, 160);
             chartArea1.Name = "ChartArea1";
@@ -357,6 +362,7 @@
             // 
             // panel6
             // 
+            panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.FromArgb(0, 71, 160);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(pBar);
@@ -378,6 +384,7 @@
             // 
             // panel7
             // 
+            panel7.Anchor = AnchorStyles.None;
             panel7.BackColor = Color.FromArgb(0, 71, 160);
             panel7.Controls.Add(dgvFailed);
             panel7.Controls.Add(label4);

@@ -138,6 +138,48 @@ namespace PRG282_Project
             }
         }
 
+        public void LoadHomePageData(Label lbl, Label lbl2)
+        {
+            string connection = _connectionString;
+            string query = @"SELECT COUNT(s.Gender)
+FROM dbo.Students s
+WHERE s.Gender = 'Male'";
+            string query2 = @"SELECT COUNT(s.Gender)
+FROM dbo.Students s
+WHERE s.Gender = 'Female'";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        object result = command.ExecuteScalar();
+                        lbl.Text = "Male: " + result;
+
+                    }
+
+                    using (SqlCommand command2 = new SqlCommand(query2, conn))
+                    {
+                        object result2 = command2.ExecuteScalar();
+                        lbl2.Text = "Female: " + result2;
+
+                    }
+
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
         public void LoadTop5Achievers(DataGridView dgv)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))

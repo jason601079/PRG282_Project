@@ -50,10 +50,6 @@
             panel_cover = new Panel();
             pictureBox1 = new PictureBox();
             panel3 = new Panel();
-            comboBox1 = new ComboBox();
-            label14 = new Label();
-            label13 = new Label();
-            label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label5 = new Label();
@@ -369,10 +365,6 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 71, 160);
-            panel3.Controls.Add(comboBox1);
-            panel3.Controls.Add(label14);
-            panel3.Controls.Add(label13);
-            panel3.Controls.Add(label12);
             panel3.Controls.Add(label11);
             panel3.Controls.Add(label10);
             panel3.Controls.Add(label5);
@@ -381,52 +373,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(857, 87);
             panel3.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(636, 13);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(154, 23);
-            comboBox1.TabIndex = 7;
-            // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label14.AutoSize = true;
-            label14.Font = new Font("Century Gothic", 12F);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(636, 49);
-            label14.Name = "label14";
-            label14.Size = new Size(53, 21);
-            label14.TabIndex = 6;
-            label14.Text = "Male:";
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label13.AutoSize = true;
-            label13.Font = new Font("Century Gothic", 12F);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(719, 49);
-            label13.Name = "label13";
-            label13.Size = new Size(71, 21);
-            label13.TabIndex = 5;
-            label13.Text = "Female:";
-            // 
-            // label12
-            // 
-            label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label12.AutoSize = true;
-            label12.Font = new Font("Century Gothic", 12F);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(505, 13);
-            label12.Name = "label12";
-            label12.Size = new Size(105, 21);
-            label12.TabIndex = 4;
-            label12.Text = "Select Class:";
-            label12.Click += label12_Click;
             // 
             // label11
             // 
@@ -458,7 +404,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12F);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(39, 13);
+            label5.Location = new Point(30, 13);
             label5.Name = "label5";
             label5.Size = new Size(126, 21);
             label5.TabIndex = 1;
@@ -476,7 +422,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(857, 82);
             panel2.TabIndex = 1;
-            //panel2.Paint += panel2_Paint_1;
             // 
             // label9
             // 
@@ -600,12 +545,8 @@
         private Label label6;
         private Label label7;
         private Label label4;
-        private Label label12;
         private Label label11;
         private Label label10;
-        private ComboBox comboBox1;
-        private Label label14;
-        private Label label13;
         private Button btnExit;
         private Button btnDashboard;
     }
