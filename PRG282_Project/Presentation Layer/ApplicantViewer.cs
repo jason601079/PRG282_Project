@@ -18,7 +18,7 @@ namespace PRG282_Project.Presentation_Layer
     public partial class ApplicantViewer : Form
     {
         private string selectedApplicantID;
-        private string _connectionString = "Your SQL Connection String Here";
+        private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
         public ApplicantViewer()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace PRG282_Project.Presentation_Layer
         private void LoadDataIntoDataGridView()
         {
 
-            string filePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicants.txt";
+            string filePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
 
 
             if (File.Exists(filePath))
@@ -82,15 +82,15 @@ namespace PRG282_Project.Presentation_Layer
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
-                
+
                 selectedApplicantID = dataGridView1.Rows[e.RowIndex].Cells["applicantID"].Value.ToString();
 
-                
+
                 txtApplicantID.Text = selectedApplicantID;
 
-                
+
                 if (e.ColumnIndex == dataGridView1.Columns["documentPath"].Index)
                 {
                     string documentPath = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
@@ -116,22 +116,22 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btnReject_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicants.txt";
+            string filePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
             var lines = File.ReadAllLines(filePath).ToList();
 
-           
+
             lines.RemoveAll(line => line.StartsWith(selectedApplicantID + ","));
             File.WriteAllLines(filePath, lines);
 
-            
+
             dataGridView1.Rows.Clear();
             LoadDataIntoDataGridView();
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            string applicantsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicants.txt";
-            string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
+            string applicantsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
+            string studentsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Students.txt";
             var lines = File.ReadAllLines(applicantsFilePath).ToList();
 
             var applicantRecord = lines.FirstOrDefault(line => line.StartsWith(selectedApplicantID + ","));
@@ -147,17 +147,17 @@ namespace PRG282_Project.Presentation_Layer
             int age = CalculateAgeFromSaID(saID);
             string gender = (saID[6] >= '0' && saID[6] <= '4') ? "Female" : "Male";
 
-            
+
             string lastStudentNumber = GetLastStudentNumber();
             string newStudentNumber = GenerateNextStudentNumber(lastStudentNumber);
 
-           
+
             string studentData = $"{newStudentNumber},{age},{course},{firstName},{lastName},{gender}";
 
-           
+
             File.AppendAllText(studentsFilePath, studentData + Environment.NewLine);
 
-            
+
             lines.Remove(applicantRecord);
             File.WriteAllLines(applicantsFilePath, lines);
 
@@ -182,11 +182,11 @@ namespace PRG282_Project.Presentation_Layer
 
         private int CalculateAgeFromSaID(string saID)
         {
-           
+
             string birthDateString = saID.Substring(0, 6);
             DateTime birthDate;
 
-            
+
             if (int.TryParse(birthDateString.Substring(0, 2), out int yearPrefix))
             {
                 string formattedBirthDate = (yearPrefix < 50 ? "20" : "19") + birthDateString;
@@ -197,9 +197,9 @@ namespace PRG282_Project.Presentation_Layer
                 throw new Exception("Invalid SA ID format");
             }
 
-           
+
             int age = DateTime.Now.Year - birthDate.Year;
-            if (DateTime.Now < birthDate.AddYears(age)) age--;  
+            if (DateTime.Now < birthDate.AddYears(age)) age--;
             return age;
         }
 
@@ -224,6 +224,11 @@ namespace PRG282_Project.Presentation_Layer
 
             int numericPart = int.Parse(lastStudentNumber.Substring(1)) + 1;
             return "S" + numericPart.ToString("D3");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

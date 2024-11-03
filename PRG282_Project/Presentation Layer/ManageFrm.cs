@@ -20,7 +20,7 @@ namespace PRG282_Project.Presentation_Layer
         public ManageFrm()
         {
             InitializeComponent();
-            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             _dbHelper = new DatabaseHelper(connectionString);
         }
 
@@ -154,7 +154,7 @@ namespace PRG282_Project.Presentation_Layer
 
         private void UpdateStudentInTextFile(Student updatedStudent)
         {
-            string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
+            string studentsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Students.txt";
 
             
             var lines = File.ReadAllLines(studentsFilePath).ToList();
@@ -233,15 +233,34 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Delete_Click_1(object sender, EventArgs e)
         {
-            string studentNumber = txtStudentNumber.Text; 
+            string studentNumber = txtStudentNumber.Text;
 
-            
             IStudentService studentService = new StudentService();
 
             try
             {
+                // Delete from the database
                 studentService.DeleteStudent(studentNumber);
                 MessageBox.Show("Student deleted successfully.");
+
+                // Delete from the text file
+                string studentsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Students.txt";
+
+                var lines = File.ReadAllLines(studentsFilePath).ToList();
+                var lineToDelete = lines.FirstOrDefault(line => line.StartsWith(studentNumber + ","));
+
+                if (lineToDelete != null)
+                {
+                    lines.Remove(lineToDelete);
+                    File.WriteAllLines(studentsFilePath, lines);
+                    MessageBox.Show("Record deleted from file successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Record not found in file.");
+                }
+
+                // Refresh the DataGridView
                 _dbHelper.LoadStudentData(guna2DataGridView1);
             }
             catch (ArgumentException ex)

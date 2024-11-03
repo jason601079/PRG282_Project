@@ -35,7 +35,6 @@
             btn_sp1 = new Button();
             btn_SummaryReport = new Button();
             panel_Applicant = new Panel();
-            btn_applicant2 = new Button();
             btn_applicant1 = new Button();
             btn_Applicant = new Button();
             btnExit = new Button();
@@ -109,7 +108,7 @@
             panel_SummaryReport.Controls.Add(btn_sp2);
             panel_SummaryReport.Controls.Add(btn_sp1);
             panel_SummaryReport.Dock = DockStyle.Top;
-            panel_SummaryReport.Location = new Point(0, 803);
+            panel_SummaryReport.Location = new Point(0, 740);
             panel_SummaryReport.Name = "panel_SummaryReport";
             panel_SummaryReport.Size = new Size(181, 121);
             panel_SummaryReport.TabIndex = 11;
@@ -157,7 +156,7 @@
             btn_SummaryReport.FlatStyle = FlatStyle.Flat;
             btn_SummaryReport.Font = new Font("Century Gothic", 12F);
             btn_SummaryReport.ForeColor = Color.White;
-            btn_SummaryReport.Location = new Point(0, 740);
+            btn_SummaryReport.Location = new Point(0, 677);
             btn_SummaryReport.Name = "btn_SummaryReport";
             btn_SummaryReport.Padding = new Padding(10, 0, 0, 0);
             btn_SummaryReport.Size = new Size(181, 63);
@@ -170,32 +169,13 @@
             // panel_Applicant
             // 
             panel_Applicant.BackColor = Color.FromArgb(0, 71, 200);
-            panel_Applicant.Controls.Add(btn_applicant2);
             panel_Applicant.Controls.Add(btn_applicant1);
             panel_Applicant.Dock = DockStyle.Top;
             panel_Applicant.Location = new Point(0, 619);
             panel_Applicant.Name = "panel_Applicant";
-            panel_Applicant.Size = new Size(181, 121);
+            panel_Applicant.Size = new Size(181, 58);
             panel_Applicant.TabIndex = 9;
             panel_Applicant.Visible = false;
-            // 
-            // btn_applicant2
-            // 
-            btn_applicant2.Dock = DockStyle.Top;
-            btn_applicant2.FlatAppearance.BorderSize = 0;
-            btn_applicant2.FlatStyle = FlatStyle.Flat;
-            btn_applicant2.Font = new Font("Century Gothic", 12F);
-            btn_applicant2.ForeColor = Color.White;
-            btn_applicant2.ImageAlign = ContentAlignment.MiddleRight;
-            btn_applicant2.Location = new Point(0, 58);
-            btn_applicant2.Name = "btn_applicant2";
-            btn_applicant2.Padding = new Padding(35, 0, 0, 0);
-            btn_applicant2.Size = new Size(181, 60);
-            btn_applicant2.TabIndex = 3;
-            btn_applicant2.Text = "ChangeText";
-            btn_applicant2.TextAlign = ContentAlignment.MiddleLeft;
-            btn_applicant2.UseVisualStyleBackColor = true;
-            btn_applicant2.Click += btn_applicant2_Click;
             // 
             // btn_applicant1
             // 
@@ -209,7 +189,7 @@
             btn_applicant1.Padding = new Padding(35, 0, 0, 0);
             btn_applicant1.Size = new Size(181, 58);
             btn_applicant1.TabIndex = 1;
-            btn_applicant1.Text = "ChangeText";
+            btn_applicant1.Text = "Manage Applicants";
             btn_applicant1.TextAlign = ContentAlignment.MiddleLeft;
             btn_applicant1.UseVisualStyleBackColor = true;
             btn_applicant1.Click += btn_applicant1_Click;
@@ -238,7 +218,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Century Gothic", 12F);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 924);
+            btnExit.Location = new Point(0, 861);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(10, 0, 0, 0);
             btnExit.Size = new Size(181, 63);
@@ -693,7 +673,6 @@
         private Button btnExit;
         private Button btnDashboard;
         private Panel panel_Applicant;
-        private Button btn_applicant2;
         private Button btn_applicant1;
         private Button btn_Applicant;
         private Panel panel_SummaryReport;

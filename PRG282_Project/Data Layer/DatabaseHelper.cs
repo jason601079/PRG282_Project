@@ -17,7 +17,7 @@ namespace PRG282_Project
     {
 
 
-        private readonly string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
 
         public DatabaseHelper(string connectionString)
         {

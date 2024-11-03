@@ -20,7 +20,7 @@ namespace PRG282_Project.Presentation_Layer
         {
             InitializeComponent();
             customeDesign();
-            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             _dbHelper = new DatabaseHelper(connectionString);
         }
 
@@ -217,6 +217,7 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_applicant1_Click(object sender, EventArgs e)
         {
+            openChildForm(new ApplicantViewer());
             hideSubMenu();
         }
 
