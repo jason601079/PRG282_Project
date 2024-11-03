@@ -9,7 +9,7 @@ namespace PRG282_Project.Data_Layer
 {
     internal class ApplicantDataAccess
     {
-        private const string fileName = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicants.txt";
+        private const string fileName = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
 
         public void SaveApplicant(Applicant applicant)
         {
