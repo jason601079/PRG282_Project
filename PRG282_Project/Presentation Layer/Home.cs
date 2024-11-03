@@ -49,7 +49,11 @@ namespace PRG282_Project.Presentation_Layer
             if (Panel_Course.Visible == true)
                 Panel_Course.Visible = false;
 
+            if (panel_SummaryReport.Visible == true)
+                panel_SummaryReport.Visible = false;
 
+            if (panel_Applicant.Visible == true)
+                panel_Applicant.Visible = false;
 
         }
 
@@ -199,6 +203,36 @@ namespace PRG282_Project.Presentation_Layer
             hideSubMenu();
             this.Close();
 
+        }
+
+        private void btn_SummaryReport_Click(object sender, EventArgs e)
+        {
+            showSubmenu(panel_SummaryReport);
+        }
+
+        private void btn_Applicant_Click(object sender, EventArgs e)
+        {
+            showSubmenu(panel_Applicant);
+        }
+
+        private void btn_applicant1_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_applicant2_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_sp1_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_sp2_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
         }
     }
 }
