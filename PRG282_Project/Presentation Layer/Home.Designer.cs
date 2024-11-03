@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             Panel_Home = new Panel();
+            panel_SummaryReport = new Panel();
+            btn_sp2 = new Button();
+            btn_sp1 = new Button();
+            btn_SummaryReport = new Button();
+            panel_Applicant = new Panel();
+            btn_applicant2 = new Button();
+            btn_applicant1 = new Button();
+            btn_Applicant = new Button();
             btnExit = new Button();
             btnDashboard = new Button();
             Panel_Course = new Panel();
@@ -61,6 +69,8 @@
             panel1 = new Panel();
             label4 = new Label();
             Panel_Home.SuspendLayout();
+            panel_SummaryReport.SuspendLayout();
+            panel_Applicant.SuspendLayout();
             Panel_Course.SuspendLayout();
             panel_Student.SuspendLayout();
             Panel_logo.SuspendLayout();
@@ -76,6 +86,10 @@
             // 
             Panel_Home.AutoScroll = true;
             Panel_Home.BackColor = Color.FromArgb(0, 71, 160);
+            Panel_Home.Controls.Add(panel_SummaryReport);
+            Panel_Home.Controls.Add(btn_SummaryReport);
+            Panel_Home.Controls.Add(panel_Applicant);
+            Panel_Home.Controls.Add(btn_Applicant);
             Panel_Home.Controls.Add(btnExit);
             Panel_Home.Controls.Add(btnDashboard);
             Panel_Home.Controls.Add(Panel_Course);
@@ -86,17 +100,145 @@
             Panel_Home.Dock = DockStyle.Left;
             Panel_Home.Location = new Point(0, 0);
             Panel_Home.Name = "Panel_Home";
-            Panel_Home.Size = new Size(198, 596);
+            Panel_Home.Size = new Size(198, 595);
             Panel_Home.TabIndex = 0;
+            // 
+            // panel_SummaryReport
+            // 
+            panel_SummaryReport.BackColor = Color.FromArgb(0, 71, 200);
+            panel_SummaryReport.Controls.Add(btn_sp2);
+            panel_SummaryReport.Controls.Add(btn_sp1);
+            panel_SummaryReport.Dock = DockStyle.Top;
+            panel_SummaryReport.Location = new Point(0, 803);
+            panel_SummaryReport.Name = "panel_SummaryReport";
+            panel_SummaryReport.Size = new Size(181, 121);
+            panel_SummaryReport.TabIndex = 11;
+            panel_SummaryReport.Visible = false;
+            // 
+            // btn_sp2
+            // 
+            btn_sp2.Dock = DockStyle.Top;
+            btn_sp2.FlatAppearance.BorderSize = 0;
+            btn_sp2.FlatStyle = FlatStyle.Flat;
+            btn_sp2.Font = new Font("Century Gothic", 12F);
+            btn_sp2.ForeColor = Color.White;
+            btn_sp2.ImageAlign = ContentAlignment.MiddleRight;
+            btn_sp2.Location = new Point(0, 58);
+            btn_sp2.Name = "btn_sp2";
+            btn_sp2.Padding = new Padding(35, 0, 0, 0);
+            btn_sp2.Size = new Size(181, 60);
+            btn_sp2.TabIndex = 3;
+            btn_sp2.Text = "ChangeText";
+            btn_sp2.TextAlign = ContentAlignment.MiddleLeft;
+            btn_sp2.UseVisualStyleBackColor = true;
+            btn_sp2.Click += btn_sp2_Click;
+            // 
+            // btn_sp1
+            // 
+            btn_sp1.Dock = DockStyle.Top;
+            btn_sp1.FlatAppearance.BorderSize = 0;
+            btn_sp1.FlatStyle = FlatStyle.Flat;
+            btn_sp1.Font = new Font("Century Gothic", 12F);
+            btn_sp1.ForeColor = Color.White;
+            btn_sp1.Location = new Point(0, 0);
+            btn_sp1.Name = "btn_sp1";
+            btn_sp1.Padding = new Padding(35, 0, 0, 0);
+            btn_sp1.Size = new Size(181, 58);
+            btn_sp1.TabIndex = 1;
+            btn_sp1.Text = "ChangeText";
+            btn_sp1.TextAlign = ContentAlignment.MiddleLeft;
+            btn_sp1.UseVisualStyleBackColor = true;
+            btn_sp1.Click += btn_sp1_Click;
+            // 
+            // btn_SummaryReport
+            // 
+            btn_SummaryReport.Dock = DockStyle.Top;
+            btn_SummaryReport.FlatAppearance.BorderSize = 0;
+            btn_SummaryReport.FlatStyle = FlatStyle.Flat;
+            btn_SummaryReport.Font = new Font("Century Gothic", 12F);
+            btn_SummaryReport.ForeColor = Color.White;
+            btn_SummaryReport.Location = new Point(0, 740);
+            btn_SummaryReport.Name = "btn_SummaryReport";
+            btn_SummaryReport.Padding = new Padding(10, 0, 0, 0);
+            btn_SummaryReport.Size = new Size(181, 63);
+            btn_SummaryReport.TabIndex = 10;
+            btn_SummaryReport.Text = "Summary Report";
+            btn_SummaryReport.TextAlign = ContentAlignment.MiddleLeft;
+            btn_SummaryReport.UseVisualStyleBackColor = true;
+            btn_SummaryReport.Click += btn_SummaryReport_Click;
+            // 
+            // panel_Applicant
+            // 
+            panel_Applicant.BackColor = Color.FromArgb(0, 71, 200);
+            panel_Applicant.Controls.Add(btn_applicant2);
+            panel_Applicant.Controls.Add(btn_applicant1);
+            panel_Applicant.Dock = DockStyle.Top;
+            panel_Applicant.Location = new Point(0, 619);
+            panel_Applicant.Name = "panel_Applicant";
+            panel_Applicant.Size = new Size(181, 121);
+            panel_Applicant.TabIndex = 9;
+            panel_Applicant.Visible = false;
+            // 
+            // btn_applicant2
+            // 
+            btn_applicant2.Dock = DockStyle.Top;
+            btn_applicant2.FlatAppearance.BorderSize = 0;
+            btn_applicant2.FlatStyle = FlatStyle.Flat;
+            btn_applicant2.Font = new Font("Century Gothic", 12F);
+            btn_applicant2.ForeColor = Color.White;
+            btn_applicant2.ImageAlign = ContentAlignment.MiddleRight;
+            btn_applicant2.Location = new Point(0, 58);
+            btn_applicant2.Name = "btn_applicant2";
+            btn_applicant2.Padding = new Padding(35, 0, 0, 0);
+            btn_applicant2.Size = new Size(181, 60);
+            btn_applicant2.TabIndex = 3;
+            btn_applicant2.Text = "ChangeText";
+            btn_applicant2.TextAlign = ContentAlignment.MiddleLeft;
+            btn_applicant2.UseVisualStyleBackColor = true;
+            btn_applicant2.Click += btn_applicant2_Click;
+            // 
+            // btn_applicant1
+            // 
+            btn_applicant1.Dock = DockStyle.Top;
+            btn_applicant1.FlatAppearance.BorderSize = 0;
+            btn_applicant1.FlatStyle = FlatStyle.Flat;
+            btn_applicant1.Font = new Font("Century Gothic", 12F);
+            btn_applicant1.ForeColor = Color.White;
+            btn_applicant1.Location = new Point(0, 0);
+            btn_applicant1.Name = "btn_applicant1";
+            btn_applicant1.Padding = new Padding(35, 0, 0, 0);
+            btn_applicant1.Size = new Size(181, 58);
+            btn_applicant1.TabIndex = 1;
+            btn_applicant1.Text = "ChangeText";
+            btn_applicant1.TextAlign = ContentAlignment.MiddleLeft;
+            btn_applicant1.UseVisualStyleBackColor = true;
+            btn_applicant1.Click += btn_applicant1_Click;
+            // 
+            // btn_Applicant
+            // 
+            btn_Applicant.Dock = DockStyle.Top;
+            btn_Applicant.FlatAppearance.BorderSize = 0;
+            btn_Applicant.FlatStyle = FlatStyle.Flat;
+            btn_Applicant.Font = new Font("Century Gothic", 12F);
+            btn_Applicant.ForeColor = Color.White;
+            btn_Applicant.Location = new Point(0, 556);
+            btn_Applicant.Name = "btn_Applicant";
+            btn_Applicant.Padding = new Padding(10, 0, 0, 0);
+            btn_Applicant.Size = new Size(181, 63);
+            btn_Applicant.TabIndex = 8;
+            btn_Applicant.Text = "Applicant";
+            btn_Applicant.TextAlign = ContentAlignment.MiddleLeft;
+            btn_Applicant.UseVisualStyleBackColor = true;
+            btn_Applicant.Click += btn_Applicant_Click;
             // 
             // btnExit
             // 
-            btnExit.Dock = DockStyle.Top;
+            btnExit.Dock = DockStyle.Bottom;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Century Gothic", 12F);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 556);
+            btnExit.Location = new Point(0, 924);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(10, 0, 0, 0);
             btnExit.Size = new Size(181, 63);
@@ -332,7 +474,6 @@
             // panel_Main_Middle
             // 
             panel_Main_Middle.Controls.Add(panel_cover);
-            panel_Main_Middle.Dock = DockStyle.Fill;
             panel_Main_Middle.Location = new Point(198, 0);
             panel_Main_Middle.Name = "panel_Main_Middle";
             panel_Main_Middle.Size = new Size(857, 596);
@@ -492,7 +633,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1055, 596);
+            ClientSize = new Size(1055, 595);
             Controls.Add(panel_Main_Middle);
             Controls.Add(Panel_Home);
             Name = "Home";
@@ -500,6 +641,8 @@
             Text = "Home Page";
             Load += Home_Load;
             Panel_Home.ResumeLayout(false);
+            panel_SummaryReport.ResumeLayout(false);
+            panel_Applicant.ResumeLayout(false);
             Panel_Course.ResumeLayout(false);
             panel_Student.ResumeLayout(false);
             Panel_logo.ResumeLayout(false);
@@ -549,5 +692,13 @@
         private Label label10;
         private Button btnExit;
         private Button btnDashboard;
+        private Panel panel_Applicant;
+        private Button btn_applicant2;
+        private Button btn_applicant1;
+        private Button btn_Applicant;
+        private Panel panel_SummaryReport;
+        private Button btn_sp2;
+        private Button btn_sp1;
+        private Button btn_SummaryReport;
     }
 }
