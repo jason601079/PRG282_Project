@@ -50,7 +50,7 @@ namespace PRG282_Project
             }
         }
 
-        // Method to get the last student number
+        
         public string GetLastStudentNumber()
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))

@@ -42,9 +42,9 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            string studentNumber = txtStudentNumber.Text; // Assuming you have a TextBox for student number
+            string studentNumber = txtStudentNumber.Text; 
 
-            // Call the business layer to delete the student
+            
             IStudentService studentService = new StudentService();
 
             try
@@ -83,23 +83,23 @@ namespace PRG282_Project.Presentation_Layer
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a row is selected
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
 
                 _selectedStudentNumber = row.Cells["Student number"].Value.ToString();
 
-                // Textboxes for First Name and Last Name
+                
                 txtFirstName.Text = row.Cells["First name"].Value.ToString();
                 txtLastName.Text = row.Cells["Last name"].Value.ToString();
 
-                // NumericUpDown for Age
+                
                 nudAge.Value = Convert.ToInt32(row.Cells["Student age"].Value);
 
-                // ComboBox for Course
+                
                 cmbCourses.SelectedItem = row.Cells["Course"].Value.ToString();
 
-                // RadioButtons for Gender
+                
                 string gender = row.Cells["Gender"].Value.ToString();
                 if (gender == "Male")
                 {
@@ -112,38 +112,7 @@ namespace PRG282_Project.Presentation_Layer
             }
         }
 
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(_selectedStudentNumber))
-            {
-                MessageBox.Show("Please select a student to update.");
-                return;
-            }
 
-            // Collect the updated details from the form
-            var updatedStudent = new Student
-            {
-                StudentNumber = _selectedStudentNumber,
-                FirstName = txtFirstName.Text,
-                LastName = txtLastName.Text,
-                Age = (int)nudAge.Value,
-                Course = cmbCourses.SelectedItem.ToString(),
-                Gender = radio_Male.Checked ? "Male" : "Female"
-            };
-
-            IStudentService studentService = new StudentService();
-
-            try
-            {
-                studentService.UpdateStudent(updatedStudent);
-                MessageBox.Show("Student updated successfully.");
-                _dbHelper.LoadStudentData(guna2DataGridView1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error updating student: " + ex.Message);
-            }
-        }
 
         private void btn_Update_Click_1(object sender, EventArgs e)
         {
@@ -153,7 +122,6 @@ namespace PRG282_Project.Presentation_Layer
                 return;
             }
 
-            // Collect the updated details from the form
             var updatedStudent = new Student
             {
                 StudentNumber = _selectedStudentNumber,
@@ -168,13 +136,44 @@ namespace PRG282_Project.Presentation_Layer
 
             try
             {
+                
                 studentService.UpdateStudent(updatedStudent);
                 MessageBox.Show("Student updated successfully.");
+
+                
+                UpdateStudentInTextFile(updatedStudent);
+
+                
                 _dbHelper.LoadStudentData(guna2DataGridView1);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error updating student: " + ex.Message);
+            }
+        }
+
+        private void UpdateStudentInTextFile(Student updatedStudent)
+        {
+            string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
+
+            
+            var lines = File.ReadAllLines(studentsFilePath).ToList();
+
+            
+            var studentLineIndex = lines.FindIndex(line => line.StartsWith(updatedStudent.StudentNumber + ","));
+
+            if (studentLineIndex != -1)
+            {
+                
+                lines[studentLineIndex] = $"{updatedStudent.StudentNumber},{updatedStudent.Age},{updatedStudent.Course}," +
+                                           $"{updatedStudent.FirstName},{updatedStudent.LastName},{updatedStudent.Gender}";
+
+                
+                File.WriteAllLines(studentsFilePath, lines);
+            }
+            else
+            {
+                MessageBox.Show("Student not found in the text file.");
             }
         }
 
@@ -209,15 +208,15 @@ namespace PRG282_Project.Presentation_Layer
                 return;
             }
 
-            // Iterate through the rows in the DataGridView to find the matching student number
+            
             bool found = false;
             foreach (DataGridViewRow row in guna2DataGridView1.Rows)
             {
-                // Check if the current row's "Student number" cell matches the search text
+               
                 if (row.Cells["Student number"].Value != null &&
                     row.Cells["Student number"].Value.ToString().Equals(searchStudentNumber, StringComparison.OrdinalIgnoreCase))
                 {
-                    // Select and scroll to the row if a match is found
+                   
                     row.Selected = true;
                     guna2DataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
                     found = true;
@@ -225,7 +224,7 @@ namespace PRG282_Project.Presentation_Layer
                 }
             }
 
-            // Display a message if no matching student number was found
+            
             if (!found)
             {
                 MessageBox.Show("Student number not found.");
@@ -234,9 +233,9 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Delete_Click_1(object sender, EventArgs e)
         {
-            string studentNumber = txtStudentNumber.Text; // Assuming you have a TextBox for student number
+            string studentNumber = txtStudentNumber.Text; 
 
-            // Call the business layer to delete the student
+            
             IStudentService studentService = new StudentService();
 
             try
