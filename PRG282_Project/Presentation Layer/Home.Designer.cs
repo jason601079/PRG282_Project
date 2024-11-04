@@ -30,19 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             Panel_Home = new Panel();
-            panel_SummaryReport = new Panel();
-            btn_sp2 = new Button();
-            btn_sp1 = new Button();
-            btn_SummaryReport = new Button();
             panel_Applicant = new Panel();
             btn_applicant1 = new Button();
             btn_Applicant = new Button();
             btnExit = new Button();
             btnDashboard = new Button();
             Panel_Course = new Panel();
-            Btn_PrintCourse = new Button();
             Btn_ManageCourse = new Button();
-            Btn_NewCOurse = new Button();
             Btn_Course = new Button();
             panel_Student = new Panel();
             Btn_Prnt_Std = new Button();
@@ -68,7 +62,6 @@
             panel1 = new Panel();
             label4 = new Label();
             Panel_Home.SuspendLayout();
-            panel_SummaryReport.SuspendLayout();
             panel_Applicant.SuspendLayout();
             Panel_Course.SuspendLayout();
             panel_Student.SuspendLayout();
@@ -85,8 +78,6 @@
             // 
             Panel_Home.AutoScroll = true;
             Panel_Home.BackColor = Color.FromArgb(0, 71, 160);
-            Panel_Home.Controls.Add(panel_SummaryReport);
-            Panel_Home.Controls.Add(btn_SummaryReport);
             Panel_Home.Controls.Add(panel_Applicant);
             Panel_Home.Controls.Add(btn_Applicant);
             Panel_Home.Controls.Add(btnExit);
@@ -102,76 +93,12 @@
             Panel_Home.Size = new Size(198, 595);
             Panel_Home.TabIndex = 0;
             // 
-            // panel_SummaryReport
-            // 
-            panel_SummaryReport.BackColor = Color.FromArgb(0, 71, 200);
-            panel_SummaryReport.Controls.Add(btn_sp2);
-            panel_SummaryReport.Controls.Add(btn_sp1);
-            panel_SummaryReport.Dock = DockStyle.Top;
-            panel_SummaryReport.Location = new Point(0, 740);
-            panel_SummaryReport.Name = "panel_SummaryReport";
-            panel_SummaryReport.Size = new Size(181, 121);
-            panel_SummaryReport.TabIndex = 11;
-            panel_SummaryReport.Visible = false;
-            // 
-            // btn_sp2
-            // 
-            btn_sp2.Dock = DockStyle.Top;
-            btn_sp2.FlatAppearance.BorderSize = 0;
-            btn_sp2.FlatStyle = FlatStyle.Flat;
-            btn_sp2.Font = new Font("Century Gothic", 12F);
-            btn_sp2.ForeColor = Color.White;
-            btn_sp2.ImageAlign = ContentAlignment.MiddleRight;
-            btn_sp2.Location = new Point(0, 58);
-            btn_sp2.Name = "btn_sp2";
-            btn_sp2.Padding = new Padding(35, 0, 0, 0);
-            btn_sp2.Size = new Size(181, 60);
-            btn_sp2.TabIndex = 3;
-            btn_sp2.Text = "ChangeText";
-            btn_sp2.TextAlign = ContentAlignment.MiddleLeft;
-            btn_sp2.UseVisualStyleBackColor = true;
-            btn_sp2.Click += btn_sp2_Click;
-            // 
-            // btn_sp1
-            // 
-            btn_sp1.Dock = DockStyle.Top;
-            btn_sp1.FlatAppearance.BorderSize = 0;
-            btn_sp1.FlatStyle = FlatStyle.Flat;
-            btn_sp1.Font = new Font("Century Gothic", 12F);
-            btn_sp1.ForeColor = Color.White;
-            btn_sp1.Location = new Point(0, 0);
-            btn_sp1.Name = "btn_sp1";
-            btn_sp1.Padding = new Padding(35, 0, 0, 0);
-            btn_sp1.Size = new Size(181, 58);
-            btn_sp1.TabIndex = 1;
-            btn_sp1.Text = "ChangeText";
-            btn_sp1.TextAlign = ContentAlignment.MiddleLeft;
-            btn_sp1.UseVisualStyleBackColor = true;
-            btn_sp1.Click += btn_sp1_Click;
-            // 
-            // btn_SummaryReport
-            // 
-            btn_SummaryReport.Dock = DockStyle.Top;
-            btn_SummaryReport.FlatAppearance.BorderSize = 0;
-            btn_SummaryReport.FlatStyle = FlatStyle.Flat;
-            btn_SummaryReport.Font = new Font("Century Gothic", 12F);
-            btn_SummaryReport.ForeColor = Color.White;
-            btn_SummaryReport.Location = new Point(0, 677);
-            btn_SummaryReport.Name = "btn_SummaryReport";
-            btn_SummaryReport.Padding = new Padding(10, 0, 0, 0);
-            btn_SummaryReport.Size = new Size(181, 63);
-            btn_SummaryReport.TabIndex = 10;
-            btn_SummaryReport.Text = "Summary Report";
-            btn_SummaryReport.TextAlign = ContentAlignment.MiddleLeft;
-            btn_SummaryReport.UseVisualStyleBackColor = true;
-            btn_SummaryReport.Click += btn_SummaryReport_Click;
-            // 
             // panel_Applicant
             // 
             panel_Applicant.BackColor = Color.FromArgb(0, 71, 200);
             panel_Applicant.Controls.Add(btn_applicant1);
             panel_Applicant.Dock = DockStyle.Top;
-            panel_Applicant.Location = new Point(0, 619);
+            panel_Applicant.Location = new Point(0, 553);
             panel_Applicant.Name = "panel_Applicant";
             panel_Applicant.Size = new Size(181, 58);
             panel_Applicant.TabIndex = 9;
@@ -201,7 +128,7 @@
             btn_Applicant.FlatStyle = FlatStyle.Flat;
             btn_Applicant.Font = new Font("Century Gothic", 12F);
             btn_Applicant.ForeColor = Color.White;
-            btn_Applicant.Location = new Point(0, 556);
+            btn_Applicant.Location = new Point(0, 490);
             btn_Applicant.Name = "btn_Applicant";
             btn_Applicant.Padding = new Padding(10, 0, 0, 0);
             btn_Applicant.Size = new Size(181, 63);
@@ -218,7 +145,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Century Gothic", 12F);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 861);
+            btnExit.Location = new Point(0, 611);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(10, 0, 0, 0);
             btnExit.Size = new Size(181, 63);
@@ -235,7 +162,7 @@
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.Font = new Font("Century Gothic", 12F);
             btnDashboard.ForeColor = Color.White;
-            btnDashboard.Location = new Point(0, 493);
+            btnDashboard.Location = new Point(0, 427);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.Padding = new Padding(10, 0, 0, 0);
             btnDashboard.Size = new Size(181, 63);
@@ -248,32 +175,13 @@
             // Panel_Course
             // 
             Panel_Course.BackColor = Color.FromArgb(0, 71, 200);
-            Panel_Course.Controls.Add(Btn_PrintCourse);
             Panel_Course.Controls.Add(Btn_ManageCourse);
-            Panel_Course.Controls.Add(Btn_NewCOurse);
             Panel_Course.Dock = DockStyle.Top;
             Panel_Course.Location = new Point(0, 369);
             Panel_Course.Name = "Panel_Course";
-            Panel_Course.Size = new Size(181, 124);
+            Panel_Course.Size = new Size(181, 58);
             Panel_Course.TabIndex = 4;
             Panel_Course.Paint += panel1_Paint;
-            // 
-            // Btn_PrintCourse
-            // 
-            Btn_PrintCourse.Dock = DockStyle.Top;
-            Btn_PrintCourse.FlatAppearance.BorderSize = 0;
-            Btn_PrintCourse.FlatStyle = FlatStyle.Flat;
-            Btn_PrintCourse.Font = new Font("Century Gothic", 12F);
-            Btn_PrintCourse.ForeColor = Color.White;
-            Btn_PrintCourse.Location = new Point(0, 80);
-            Btn_PrintCourse.Name = "Btn_PrintCourse";
-            Btn_PrintCourse.Padding = new Padding(35, 0, 0, 0);
-            Btn_PrintCourse.Size = new Size(181, 40);
-            Btn_PrintCourse.TabIndex = 3;
-            Btn_PrintCourse.Text = "Print";
-            Btn_PrintCourse.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_PrintCourse.UseVisualStyleBackColor = true;
-            Btn_PrintCourse.Click += Btn_PrintCourse_Click;
             // 
             // Btn_ManageCourse
             // 
@@ -282,32 +190,15 @@
             Btn_ManageCourse.FlatStyle = FlatStyle.Flat;
             Btn_ManageCourse.Font = new Font("Century Gothic", 12F);
             Btn_ManageCourse.ForeColor = Color.White;
-            Btn_ManageCourse.Location = new Point(0, 40);
+            Btn_ManageCourse.Location = new Point(0, 0);
             Btn_ManageCourse.Name = "Btn_ManageCourse";
             Btn_ManageCourse.Padding = new Padding(35, 0, 0, 0);
-            Btn_ManageCourse.Size = new Size(181, 40);
+            Btn_ManageCourse.Size = new Size(181, 58);
             Btn_ManageCourse.TabIndex = 1;
-            Btn_ManageCourse.Text = "Manage Course";
+            Btn_ManageCourse.Text = "Module Overview";
             Btn_ManageCourse.TextAlign = ContentAlignment.MiddleLeft;
             Btn_ManageCourse.UseVisualStyleBackColor = true;
             Btn_ManageCourse.Click += Btn_ManageCourse_Click;
-            // 
-            // Btn_NewCOurse
-            // 
-            Btn_NewCOurse.Dock = DockStyle.Top;
-            Btn_NewCOurse.FlatAppearance.BorderSize = 0;
-            Btn_NewCOurse.FlatStyle = FlatStyle.Flat;
-            Btn_NewCOurse.Font = new Font("Century Gothic", 12F);
-            Btn_NewCOurse.ForeColor = Color.White;
-            Btn_NewCOurse.Location = new Point(0, 0);
-            Btn_NewCOurse.Name = "Btn_NewCOurse";
-            Btn_NewCOurse.Padding = new Padding(35, 0, 0, 0);
-            Btn_NewCOurse.Size = new Size(181, 40);
-            Btn_NewCOurse.TabIndex = 0;
-            Btn_NewCOurse.Text = "New Course";
-            Btn_NewCOurse.TextAlign = ContentAlignment.MiddleLeft;
-            Btn_NewCOurse.UseVisualStyleBackColor = true;
-            Btn_NewCOurse.Click += Btn_NewCOurse_Click;
             // 
             // Btn_Course
             // 
@@ -321,7 +212,7 @@
             Btn_Course.Padding = new Padding(10, 0, 0, 0);
             Btn_Course.Size = new Size(181, 63);
             Btn_Course.TabIndex = 3;
-            Btn_Course.Text = "Course";
+            Btn_Course.Text = "Modules";
             Btn_Course.TextAlign = ContentAlignment.MiddleLeft;
             Btn_Course.UseVisualStyleBackColor = true;
             Btn_Course.Click += Btn_Course_Click;
@@ -621,7 +512,6 @@
             Text = "Home Page";
             Load += Home_Load;
             Panel_Home.ResumeLayout(false);
-            panel_SummaryReport.ResumeLayout(false);
             panel_Applicant.ResumeLayout(false);
             Panel_Course.ResumeLayout(false);
             panel_Student.ResumeLayout(false);
@@ -649,9 +539,7 @@
         private Button btn_Mng;
         private Button Btn_reg;
         private Panel Panel_Course;
-        private Button Btn_PrintCourse;
         private Button Btn_ManageCourse;
-        private Button Btn_NewCOurse;
         private Button Btn_Course;
         private Label label2;
         private Label label1;
@@ -675,9 +563,5 @@
         private Panel panel_Applicant;
         private Button btn_applicant1;
         private Button btn_Applicant;
-        private Panel panel_SummaryReport;
-        private Button btn_sp2;
-        private Button btn_sp1;
-        private Button btn_SummaryReport;
     }
 }

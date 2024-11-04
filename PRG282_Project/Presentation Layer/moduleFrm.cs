@@ -3,37 +3,42 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
 
 namespace PRG282_Project.Presentation_Layer
 {
-    public partial class PrintFrm : Form
+    public partial class moduleFrm : Form
     {
         private DatabaseHelper _dbHelper;
-        public PrintFrm()
+        public moduleFrm()
         {
             InitializeComponent();
             //string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             _dbHelper = new DatabaseHelper(connectionString);
-            radio_Female.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
-            radio_Male.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
             radio_All.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+            radio_Fail.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+            radio_Pass.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
         }
 
-        private void PrintFrm_Load(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
-            _dbHelper.LoadStudentData(guna2DataGridView1);
+
+        }
+
+        private void moduleFrm_Load(object sender, EventArgs e)
+        {
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             guna2DataGridView1.ColumnHeadersHeight = 30;
             guna2DataGridView1.DefaultCellStyle.BackColor = Color.White;
             guna2DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.Blue;
             guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            _dbHelper.loadDataModules(guna2DataGridView1);
         }
 
         private void btn_Print_Click(object sender, EventArgs e)
@@ -46,7 +51,6 @@ namespace PRG282_Project.Presentation_Layer
             };
             printPreviewDialog.ShowDialog();
         }
-
         private int rowPrintIndex = 0; // Track the index of row being printed
         private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -95,38 +99,37 @@ namespace PRG282_Project.Presentation_Layer
             e.HasMorePages = false;
         }
 
-
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            _dbHelper.searchModule(textBox5,guna2DataGridView1);
-
+            _dbHelper.searchModule2(search_TextBox,guna2DataGridView1);
         }
+
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             // Check if the current radio button is checked before filtering
             if (sender is RadioButton radioButton && radioButton.Checked)
             {
-                string genderFilter = null;
+                string choice = null;
 
                 // Determine which radio button is checked
-                if (radioButton == radio_Female)
+                if (radioButton == radio_Pass)
                 {
-                    genderFilter = "Female";
+                    choice = "Pass";
                 }
-                else if (radioButton == radio_Male)
+                else if (radioButton == radio_Fail)
                 {
-                    genderFilter = "Male";
+                    choice = "Fail";
                 }
 
                 // Load filtered data based on the selected gender, or load all if "All" is selected
-                if (genderFilter != null)
+                if (choice != null)
                 {
-                    _dbHelper.LoadStudentDataFilter(guna2DataGridView1, genderFilter);
+                    _dbHelper.LoadFilteredDataModules(guna2DataGridView1, choice);
                 }
                 else
                 {
-                    _dbHelper.LoadStudentData(guna2DataGridView1); // Load all data if "All" is selected
+                    _dbHelper.loadDataModules(guna2DataGridView1); // Load all data if "All" is selected
                 }
             }
         }

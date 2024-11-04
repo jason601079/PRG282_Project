@@ -17,8 +17,8 @@ namespace PRG282_Project
     {
 
 
+        //private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
         private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-
         public DatabaseHelper(string connectionString)
         {
             _connectionString = connectionString;
@@ -429,18 +429,123 @@ ORDER BY Failed DESC";
             
         }
 
-        public void loadAll()
+        public void loadDataModules(DataGridView dgv)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"SELECT  m.[Student number],CONCAT(s.[First name],+' '+s.[Last name]) AS 'Full name',m.Module,m.Mark,m.Credits,s.Course   
+FROM dbo.Modules  m
+JOIN dbo.Students  s 
+ON m.[Student number] = s.[Student number];";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public void searchModule2(TextBox txtBox, DataGridView dgv)
         {
 
-        }
-        public void male()
-        {
+            string Module = txtBox.Text;
+            string connection = _connectionString;
+            string query = @$"SELECT m.[Student number],CONCAT(s.[First name],+' '+s.[Last name]) AS 'Full name',m.Module,m.Mark,m.Credits,s.Course   
+FROM dbo.Modules  m
+JOIN dbo.Students  s 
+ON m.[Student number] = s.[Student number]
+WHERE m.Module = '{Module}'";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connection))
+                {
+                    SqlCommand command = new SqlCommand(query, conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+
+                    adapter.Fill(dt);
+
+                    dgv.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
-        public void female()
-        {
 
+        public void LoadFilteredDataModules(DataGridView dgv,string choice)
+        {
+            
+            string query = null;
+
+            if (choice == "Pass")
+            {
+               query = @"SELECT  m.[Student number],CONCAT(s.[First name],+' '+s.[Last name]) AS 'Full name',m.Module,m.Mark,m.Credits,s.Course   
+FROM dbo.Modules  m
+JOIN dbo.Students  s 
+ON m.[Student number] = s.[Student number]
+WHERE m.Mark > 49";
+            }
+            else if (choice  == "Fail")
+            {
+                query = @"SELECT  m.[Student number],CONCAT(s.[First name],+' '+s.[Last name]) AS 'Full name',m.Module,m.Mark,m.Credits,s.Course   
+FROM dbo.Modules  m
+JOIN dbo.Students  s 
+ON m.[Student number] = s.[Student number]
+WHERE m.Mark < 50";
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv.DataSource = dt;
+            }
         }
+
+
+        public void LoadStudentDataFilter(DataGridView dgv, string choice)
+        {
+            string query = null;
+
+            if (choice == "Male")
+            {
+                query = @"SELECT * FROM Students WHERE Gender = 'Male'";
+            }
+            else if (choice == "Female")
+            {
+                query = @"SELECT * FROM Students WHERE Gender = 'Female'";
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv.DataSource = dt;
+            }
+        }
+
 
     }
 }
