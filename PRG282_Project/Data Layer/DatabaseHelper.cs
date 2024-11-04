@@ -399,5 +399,48 @@ ORDER BY Failed DESC";
             }
         }
 
+
+        public void searchModule(TextBox txtBox, DataGridView dgv)
+        {
+
+            string Module = txtBox.Text;
+            string connection = _connectionString;
+            string query = @$"SELECT *
+                     FROM dbo.Students m
+                     WHERE m.Course = '{Module}'";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connection))
+                {
+                    SqlCommand command = new SqlCommand(query, conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+
+                    adapter.Fill(dt);
+
+                    dgv.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        public void loadAll()
+        {
+
+        }
+        public void male()
+        {
+
+        }
+        public void female()
+        {
+
+        }
+
     }
 }
