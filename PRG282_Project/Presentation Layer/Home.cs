@@ -20,7 +20,8 @@ namespace PRG282_Project.Presentation_Layer
         {
             InitializeComponent();
             customeDesign();
-            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            //string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             _dbHelper = new DatabaseHelper(connectionString);
         }
 
@@ -48,9 +49,6 @@ namespace PRG282_Project.Presentation_Layer
 
             if (Panel_Course.Visible == true)
                 Panel_Course.Visible = false;
-
-            if (panel_SummaryReport.Visible == true)
-                panel_SummaryReport.Visible = false;
 
             if (panel_Applicant.Visible == true)
                 panel_Applicant.Visible = false;
@@ -119,9 +117,7 @@ namespace PRG282_Project.Presentation_Layer
 
         private void Btn_ManageCourse_Click(object sender, EventArgs e)
         {
-            //...
-            //Code
-            //...
+            openChildForm(new moduleFrm());
 
             hideSubMenu();
         }
@@ -205,10 +201,7 @@ namespace PRG282_Project.Presentation_Layer
 
         }
 
-        private void btn_SummaryReport_Click(object sender, EventArgs e)
-        {
-            showSubmenu(panel_SummaryReport);
-        }
+       
 
         private void btn_Applicant_Click(object sender, EventArgs e)
         {
