@@ -19,6 +19,9 @@ namespace PRG282_Project.Presentation_Layer
     {
         private string selectedApplicantID;
         private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        public string applicantPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Applicant.txt");
+        public string studentsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Students.txt");
+
         public ApplicantViewer()
         {
             InitializeComponent();
@@ -52,13 +55,13 @@ namespace PRG282_Project.Presentation_Layer
         private void LoadDataIntoDataGridView()
         {
 
-            string filePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
+            
 
 
-            if (File.Exists(filePath))
+            if (File.Exists(applicantPath))
             {
 
-                var lines = File.ReadAllLines(filePath);
+                var lines = File.ReadAllLines(applicantPath);
 
 
                 foreach (var line in lines)
@@ -116,12 +119,12 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btnReject_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
-            var lines = File.ReadAllLines(filePath).ToList();
+           
+            var lines = File.ReadAllLines(applicantPath).ToList();
 
 
             lines.RemoveAll(line => line.StartsWith(selectedApplicantID + ","));
-            File.WriteAllLines(filePath, lines);
+            File.WriteAllLines(applicantPath, lines);
 
 
             dataGridView1.Rows.Clear();
@@ -130,9 +133,9 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            string applicantsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
-            string studentsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Students.txt";
-            var lines = File.ReadAllLines(applicantsFilePath).ToList();
+            
+            
+            var lines = File.ReadAllLines(applicantPath).ToList();
 
             var applicantRecord = lines.FirstOrDefault(line => line.StartsWith(selectedApplicantID + ","));
             if (applicantRecord == null) return;
@@ -159,7 +162,7 @@ namespace PRG282_Project.Presentation_Layer
 
 
             lines.Remove(applicantRecord);
-            File.WriteAllLines(applicantsFilePath, lines);
+            File.WriteAllLines(applicantPath, lines);
 
             dataGridView1.Rows.Clear();
             LoadDataIntoDataGridView();
