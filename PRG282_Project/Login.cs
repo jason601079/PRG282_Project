@@ -117,6 +117,7 @@ namespace PRG282_Project
             {
                 this.Hide();
                 Home home = new Home();
+                CurrentUser.User = uname;
                 home.Show();
             }
 
