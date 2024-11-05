@@ -1,4 +1,6 @@
-﻿using PRG282_Project.Presentation_Layer;
+﻿using PRG282_Project.Business_Logic_Layer;
+using PRG282_Project.Data_Layer;
+using PRG282_Project.Presentation_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PRG282_Project
 {
     public partial class Login : Form
     {
+        LoginDataAccess lda = new LoginDataAccess();
+        PasswordHasher ph = new PasswordHasher();
         public Login()
         {
             InitializeComponent();
@@ -84,10 +89,12 @@ namespace PRG282_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
             if (txtUsername.Text == "Enter username")
             {
                 pnlUsernameError.Visible = true;
                 txtUsername.Focus();
+                
                 return;
             }
 
@@ -95,8 +102,24 @@ namespace PRG282_Project
             {
                 pnlPassowrdError.Visible = true;
                 txtPassword.Focus();
+                
                 return;
             }
+            string uname = txtUsername.Text;
+            string pword = txtPassword.Text;
+
+            string hashedPassword = ph.HashPassword(pword);
+
+
+            bool proccess = lda.checkPassword(uname,hashedPassword);
+
+            if (proccess)
+            {
+                this.Hide();
+                Home home = new Home();
+                home.Show();
+            }
+
         }
 
         private void pnlLogin_Paint(object sender, PaintEventArgs e)
