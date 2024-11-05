@@ -9,7 +9,10 @@ namespace PRG282_Project.Data_Layer
 {
     internal class ApplicantDataAccess
     {
-        private const string fileName = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Applicant.txt";
+       
+        public string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Applicant.txt");
+
+
 
         public void SaveApplicant(Applicant applicant)
         {

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,11 @@ namespace PRG282_Project.Presentation_Layer
         private DatabaseHelper _dbHelper;
 
         private IStudentService studentService;
+
+
+        //private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        public string studentpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Students.txt");
 
 
         public Registration(IStudentService studentService)
@@ -69,6 +75,22 @@ namespace PRG282_Project.Presentation_Layer
             studentService.AddStudent(student);
             _dbHelper.LoadStudentData(guna2DataGridView1);
 
+            //Adding to the Textfile
+            string lastStudentNumber = GetLastStudentNumber();
+            string studentNumber = GenerateNextStudentNumber(lastStudentNumber);
+
+            string studentData = $"{studentNumber},{student.FirstName},{student.LastName},{student.Gender},{student.Age},{student.Course}";
+
+
+            try
+            {
+                File.AppendAllText(studentpath, studentData + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while saving to the text file: {ex.Message}");
+            }
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -100,6 +122,30 @@ namespace PRG282_Project.Presentation_Layer
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public string GetLastStudentNumber()
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                string query = "SELECT TOP 1 [Student number] FROM Students ORDER BY [Student number] DESC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : null;
+            }
+        }
+
+        
+        private string GenerateNextStudentNumber(string lastStudentNumber)
+        {
+            if (string.IsNullOrEmpty(lastStudentNumber))
+            {
+                return "S001";
+            }
+
+            int numericPart = int.Parse(lastStudentNumber.Substring(1)) + 1;
+            return "S" + numericPart.ToString("D3");
         }
     }
 }
