@@ -33,6 +33,7 @@ namespace PRG282_Project.Presentation_Layer
         private void Home_Load(object sender, EventArgs e)
         {
             _dbHelper.LoadHomePageData(label10, label11);
+            Userlbl.Text = CurrentUser.User;
         }
 
         private void customeDesign()

@@ -56,7 +56,7 @@
             label5 = new Label();
             panel2 = new Panel();
             label9 = new Label();
-            label8 = new Label();
+            Userlbl = new Label();
             label6 = new Label();
             label7 = new Label();
             panel1 = new Panel();
@@ -426,7 +426,7 @@
             // 
             panel2.BackColor = Color.FromArgb(0, 71, 160);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(label8);
+            panel2.Controls.Add(Userlbl);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
             panel2.Dock = DockStyle.Top;
@@ -447,16 +447,16 @@
             label9.Text = "Admin";
             label9.Click += label9_Click;
             // 
-            // label8
+            // Userlbl
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Century Gothic", 12F);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(123, 19);
-            label8.Name = "label8";
-            label8.Size = new Size(42, 21);
-            label8.TabIndex = 4;
-            label8.Text = "User";
+            Userlbl.AutoSize = true;
+            Userlbl.Font = new Font("Century Gothic", 12F);
+            Userlbl.ForeColor = Color.White;
+            Userlbl.Location = new Point(123, 19);
+            Userlbl.Name = "Userlbl";
+            Userlbl.Size = new Size(42, 21);
+            Userlbl.TabIndex = 4;
+            Userlbl.Text = "User";
             // 
             // label6
             // 
@@ -552,7 +552,7 @@
         private Panel panel2;
         private Label label5;
         private Label label9;
-        private Label label8;
+        private Label Userlbl;
         private Label label6;
         private Label label7;
         private Label label4;
