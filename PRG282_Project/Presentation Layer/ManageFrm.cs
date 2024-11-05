@@ -16,6 +16,8 @@ namespace PRG282_Project.Presentation_Layer
     {
         private DatabaseHelper _dbHelper;
         private string _selectedStudentNumber;
+        public string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Applicant.txt");
+        public string studentPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Students.txt");
 
         public ManageFrm()
         {
@@ -155,10 +157,10 @@ namespace PRG282_Project.Presentation_Layer
 
         private void UpdateStudentInTextFile(Student updatedStudent)
         {
-            string studentsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Students.txt";
+            
 
             
-            var lines = File.ReadAllLines(studentsFilePath).ToList();
+            var lines = File.ReadAllLines(fileName).ToList();
 
             
             var studentLineIndex = lines.FindIndex(line => line.StartsWith(updatedStudent.StudentNumber + ","));
@@ -170,7 +172,7 @@ namespace PRG282_Project.Presentation_Layer
                                            $"{updatedStudent.FirstName},{updatedStudent.LastName},{updatedStudent.Gender}";
 
                 
-                File.WriteAllLines(studentsFilePath, lines);
+                File.WriteAllLines(fileName, lines);
             }
             else
             {
@@ -245,15 +247,15 @@ namespace PRG282_Project.Presentation_Layer
                 MessageBox.Show("Student deleted successfully.");
 
                 // Delete from the text file
-                string studentsFilePath = @"C:\Users\bramc\Documents\PRG282_Project\PRG282_Project\PRG282_Project\bin\Students.txt";
+                
 
-                var lines = File.ReadAllLines(studentsFilePath).ToList();
+                var lines = File.ReadAllLines(studentPath).ToList();
                 var lineToDelete = lines.FirstOrDefault(line => line.StartsWith(studentNumber + ","));
 
                 if (lineToDelete != null)
                 {
                     lines.Remove(lineToDelete);
-                    File.WriteAllLines(studentsFilePath, lines);
+                    File.WriteAllLines(studentPath, lines);
                     MessageBox.Show("Record deleted from file successfully.");
                 }
                 else
