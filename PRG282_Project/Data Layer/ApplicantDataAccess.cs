@@ -10,8 +10,8 @@ namespace PRG282_Project.Data_Layer
     internal class ApplicantDataAccess
     {
        
-        public string fileName = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
-
+        //public string fileName = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
+        public string fileName = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Applicant.txt";
 
 
         public void SaveApplicant(Applicant applicant)

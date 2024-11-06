@@ -22,8 +22,8 @@ namespace PRG282_Project.Presentation_Layer
 
 
         //private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        public string studentpath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
+        private readonly string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        public string studentpath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Students.txt";
 
 
         public Registration(IStudentService studentService)

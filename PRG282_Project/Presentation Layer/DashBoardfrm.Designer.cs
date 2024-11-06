@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardfrm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label7 = new Label();
             panel2 = new Panel();
@@ -63,6 +63,10 @@
             panel7 = new Panel();
             dgvFailed = new DataGridView();
             label4 = new Label();
+            panel8 = new Panel();
+            pictureBox3 = new PictureBox();
+            lblAvgAge = new Label();
+            label9 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -77,6 +81,8 @@
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFailed).BeginInit();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -153,9 +159,9 @@
             panel3.Controls.Add(pictureBox4);
             panel3.Controls.Add(lbl_BI);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(203, 64);
+            panel3.Location = new Point(232, 64);
             panel3.Name = "panel3";
-            panel3.Size = new Size(298, 58);
+            panel3.Size = new Size(182, 58);
             panel3.TabIndex = 6;
             // 
             // pictureBox4
@@ -197,9 +203,9 @@
             panel4.Controls.Add(pictureBox2);
             panel4.Controls.Add(lbl_Diploma);
             panel4.Controls.Add(label5);
-            panel4.Location = new Point(504, 64);
+            panel4.Location = new Point(457, 64);
             panel4.Name = "panel4";
-            panel4.Size = new Size(352, 58);
+            panel4.Size = new Size(182, 58);
             panel4.TabIndex = 6;
             // 
             // pictureBox2
@@ -252,23 +258,23 @@
             dataGridView_Top5.BorderStyle = BorderStyle.None;
             dataGridView_Top5.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView_Top5.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView_Top5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView_Top5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView_Top5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 71, 200);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView_Top5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 71, 200);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView_Top5.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView_Top5.EnableHeadersVisualStyles = false;
             dataGridView_Top5.GridColor = Color.White;
             dataGridView_Top5.Location = new Point(11, 22);
@@ -296,41 +302,41 @@
             // 
             chart2.Anchor = AnchorStyles.None;
             chart2.BackColor = Color.FromArgb(0, 71, 160);
-            chartArea1.BackColor = Color.FromArgb(0, 71, 160);
-            chartArea1.Name = "ChartArea1";
-            chart2.ChartAreas.Add(chartArea1);
-            legend1.BackColor = Color.FromArgb(0, 71, 160);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.ForeColor = Color.White;
-            legend1.Name = "Legend1";
-            chart2.Legends.Add(legend1);
+            chartArea2.BackColor = Color.FromArgb(0, 71, 160);
+            chartArea2.Name = "ChartArea1";
+            chart2.ChartAreas.Add(chartArea2);
+            legend2.BackColor = Color.FromArgb(0, 71, 160);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend2.ForeColor = Color.White;
+            legend2.Name = "Legend1";
+            chart2.Legends.Add(legend2);
             chart2.Location = new Point(546, 128);
             chart2.Name = "chart2";
             chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
-            series1.BackSecondaryColor = Color.Blue;
-            series1.BorderColor = Color.FromArgb(0, 71, 160);
-            series1.BorderWidth = 8;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new Font("Microsoft Sans Serif", 12F);
-            series1.IsValueShownAsLabel = true;
-            series1.IsXValueIndexed = true;
-            series1.LabelForeColor = Color.White;
-            series1.Legend = "Legend1";
-            series1.Name = "s1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            chart2.Series.Add(series1);
+            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            series2.BackSecondaryColor = Color.Blue;
+            series2.BorderColor = Color.FromArgb(0, 71, 160);
+            series2.BorderWidth = 8;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new Font("Microsoft Sans Serif", 12F);
+            series2.IsValueShownAsLabel = true;
+            series2.IsXValueIndexed = true;
+            series2.LabelForeColor = Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "s1";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            chart2.Series.Add(series2);
             chart2.Size = new Size(310, 455);
             chart2.TabIndex = 11;
             chart2.Text = "chart2";
-            title1.Alignment = ContentAlignment.TopLeft;
-            title1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            title1.ForeColor = Color.White;
-            title1.Name = "Title1";
-            title1.Text = "Top 7 modules and pass rate";
-            chart2.Titles.Add(title1);
+            title2.Alignment = ContentAlignment.TopLeft;
+            title2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title2.ForeColor = Color.White;
+            title2.Name = "Title1";
+            title2.Text = "Top 7 modules and pass rate";
+            chart2.Titles.Add(title2);
             // 
             // pBar
             // 
@@ -343,7 +349,7 @@
             pBar.Name = "pBar";
             pBar.ProgressColor = Color.FromArgb(0, 71, 200);
             pBar.ProgressColor2 = Color.FromArgb(0, 71, 200);
-            pBar.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            pBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             pBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pBar.Size = new Size(160, 160);
             pBar.TabIndex = 12;
@@ -400,23 +406,23 @@
             dgvFailed.BorderStyle = BorderStyle.None;
             dgvFailed.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvFailed.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvFailed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvFailed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvFailed.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(0, 71, 160);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 71, 200);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvFailed.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(0, 71, 160);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(0, 71, 200);
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvFailed.DefaultCellStyle = dataGridViewCellStyle8;
             dgvFailed.EnableHeadersVisualStyles = false;
             dgvFailed.GridColor = Color.White;
             dgvFailed.Location = new Point(11, 22);
@@ -439,18 +445,63 @@
             label4.TabIndex = 0;
             label4.Text = "Top 8 Failed Modules";
             // 
+            // panel8
+            // 
+            panel8.Anchor = AnchorStyles.None;
+            panel8.BackColor = Color.FromArgb(0, 71, 160);
+            panel8.Controls.Add(pictureBox3);
+            panel8.Controls.Add(lblAvgAge);
+            panel8.Controls.Add(label9);
+            panel8.Location = new Point(674, 64);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(182, 58);
+            panel8.TabIndex = 15;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(3, 16);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(59, 39);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            // 
+            // lblAvgAge
+            // 
+            lblAvgAge.AutoSize = true;
+            lblAvgAge.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvgAge.ForeColor = Color.White;
+            lblAvgAge.Location = new Point(65, 20);
+            lblAvgAge.Name = "lblAvgAge";
+            lblAvgAge.Size = new Size(42, 25);
+            lblAvgAge.TabIndex = 1;
+            lblAvgAge.Text = "500";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(0, -3);
+            label9.Name = "label9";
+            label9.Size = new Size(94, 16);
+            label9.TabIndex = 0;
+            label9.Text = "Average Age";
+            // 
             // DashBoardfrm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 71, 200);
             ClientSize = new Size(868, 586);
+            Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(panel6);
+            Controls.Add(panel3);
+            Controls.Add(panel4);
             Controls.Add(chart2);
             Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "DashBoardfrm";
@@ -478,6 +529,9 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFailed).EndInit();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -508,5 +562,9 @@
         private Panel panel7;
         private DataGridView dgvFailed;
         private Label label4;
+        private Panel panel8;
+        private PictureBox pictureBox3;
+        private Label lblAvgAge;
+        private Label label9;
     }
 }
