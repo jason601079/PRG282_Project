@@ -50,7 +50,7 @@ namespace PRG282_Project.Presentation_Layer
         private int rowPrintIndex = 0; // Track the index of row being printed
         private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Define fonts and margins
+            
             Font font = new Font("Arial", 10);
             int startX = 100;
             int startY = 100;
@@ -62,9 +62,9 @@ namespace PRG282_Project.Presentation_Layer
             foreach (DataGridViewColumn col in guna2DataGridView1.Columns)
             {
                 e.Graphics.DrawString(col.HeaderText, font, Brushes.Black, new PointF(currentX, yPos));
-                currentX += col.Width + 10; // Adjust for next column based on width
+                currentX += col.Width + 10; 
             }
-            yPos += lineHeight; // Move down for rows
+            yPos += lineHeight;
 
             // Print rows
             while (rowPrintIndex < guna2DataGridView1.Rows.Count)
@@ -86,11 +86,11 @@ namespace PRG282_Project.Presentation_Layer
                 if (yPos + lineHeight > e.MarginBounds.Bottom)
                 {
                     e.HasMorePages = true;
-                    return; // Exit the method to print on the next page
+                    return; 
                 }
             }
 
-            // Reset index if all rows are printed
+            
             rowPrintIndex = 0;
             e.HasMorePages = false;
         }
@@ -104,12 +104,12 @@ namespace PRG282_Project.Presentation_Layer
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            // Check if the current radio button is checked before filtering
+            
             if (sender is RadioButton radioButton && radioButton.Checked)
             {
                 string genderFilter = null;
 
-                // Determine which radio button is checked
+                
                 if (radioButton == radio_Female)
                 {
                     genderFilter = "Female";
@@ -119,14 +119,14 @@ namespace PRG282_Project.Presentation_Layer
                     genderFilter = "Male";
                 }
 
-                // Load filtered data based on the selected gender, or load all if "All" is selected
+                
                 if (genderFilter != null)
                 {
                     _dbHelper.LoadStudentDataFilter(guna2DataGridView1, genderFilter);
                 }
                 else
                 {
-                    _dbHelper.LoadStudentData(guna2DataGridView1); // Load all data if "All" is selected
+                    _dbHelper.LoadStudentData(guna2DataGridView1); 
                 }
             }
         }

@@ -24,10 +24,10 @@ namespace PRG282_Project
 
             //Application.Run(new Loading_Screen(studentService));
 
-            //using for testing purposes of admin home page
+            
 
-            Application.Run(new Login());
-            //Application.Run(new ApplicantViewer());
+            //Application.Run(new Login());
+            Application.Run(new ApplicantViewer());
            // Application.Run(new ApplicantForm());
             //Application.Run(new Home());
             

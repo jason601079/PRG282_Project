@@ -19,8 +19,8 @@ namespace PRG282_Project.Presentation_Layer
     {
         private string selectedApplicantID;
         private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        public string applicantPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Applicant.txt");
-        public string studentsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Students.txt");
+        public string applicantPath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
+        public string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
 
         public ApplicantViewer()
         {

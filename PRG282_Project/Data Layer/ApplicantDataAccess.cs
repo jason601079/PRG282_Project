@@ -10,7 +10,7 @@ namespace PRG282_Project.Data_Layer
     internal class ApplicantDataAccess
     {
        
-        public string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Applicant.txt");
+        public string fileName = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
 
 
 
@@ -29,7 +29,7 @@ namespace PRG282_Project.Data_Layer
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
             int nextId = 1; 
 
-            // Check if the file exists and read existing IDs
+           
             if (File.Exists(filePath))
             {
                 var existingRecords = File.ReadAllLines(filePath);
@@ -37,7 +37,7 @@ namespace PRG282_Project.Data_Layer
                 {
                     nextId = existingRecords
                         .Select(line => int.Parse(line.Split(',')[0])) 
-                        .Max() + 1; // Find the maximum ID and increment
+                        .Max() + 1; 
                 }
             }
 
