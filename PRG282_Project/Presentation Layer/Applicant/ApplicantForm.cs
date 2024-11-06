@@ -57,7 +57,9 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

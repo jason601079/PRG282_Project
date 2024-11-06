@@ -1,0 +1,6 @@
+Bcomp:48
+BI:26
+Diploma:34
+Average Age:20
+
+Last logged at: 2024/11/06 19:58:57 by Trent

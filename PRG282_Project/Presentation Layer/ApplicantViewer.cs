@@ -18,10 +18,13 @@ namespace PRG282_Project.Presentation_Layer
     public partial class ApplicantViewer : Form
     {
         private string selectedApplicantID;
-        private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        public string applicantPath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
-        public string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
-
+        //private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        //public string applicantPath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
+        //public string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
+        
+        public string applicantPath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Applicant.txt";
+        public string studentsFilePath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Students.txt";
+        private  string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
         public ApplicantViewer()
         {
             InitializeComponent();

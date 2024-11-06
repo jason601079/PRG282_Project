@@ -26,8 +26,8 @@ namespace PRG282_Project
 
             
 
-            //Application.Run(new Login());
-            Application.Run(new ApplicantViewer());
+            Application.Run(new Login());
+            //Application.Run(new ApplicantViewer());
            // Application.Run(new ApplicantForm());
             //Application.Run(new Home());
             

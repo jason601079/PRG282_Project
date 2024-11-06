@@ -16,8 +16,8 @@ namespace PRG282_Project.Presentation_Layer
     {
         private DatabaseHelper _dbHelper;
         private string _selectedStudentNumber;
-        public string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Applicant.txt");
-        public string studentPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Students.txt");
+        public string fileName = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Applicant.txt";
+        public string studentPath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Students.txt";
 
         public ManageFrm()
         {

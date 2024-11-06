@@ -18,7 +18,7 @@ namespace PRG282_Project
 
 
         //private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        private readonly string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
         public DatabaseHelper(string connectionString)
         {
             _connectionString = connectionString;
@@ -323,6 +323,42 @@ WHERE s.Course = 'Diploma'";
             }
         }
 
+
+        public void avgAge(Label lbl)
+        {
+            string connectionString = _connectionString;
+            string query = @"SELECT AVG(s.[Student age]) as Avg_Age
+FROM dbo.Students s";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+
+                try
+                {
+
+                    connection.Open();
+
+                    // Execute the query and get the result
+                    object result = command.ExecuteScalar();
+
+                    // Set the label's text to the result (handle null values)
+                    if (result != DBNull.Value)
+                    {
+                        lbl.Text = result.ToString();
+                    }
+                    else
+                    {
+                        lbl.Text = "No data available.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
         public void PopulateDoughnutChart(Chart chart2)
         {
             // Connection string to your database
@@ -543,6 +579,34 @@ WHERE m.Mark < 50";
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgv.DataSource = dt;
+            }
+        }
+
+        public void LogToSummaryReportTxt(Label one, Label two, Label three, Label four, string FilePath)
+        {
+            try
+            {
+                if (File.Exists(FilePath))
+                {
+                    string details = $"Bcomp:{one.Text}\nBI:{two.Text}\nDiploma:{three.Text}\nAverage Age:{four.Text}";
+                    DateTime dt = File.GetLastWriteTime(FilePath);
+                    string user = CurrentUser.User;
+                    
+                    using (StreamWriter w = new StreamWriter(FilePath))
+                    {
+                        w.WriteLine(details);
+                        w.WriteLine($"\nLast logged at: {dt} by {user}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("File does not exists - creating file now");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -15,6 +15,7 @@ namespace PRG282_Project.Presentation_Layer
     public partial class DashBoardfrm : Form
     {
         private DatabaseHelper _dbHelper;
+        string FilePath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\SummaryReport.txt";
         public DashBoardfrm()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace PRG282_Project.Presentation_Layer
             _dbHelper.biStd(lbl_BI);
             _dbHelper.diplomaStd(lbl_Diploma);
             _dbHelper.PopulateDoughnutChart(chart2);
+            _dbHelper.avgAge(lblAvgAge);
+            _dbHelper.LogToSummaryReportTxt(lbl_BCOM,lbl_BI,lbl_Diploma,lblAvgAge,FilePath);
             dataGridView_Top5.ScrollBars = ScrollBars.None;
             UpdateProgressBar();
             _dbHelper.top5FailedModules(dgvFailed);
