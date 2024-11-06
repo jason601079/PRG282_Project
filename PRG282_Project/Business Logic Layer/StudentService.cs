@@ -18,11 +18,11 @@ namespace PRG282_Project.Business_Logic_Layer
 
         public void AddStudent(Student student)
         {
-            // Generate a unique student number
+           
             string lastStudentNumber = _studentRepository.GetLastStudentNumber();
             student.StudentNumber = GenerateNextStudentNumber(lastStudentNumber);
 
-            // Validate other properties if necessary
+            
             if (string.IsNullOrWhiteSpace(student.FirstName) || string.IsNullOrWhiteSpace(student.LastName))
             {
                 throw new ArgumentException("First name and last name are required.");
@@ -36,10 +36,10 @@ namespace PRG282_Project.Business_Logic_Layer
         {
             if (string.IsNullOrEmpty(lastStudentNumber))
             {
-                return "S001"; // Start from S001 if no records exist
+                return "S001"; 
             }
 
-            // Extract the numeric part, increment, and format with leading zeros
+           
             int numericPart = int.Parse(lastStudentNumber.Substring(1)) + 1;
             return "S" + numericPart.ToString("D3");
         }

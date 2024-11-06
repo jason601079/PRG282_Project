@@ -10,7 +10,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
         private ApplicantManager applicantManager;
        
         private string uploadedDocumentPath;
-        private bool isFormValid; // Flag to check if the form is valid
+        private bool isFormValid;
 
         public ApplicantDetails()
         {
@@ -18,7 +18,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             applicantManager = new ApplicantManager();
             uploadedDocumentPath = string.Empty;
 
-            // Add event handlers for input changes
+            
             txtSAIdNumber.TextChanged += InputFields_TextChanged;
             txtFirstName.TextChanged += InputFields_TextChanged;
             txtSurname.TextChanged += InputFields_TextChanged;
@@ -30,7 +30,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
 
         private void ApplicantDetails_Load(object sender, EventArgs e)
         {
-            // Load event logic (if any)
+            
         }
 
         private string GetSelectedGender()
@@ -60,7 +60,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     uploadedDocumentPath = openFileDialog.FileName;
-                    lblDocumentPath.Text = uploadedDocumentPath; // Display the file path
+                    lblDocumentPath.Text = uploadedDocumentPath; 
                 }
             }
         }
@@ -91,19 +91,19 @@ namespace PRG282_Project.Presentation_Layer.Applicant
         {
             if (ValidateForm())
             {
-                btnSave.Enabled = true; // Enable the save button
-                isFormValid = true; // Set the flag to true
+                btnSave.Enabled = true; 
+                isFormValid = true; 
                 MessageBox.Show("Form is valid. You can proceed with saving the applicant information.");
             }
         }
 
         private void InputFields_TextChanged(object sender, EventArgs e)
         {
-            // If the form was previously valid, disable the save button when fields change
+            
             if (isFormValid)
             {
-                btnSave.Enabled = false; // Disable the save button
-                isFormValid = false; // Reset the form valid flag
+                btnSave.Enabled = false; 
+                isFormValid = false; 
             }
         }
 
@@ -143,7 +143,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
                 return false;
             }
 
-            return true; // All validations passed
+            return true; 
         }
 
         private bool IsValidEmail(string email)

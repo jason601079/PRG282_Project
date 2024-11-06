@@ -54,7 +54,7 @@ namespace PRG282_Project.Presentation_Layer
         private int rowPrintIndex = 0; // Track the index of row being printed
         private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Define fonts and margins
+           
             Font font = new Font("Arial", 10);
             int startX = 100;
             int startY = 100;
