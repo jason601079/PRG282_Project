@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PRG282_Project.Business_Logic_Layer
 {
-    internal class ApplicantManager
+    public class ApplicantManager
     {
         private ApplicantDataAccess dataAccess;
 
