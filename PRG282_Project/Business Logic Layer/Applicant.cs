@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRG282_Project.Business_Logic_Layer
 {
-    internal class Applicant
+    public class Applicant
     {
         public int ApplicantID { get; }
         public string SAIdNumber { get; }
