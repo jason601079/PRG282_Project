@@ -34,7 +34,7 @@ namespace PRG282_Project.Business_Logic_Layer
             _studentRepository.InsertStudent(student);
         }
 
-        private string GenerateNextStudentNumber(string lastStudentNumber)
+        public string GenerateNextStudentNumber(string lastStudentNumber)
         {
             if (string.IsNullOrEmpty(lastStudentNumber))
             {
