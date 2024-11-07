@@ -10,27 +10,27 @@ namespace PRG282_Project.Business_Logic_Layer
     public class PasswordHasher
     {
 
-        public string HashPassword(string password)
-        {
-            // Convert the password string to a byte array
-            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-
-            // Use SHA-256 to hash the password
-            using (SHA256 sha256 = SHA256.Create())
+            public string HashPassword(string password)
             {
-                // Compute the hash for the byte array
-                byte[] hashedBytes = sha256.ComputeHash(passwordBytes);
+                // Convert the password string to a byte array
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
 
-                // Convert the hashed byte array to a readable string (hexadecimal format)
-                StringBuilder hashedPassword = new StringBuilder();
-                foreach (byte b in hashedBytes)
+                // Use SHA-256 to hash the password
+                using (SHA256 sha256 = SHA256.Create())
                 {
-                    hashedPassword.Append(b.ToString("x2"));
-                }
+                    // Compute the hash for the byte array
+                    byte[] hashedBytes = sha256.ComputeHash(passwordBytes);
 
-                return hashedPassword.ToString();
+                    // Convert the hashed byte array to a readable string (hexadecimal format)
+                    StringBuilder hashedPassword = new StringBuilder();
+                    foreach (byte b in hashedBytes)
+                    {
+                        hashedPassword.Append(b.ToString("x2"));
+                    }
+
+                    return hashedPassword.ToString();
+                }
             }
-        }
 
     }
 }
