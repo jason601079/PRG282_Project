@@ -35,11 +35,27 @@
             label3 = new Label();
             label1 = new Label();
             panel_Main_Middle = new Panel();
+            panel6 = new Panel();
+            label9 = new Label();
+            panel7 = new Panel();
+            label10 = new Label();
+            panel4 = new Panel();
+            label7 = new Label();
+            panel5 = new Panel();
+            label8 = new Label();
+            panel2 = new Panel();
+            label6 = new Label();
+            panel3 = new Panel();
+            label5 = new Label();
+            label2 = new Label();
             panel1 = new Panel();
             label4 = new Label();
             Panel_Home.SuspendLayout();
             Panel_logo.SuspendLayout();
             panel_Main_Middle.SuspendLayout();
+            panel6.SuspendLayout();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -127,12 +143,141 @@
             // 
             // panel_Main_Middle
             // 
+            panel_Main_Middle.BackColor = Color.White;
+            panel_Main_Middle.Controls.Add(panel6);
+            panel_Main_Middle.Controls.Add(panel4);
+            panel_Main_Middle.Controls.Add(panel2);
+            panel_Main_Middle.Controls.Add(label2);
             panel_Main_Middle.Controls.Add(panel1);
             panel_Main_Middle.Location = new Point(198, 0);
             panel_Main_Middle.Name = "panel_Main_Middle";
             panel_Main_Middle.Size = new Size(520, 400);
             panel_Main_Middle.TabIndex = 2;
             panel_Main_Middle.Paint += panel_Main_Middle_Paint;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(label9);
+            panel6.Controls.Add(panel7);
+            panel6.Controls.Add(label10);
+            panel6.Location = new Point(358, 125);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(118, 211);
+            panel6.TabIndex = 5;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(3, 100);
+            label9.Name = "label9";
+            label9.Size = new Size(121, 51);
+            label9.TabIndex = 4;
+            label9.Text = "LEVEL : NQF6\r\n\r\nDuration : 2.5 years\r\n";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Black;
+            panel7.Location = new Point(3, 75);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(112, 1);
+            panel7.TabIndex = 3;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(16, 12);
+            label10.Name = "label10";
+            label10.Size = new Size(87, 60);
+            label10.TabIndex = 3;
+            label10.Text = "Diploma in\r\nComputing\r\nDC\r\n";
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(panel5);
+            panel4.Controls.Add(label8);
+            panel4.Location = new Point(195, 125);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(118, 211);
+            panel4.TabIndex = 5;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(3, 100);
+            label7.Name = "label7";
+            label7.Size = new Size(111, 51);
+            label7.TabIndex = 4;
+            label7.Text = "LEVEL : NQF6\r\n\r\nDuration : 2 years\r\n";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Black;
+            panel5.Location = new Point(3, 75);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(112, 1);
+            panel5.TabIndex = 3;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(16, 12);
+            label8.Name = "label8";
+            label8.Size = new Size(90, 60);
+            label8.TabIndex = 3;
+            label8.Text = "Business \r\nIntelligence\r\nBI";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(label5);
+            panel2.Location = new Point(42, 125);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(118, 211);
+            panel2.TabIndex = 2;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(3, 100);
+            label6.Name = "label6";
+            label6.Size = new Size(111, 51);
+            label6.TabIndex = 4;
+            label6.Text = "LEVEL : NQF8\r\n\r\nDuration : 4 years\r\n";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(3, 75);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(112, 1);
+            panel3.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(16, 12);
+            label5.Name = "label5";
+            label5.Size = new Size(87, 60);
+            label5.TabIndex = 3;
+            label5.Text = "Bachelor in\r\nComputing\r\nBCOMP\r\n";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(45, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(200, 25);
+            label2.TabIndex = 1;
+            label2.Text = "Courses that we offer :";
             // 
             // panel1
             // 
@@ -162,12 +307,20 @@
             Controls.Add(panel_Main_Middle);
             Controls.Add(Panel_Home);
             Name = "ApplicantForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ApplicantForm";
             Load += ApplicantForm_Load;
             Panel_Home.ResumeLayout(false);
             Panel_logo.ResumeLayout(false);
             Panel_logo.PerformLayout();
             panel_Main_Middle.ResumeLayout(false);
+            panel_Main_Middle.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -184,5 +337,18 @@
         private Panel panel_Main_Middle;
         private Panel panel1;
         private Label label4;
+        private Panel panel6;
+        private Label label9;
+        private Panel panel7;
+        private Label label10;
+        private Panel panel4;
+        private Label label7;
+        private Panel panel5;
+        private Label label8;
+        private Panel panel2;
+        private Label label6;
+        private Panel panel3;
+        private Label label5;
+        private Label label2;
     }
 }

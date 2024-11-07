@@ -160,7 +160,9 @@
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtEmail.Size = new Size(200, 20);
-            txtEmail.TabIndex = 11;
+            txtEmail.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            txtEmail.TabIndex = 4;
+            txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSurname
             // 
@@ -180,7 +182,9 @@
             txtSurname.SelectedText = "";
             txtSurname.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtSurname.Size = new Size(200, 20);
-            txtSurname.TabIndex = 10;
+            txtSurname.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            txtSurname.TabIndex = 2;
+            txtSurname.TextAlign = HorizontalAlignment.Center;
             // 
             // txtFirstName
             // 
@@ -200,10 +204,13 @@
             txtFirstName.SelectedText = "";
             txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtFirstName.Size = new Size(200, 20);
-            txtFirstName.TabIndex = 9;
+            txtFirstName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            txtFirstName.TabIndex = 1;
+            txtFirstName.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSAIdNumber
             // 
+            txtSAIdNumber.BackColor = Color.White;
             txtSAIdNumber.CustomizableEdges = customizableEdges29;
             txtSAIdNumber.DefaultText = "";
             txtSAIdNumber.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -220,7 +227,9 @@
             txtSAIdNumber.SelectedText = "";
             txtSAIdNumber.ShadowDecoration.CustomizableEdges = customizableEdges30;
             txtSAIdNumber.Size = new Size(200, 20);
-            txtSAIdNumber.TabIndex = 8;
+            txtSAIdNumber.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            txtSAIdNumber.TabIndex = 3;
+            txtSAIdNumber.TextAlign = HorizontalAlignment.Center;
             // 
             // guna2HtmlLabel7
             // 
@@ -385,6 +394,7 @@
             Controls.Add(btnSave);
             Controls.Add(guna2Panel1);
             Name = "ApplicantDetails";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ApplicantDetails";
             Load += ApplicantDetails_Load;
             guna2Panel1.ResumeLayout(false);
