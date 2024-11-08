@@ -16,5 +16,30 @@ namespace PRG282_Project.Presentation_Layer.Student
         {
             InitializeComponent();
         }
+
+        private void btnNetworkClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNetworkMax_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnNetworkMin_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProgrammingCluster));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnPRG = new Button();
             btnMaximise = new Button();
             btnClose = new Button();
@@ -44,6 +44,10 @@
             btnBusinessClose = new Button();
             panel3 = new Panel();
             panel1 = new Panel();
+            panel4 = new Panel();
+            btnProgrammingMax = new Button();
+            btnProgrammingClose = new Button();
+            btnProgrammingMin = new Button();
             label1 = new Label();
             panel2 = new Panel();
             btnMax = new Button();
@@ -52,18 +56,14 @@
             btnSAD = new Button();
             lblStudentClusterTitle = new Label();
             pnlProgrammingCluster = new Panel();
-            panel4 = new Panel();
-            btnProgrammingMax = new Button();
-            btnProgrammingClose = new Button();
-            btnProgrammingMin = new Button();
             panel5.SuspendLayout();
             pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             pnlProgrammingCluster.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // btnPRG
@@ -145,12 +145,12 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges3;
+            guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(64, 94);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Size = new Size(200, 200);
             guna2PictureBox1.TabIndex = 3;
             guna2PictureBox1.TabStop = false;
@@ -213,6 +213,54 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(910, 72);
             panel1.TabIndex = 18;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel4.BackColor = Color.FromArgb(17, 53, 71);
+            panel4.Controls.Add(btnProgrammingMax);
+            panel4.Controls.Add(btnProgrammingClose);
+            panel4.Controls.Add(btnProgrammingMin);
+            panel4.Location = new Point(823, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(87, 25);
+            panel4.TabIndex = 21;
+            // 
+            // btnProgrammingMax
+            // 
+            btnProgrammingMax.Dock = DockStyle.Fill;
+            btnProgrammingMax.FlatStyle = FlatStyle.Flat;
+            btnProgrammingMax.Image = (Image)resources.GetObject("btnProgrammingMax.Image");
+            btnProgrammingMax.Location = new Point(25, 0);
+            btnProgrammingMax.Name = "btnProgrammingMax";
+            btnProgrammingMax.Size = new Size(37, 25);
+            btnProgrammingMax.TabIndex = 3;
+            btnProgrammingMax.UseVisualStyleBackColor = true;
+            btnProgrammingMax.Click += btnProgrammingMax_Click;
+            // 
+            // btnProgrammingClose
+            // 
+            btnProgrammingClose.Dock = DockStyle.Right;
+            btnProgrammingClose.FlatStyle = FlatStyle.Flat;
+            btnProgrammingClose.Image = (Image)resources.GetObject("btnProgrammingClose.Image");
+            btnProgrammingClose.Location = new Point(62, 0);
+            btnProgrammingClose.Name = "btnProgrammingClose";
+            btnProgrammingClose.Size = new Size(25, 25);
+            btnProgrammingClose.TabIndex = 1;
+            btnProgrammingClose.UseVisualStyleBackColor = true;
+            btnProgrammingClose.Click += btnProgrammingClose_Click;
+            // 
+            // btnProgrammingMin
+            // 
+            btnProgrammingMin.Dock = DockStyle.Left;
+            btnProgrammingMin.FlatStyle = FlatStyle.Flat;
+            btnProgrammingMin.Image = (Image)resources.GetObject("btnProgrammingMin.Image");
+            btnProgrammingMin.Location = new Point(0, 0);
+            btnProgrammingMin.Name = "btnProgrammingMin";
+            btnProgrammingMin.Size = new Size(25, 25);
+            btnProgrammingMin.TabIndex = 2;
+            btnProgrammingMin.UseVisualStyleBackColor = true;
+            btnProgrammingMin.Click += btnProgrammingMin_Click;
             // 
             // label1
             // 
@@ -303,51 +351,6 @@
             pnlProgrammingCluster.Size = new Size(910, 524);
             pnlProgrammingCluster.TabIndex = 20;
             // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel4.BackColor = Color.FromArgb(17, 53, 71);
-            panel4.Controls.Add(btnProgrammingMax);
-            panel4.Controls.Add(btnProgrammingClose);
-            panel4.Controls.Add(btnProgrammingMin);
-            panel4.Location = new Point(823, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(87, 25);
-            panel4.TabIndex = 21;
-            // 
-            // btnProgrammingMax
-            // 
-            btnProgrammingMax.Dock = DockStyle.Fill;
-            btnProgrammingMax.FlatStyle = FlatStyle.Flat;
-            btnProgrammingMax.Image = (Image)resources.GetObject("btnProgrammingMax.Image");
-            btnProgrammingMax.Location = new Point(25, 0);
-            btnProgrammingMax.Name = "btnProgrammingMax";
-            btnProgrammingMax.Size = new Size(37, 25);
-            btnProgrammingMax.TabIndex = 3;
-            btnProgrammingMax.UseVisualStyleBackColor = true;
-            // 
-            // btnProgrammingClose
-            // 
-            btnProgrammingClose.Dock = DockStyle.Right;
-            btnProgrammingClose.FlatStyle = FlatStyle.Flat;
-            btnProgrammingClose.Image = (Image)resources.GetObject("btnProgrammingClose.Image");
-            btnProgrammingClose.Location = new Point(62, 0);
-            btnProgrammingClose.Name = "btnProgrammingClose";
-            btnProgrammingClose.Size = new Size(25, 25);
-            btnProgrammingClose.TabIndex = 1;
-            btnProgrammingClose.UseVisualStyleBackColor = true;
-            // 
-            // btnProgrammingMin
-            // 
-            btnProgrammingMin.Dock = DockStyle.Left;
-            btnProgrammingMin.FlatStyle = FlatStyle.Flat;
-            btnProgrammingMin.Image = (Image)resources.GetObject("btnProgrammingMin.Image");
-            btnProgrammingMin.Location = new Point(0, 0);
-            btnProgrammingMin.Name = "btnProgrammingMin";
-            btnProgrammingMin.Size = new Size(25, 25);
-            btnProgrammingMin.TabIndex = 2;
-            btnProgrammingMin.UseVisualStyleBackColor = true;
-            // 
             // StudentProgrammingCluster
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -366,10 +369,10 @@
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             pnlProgrammingCluster.ResumeLayout(false);
             pnlProgrammingCluster.PerformLayout();
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
