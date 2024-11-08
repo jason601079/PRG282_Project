@@ -1,1 +1,14 @@
 S122,t,t,Female,100,DIPLOMA
+S121,trent,evans,Male,2,BCOMP
+S120,john,bowlr,,0,
+S121,john,bowlr,Male,0,BCOMP
+S122,john,bowlr,Male,0,BCOMP
+S123,john,bowlr,Male,0,BCOMP
+S123,20,BCOMP,Jason,Taylor,Male
+S124,t,,Male,19,BCOMP
+S124,t,,Male,19,BCOMP
+S124,t,,Male,19,BCOMP
+S124,t,,Male,19,BCOMP
+S125,t,t,Male,19,BCOMP
+S127,eva,ave,Male,19,BCOMP
+S126,19,BCOMP,trentos,Evanbs,Male

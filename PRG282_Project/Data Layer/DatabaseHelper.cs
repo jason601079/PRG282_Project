@@ -438,7 +438,7 @@ ORDER BY Failed DESC";
 
         public void searchModule(TextBox txtBox, DataGridView dgv)
         {
-
+            
             string Module = txtBox.Text;
             string connection = _connectionString;
             string query = @$"SELECT *
@@ -455,7 +455,9 @@ ORDER BY Failed DESC";
                     adapter.Fill(dt);
 
                     dgv.DataSource = dt;
+ 
                 }
+
             }
             catch (Exception ex)
             {

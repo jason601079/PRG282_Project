@@ -15,7 +15,7 @@ namespace PRG282_Project.Presentation_Layer
     public partial class DashBoardfrm : Form
     {
         private DatabaseHelper _dbHelper;
-        string FilePath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\SummaryReport.txt";
+        string FilePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\SummaryReport.txt";
         public DashBoardfrm()
         {
             InitializeComponent();

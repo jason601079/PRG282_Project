@@ -101,7 +101,16 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            _dbHelper.searchModule2(search_TextBox,guna2DataGridView1);
+            if (string.IsNullOrEmpty(search_TextBox.Text) || search_TextBox.Text == "Search by module")
+            {
+                MessageBox.Show("Please enter a module to search for");
+            }
+            else
+            {
+                _dbHelper.searchModule2(search_TextBox, guna2DataGridView1);
+            }
+
+            
         }
 
 

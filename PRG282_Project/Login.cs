@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Xunit.Sdk;
 
 namespace PRG282_Project
 {
@@ -21,6 +22,7 @@ namespace PRG282_Project
         public Login()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '•';
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -36,11 +38,12 @@ namespace PRG282_Project
                 {
                     txtUsername.Text = "Enter username";
                     txtUsername.ForeColor = Color.Gray;
-                } else
+                }
+                else
                 {
                     txtUsername.ForeColor = Color.White;
                 }
-                
+
                 pnlUsernameError.Visible = false;
             }
             catch { }
@@ -55,11 +58,12 @@ namespace PRG282_Project
                 {
                     txtPassword.Text = "Password";
                     txtPassword.ForeColor = Color.Gray;
-                } else
+                }
+                else
                 {
                     txtPassword.ForeColor = Color.White;
                 }
-               
+
                 pnlPassowrdError.Visible = false;
 
             }
@@ -89,12 +93,12 @@ namespace PRG282_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
             if (txtUsername.Text == "Enter username")
             {
                 pnlUsernameError.Visible = true;
                 txtUsername.Focus();
-                
+
                 return;
             }
 
@@ -102,16 +106,14 @@ namespace PRG282_Project
             {
                 pnlPassowrdError.Visible = true;
                 txtPassword.Focus();
-                
+
                 return;
             }
             string uname = txtUsername.Text;
             string pword = txtPassword.Text;
 
             string hashedPassword = ph.HashPassword(pword);
-
-
-            bool proccess = lda.checkPassword(uname,hashedPassword);
+            bool proccess = lda.checkPassword(uname, hashedPassword);
 
             if (proccess)
             {
@@ -119,6 +121,11 @@ namespace PRG282_Project
                 Home home = new Home();
                 CurrentUser.User = uname;
                 home.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Details or user does not exists");
+                
             }
 
         }
@@ -157,8 +164,13 @@ namespace PRG282_Project
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
-                this.WindowState= FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

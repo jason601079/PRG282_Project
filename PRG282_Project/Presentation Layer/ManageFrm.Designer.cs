@@ -432,7 +432,7 @@
             txtStudentNumber.Name = "txtStudentNumber";
             txtStudentNumber.Size = new Size(237, 35);
             txtStudentNumber.TabIndex = 20;
-            txtStudentNumber.Text = "Enter a student number";
+            txtStudentNumber.Text = "Enter student ID";
             txtStudentNumber.Enter += txtStudentNumber_Enter;
             txtStudentNumber.Leave += txtStudentNumber_Leave;
             // 

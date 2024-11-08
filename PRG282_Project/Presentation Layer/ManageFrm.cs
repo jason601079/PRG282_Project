@@ -16,8 +16,8 @@ namespace PRG282_Project.Presentation_Layer
     {
         private DatabaseHelper _dbHelper;
         private string _selectedStudentNumber;
-        public string fileName = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Applicant.txt";
-        public string studentPath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Students.txt";
+        public string fileName = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
+        public string studentPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
 
         public ManageFrm()
         {
@@ -41,6 +41,7 @@ namespace PRG282_Project.Presentation_Layer
             guna2DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.Blue;
             guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -236,43 +237,50 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Delete_Click_1(object sender, EventArgs e)
         {
-            string studentNumber = txtStudentNumber.Text;
-
-            IStudentService studentService = new StudentService();
-
-            try
+            if (string.IsNullOrEmpty(txtStudentNumber.Text) || txtStudentNumber.Text == "Enter student ID")
             {
-                // Delete from the database
-                studentService.DeleteStudent(studentNumber);
-                MessageBox.Show("Student deleted successfully.");
-
-                // Delete from the text file
-                
-
-                var lines = File.ReadAllLines(studentPath).ToList();
-                var lineToDelete = lines.FirstOrDefault(line => line.StartsWith(studentNumber + ","));
-
-                if (lineToDelete != null)
-                {
-                    lines.Remove(lineToDelete);
-                    File.WriteAllLines(studentPath, lines);
-                    MessageBox.Show("Record deleted from file successfully.");
-                }
-                else
-                {
-                    MessageBox.Show("Record not found in file.");
-                }
-
-                // Refresh the DataGridView
-                _dbHelper.LoadStudentData(guna2DataGridView1);
+                MessageBox.Show("Please enter a student number");
             }
-            catch (ArgumentException ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error deleting student: " + ex.Message);
+                string studentNumber = txtStudentNumber.Text;
+
+                IStudentService studentService = new StudentService();
+
+                try
+                {
+                    // Delete from the database
+                    studentService.DeleteStudent(studentNumber);
+                    MessageBox.Show("Student deleted successfully.");
+
+                    // Delete from the text file
+
+
+                    var lines = File.ReadAllLines(studentPath).ToList();
+                    var lineToDelete = lines.FirstOrDefault(line => line.StartsWith(studentNumber + ","));
+
+                    if (lineToDelete != null)
+                    {
+                        lines.Remove(lineToDelete);
+                        File.WriteAllLines(studentPath, lines);
+                        MessageBox.Show("Record deleted from file successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record not found in file.");
+                    }
+
+                    // Refresh the DataGridView
+                    _dbHelper.LoadStudentData(guna2DataGridView1);
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting student: " + ex.Message);
+                }
             }
         }
 

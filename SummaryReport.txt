@@ -1,6 +1,6 @@
-Bcomp:48
-BI:26
-Diploma:34
-Average Age:20
+Bcomp:55
+BI:28
+Diploma:33
+Average Age:19
 
-Last logged at: 2024/11/06 19:58:57 by Trent
+Last logged at: 2024/11/08 18:56:03 by Calvin

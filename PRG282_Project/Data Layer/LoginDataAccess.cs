@@ -10,7 +10,7 @@ namespace PRG282_Project.Data_Layer
 {
     public class LoginDataAccess
     {
-        private string filePath = @"C:\Users\User\OneDrive\Desktop\PRG282_Project\Admins.txt";
+        private string filePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Admins.txt";
 
         public bool checkPassword(string username, string password)
         {
@@ -31,12 +31,9 @@ namespace PRG282_Project.Data_Layer
                             if (uname == username && pword == password)
                             {
                                 valid = true;
+                                break;
                             }
-                            else
-                            {
-                                valid = false;
-                                MessageBox.Show("Invalid Details");
-                            }
+                          
                         }
                     }
                 }

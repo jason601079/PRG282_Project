@@ -98,7 +98,15 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            _dbHelper.searchModule(textBox5,guna2DataGridView1);
+            if (string.IsNullOrEmpty(textBox5.Text.Trim()) || textBox5.Text == "Search by Course")
+            {
+                MessageBox.Show("Please enter a course to search ");
+            }
+            else
+            {
+                _dbHelper.searchModule(textBox5, guna2DataGridView1);
+            }
+            
 
         }
 
