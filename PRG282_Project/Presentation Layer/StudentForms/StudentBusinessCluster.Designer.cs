@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentBusinessCluster));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblStudentClusterTitle = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             label1 = new Label();
@@ -74,12 +74,12 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges3;
+            guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(64, 94);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Size = new Size(200, 200);
             guna2PictureBox1.TabIndex = 3;
             guna2PictureBox1.TabStop = false;
@@ -197,6 +197,7 @@
             btnBusinessMax.Size = new Size(37, 25);
             btnBusinessMax.TabIndex = 3;
             btnBusinessMax.UseVisualStyleBackColor = true;
+            btnBusinessMax.Click += btnBusinessMax_Click;
             // 
             // btnBusinessClose
             // 
@@ -208,6 +209,7 @@
             btnBusinessClose.Size = new Size(25, 25);
             btnBusinessClose.TabIndex = 1;
             btnBusinessClose.UseVisualStyleBackColor = true;
+            btnBusinessClose.Click += btnBusinessClose_Click;
             // 
             // btnBusinessMin
             // 
@@ -219,6 +221,7 @@
             btnBusinessMin.Size = new Size(25, 25);
             btnBusinessMin.TabIndex = 2;
             btnBusinessMin.UseVisualStyleBackColor = true;
+            btnBusinessMin.Click += btnBusinessMin_Click;
             // 
             // panel5
             // 

@@ -44,6 +44,10 @@
             btnBusinessClose = new Button();
             panel3 = new Panel();
             panel1 = new Panel();
+            panel4 = new Panel();
+            btnDataMax = new Button();
+            btnDataClose = new Button();
+            btnDataMin = new Button();
             label1 = new Label();
             panel2 = new Panel();
             btnMax = new Button();
@@ -52,18 +56,14 @@
             btnMLG = new Button();
             lblStudentClusterTitle = new Label();
             pnlBusinessCluster = new Panel();
-            panel4 = new Panel();
-            btnDataMax = new Button();
-            btnDataClose = new Button();
-            btnDataMin = new Button();
             panel5.SuspendLayout();
             pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             pnlBusinessCluster.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // btnDBD
@@ -214,6 +214,54 @@
             panel1.Size = new Size(910, 72);
             panel1.TabIndex = 18;
             // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel4.BackColor = Color.FromArgb(17, 53, 71);
+            panel4.Controls.Add(btnDataMax);
+            panel4.Controls.Add(btnDataClose);
+            panel4.Controls.Add(btnDataMin);
+            panel4.Location = new Point(823, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(87, 25);
+            panel4.TabIndex = 4;
+            // 
+            // btnDataMax
+            // 
+            btnDataMax.Dock = DockStyle.Fill;
+            btnDataMax.FlatStyle = FlatStyle.Flat;
+            btnDataMax.Image = (Image)resources.GetObject("btnDataMax.Image");
+            btnDataMax.Location = new Point(25, 0);
+            btnDataMax.Name = "btnDataMax";
+            btnDataMax.Size = new Size(37, 25);
+            btnDataMax.TabIndex = 3;
+            btnDataMax.UseVisualStyleBackColor = true;
+            btnDataMax.Click += btnDataMax_Click;
+            // 
+            // btnDataClose
+            // 
+            btnDataClose.Dock = DockStyle.Right;
+            btnDataClose.FlatStyle = FlatStyle.Flat;
+            btnDataClose.Image = (Image)resources.GetObject("btnDataClose.Image");
+            btnDataClose.Location = new Point(62, 0);
+            btnDataClose.Name = "btnDataClose";
+            btnDataClose.Size = new Size(25, 25);
+            btnDataClose.TabIndex = 1;
+            btnDataClose.UseVisualStyleBackColor = true;
+            btnDataClose.Click += btnDataClose_Click;
+            // 
+            // btnDataMin
+            // 
+            btnDataMin.Dock = DockStyle.Left;
+            btnDataMin.FlatStyle = FlatStyle.Flat;
+            btnDataMin.Image = (Image)resources.GetObject("btnDataMin.Image");
+            btnDataMin.Location = new Point(0, 0);
+            btnDataMin.Name = "btnDataMin";
+            btnDataMin.Size = new Size(25, 25);
+            btnDataMin.TabIndex = 2;
+            btnDataMin.UseVisualStyleBackColor = true;
+            btnDataMin.Click += btnDataMin_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -303,51 +351,6 @@
             pnlBusinessCluster.Size = new Size(910, 524);
             pnlBusinessCluster.TabIndex = 20;
             // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel4.BackColor = Color.FromArgb(17, 53, 71);
-            panel4.Controls.Add(btnDataMax);
-            panel4.Controls.Add(btnDataClose);
-            panel4.Controls.Add(btnDataMin);
-            panel4.Location = new Point(823, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(87, 25);
-            panel4.TabIndex = 4;
-            // 
-            // btnDataMax
-            // 
-            btnDataMax.Dock = DockStyle.Fill;
-            btnDataMax.FlatStyle = FlatStyle.Flat;
-            btnDataMax.Image = (Image)resources.GetObject("btnDataMax.Image");
-            btnDataMax.Location = new Point(25, 0);
-            btnDataMax.Name = "btnDataMax";
-            btnDataMax.Size = new Size(37, 25);
-            btnDataMax.TabIndex = 3;
-            btnDataMax.UseVisualStyleBackColor = true;
-            // 
-            // btnDataClose
-            // 
-            btnDataClose.Dock = DockStyle.Right;
-            btnDataClose.FlatStyle = FlatStyle.Flat;
-            btnDataClose.Image = (Image)resources.GetObject("btnDataClose.Image");
-            btnDataClose.Location = new Point(62, 0);
-            btnDataClose.Name = "btnDataClose";
-            btnDataClose.Size = new Size(25, 25);
-            btnDataClose.TabIndex = 1;
-            btnDataClose.UseVisualStyleBackColor = true;
-            // 
-            // btnDataMin
-            // 
-            btnDataMin.Dock = DockStyle.Left;
-            btnDataMin.FlatStyle = FlatStyle.Flat;
-            btnDataMin.Image = (Image)resources.GetObject("btnDataMin.Image");
-            btnDataMin.Location = new Point(0, 0);
-            btnDataMin.Name = "btnDataMin";
-            btnDataMin.Size = new Size(25, 25);
-            btnDataMin.TabIndex = 2;
-            btnDataMin.UseVisualStyleBackColor = true;
-            // 
             // StudentDataScienceCluster
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -366,10 +369,10 @@
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             pnlBusinessCluster.ResumeLayout(false);
             pnlBusinessCluster.PerformLayout();
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 

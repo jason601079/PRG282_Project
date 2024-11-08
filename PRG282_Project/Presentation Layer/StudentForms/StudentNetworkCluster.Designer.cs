@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentNetworkCluster));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnINF = new Button();
             btnMaximise = new Button();
             btnClose = new Button();
@@ -44,6 +44,10 @@
             btnBusinessClose = new Button();
             btnNWD = new Button();
             panel1 = new Panel();
+            panel4 = new Panel();
+            btnNetworkMax = new Button();
+            btnNetworkClose = new Button();
+            btnNetworkMin = new Button();
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
@@ -52,18 +56,14 @@
             btnMinimize = new Button();
             lblStudentClusterTitle = new Label();
             pnlBusinessCluster = new Panel();
-            panel4 = new Panel();
-            btnNetworkMax = new Button();
-            btnNetworkClose = new Button();
-            btnNetworkMin = new Button();
             panel5.SuspendLayout();
             pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             panel1.SuspendLayout();
+            panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             pnlBusinessCluster.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // btnINF
@@ -145,12 +145,12 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges3;
+            guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(64, 94);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Size = new Size(200, 200);
             guna2PictureBox1.TabIndex = 3;
             guna2PictureBox1.TabStop = false;
@@ -211,6 +211,54 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(910, 72);
             panel1.TabIndex = 18;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel4.BackColor = Color.FromArgb(17, 53, 71);
+            panel4.Controls.Add(btnNetworkMax);
+            panel4.Controls.Add(btnNetworkClose);
+            panel4.Controls.Add(btnNetworkMin);
+            panel4.Location = new Point(823, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(87, 25);
+            panel4.TabIndex = 4;
+            // 
+            // btnNetworkMax
+            // 
+            btnNetworkMax.Dock = DockStyle.Fill;
+            btnNetworkMax.FlatStyle = FlatStyle.Flat;
+            btnNetworkMax.Image = (Image)resources.GetObject("btnNetworkMax.Image");
+            btnNetworkMax.Location = new Point(25, 0);
+            btnNetworkMax.Name = "btnNetworkMax";
+            btnNetworkMax.Size = new Size(37, 25);
+            btnNetworkMax.TabIndex = 3;
+            btnNetworkMax.UseVisualStyleBackColor = true;
+            btnNetworkMax.Click += btnNetworkMax_Click;
+            // 
+            // btnNetworkClose
+            // 
+            btnNetworkClose.Dock = DockStyle.Right;
+            btnNetworkClose.FlatStyle = FlatStyle.Flat;
+            btnNetworkClose.Image = (Image)resources.GetObject("btnNetworkClose.Image");
+            btnNetworkClose.Location = new Point(62, 0);
+            btnNetworkClose.Name = "btnNetworkClose";
+            btnNetworkClose.Size = new Size(25, 25);
+            btnNetworkClose.TabIndex = 1;
+            btnNetworkClose.UseVisualStyleBackColor = true;
+            btnNetworkClose.Click += btnNetworkClose_Click;
+            // 
+            // btnNetworkMin
+            // 
+            btnNetworkMin.Dock = DockStyle.Left;
+            btnNetworkMin.FlatStyle = FlatStyle.Flat;
+            btnNetworkMin.Image = (Image)resources.GetObject("btnNetworkMin.Image");
+            btnNetworkMin.Location = new Point(0, 0);
+            btnNetworkMin.Name = "btnNetworkMin";
+            btnNetworkMin.Size = new Size(25, 25);
+            btnNetworkMin.TabIndex = 2;
+            btnNetworkMin.UseVisualStyleBackColor = true;
+            btnNetworkMin.Click += btnNetworkMin_Click;
             // 
             // panel3
             // 
@@ -303,51 +351,6 @@
             pnlBusinessCluster.Size = new Size(910, 524);
             pnlBusinessCluster.TabIndex = 20;
             // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel4.BackColor = Color.FromArgb(17, 53, 71);
-            panel4.Controls.Add(btnNetworkMax);
-            panel4.Controls.Add(btnNetworkClose);
-            panel4.Controls.Add(btnNetworkMin);
-            panel4.Location = new Point(823, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(87, 25);
-            panel4.TabIndex = 4;
-            // 
-            // btnNetworkMax
-            // 
-            btnNetworkMax.Dock = DockStyle.Fill;
-            btnNetworkMax.FlatStyle = FlatStyle.Flat;
-            btnNetworkMax.Image = (Image)resources.GetObject("btnNetworkMax.Image");
-            btnNetworkMax.Location = new Point(25, 0);
-            btnNetworkMax.Name = "btnNetworkMax";
-            btnNetworkMax.Size = new Size(37, 25);
-            btnNetworkMax.TabIndex = 3;
-            btnNetworkMax.UseVisualStyleBackColor = true;
-            // 
-            // btnNetworkClose
-            // 
-            btnNetworkClose.Dock = DockStyle.Right;
-            btnNetworkClose.FlatStyle = FlatStyle.Flat;
-            btnNetworkClose.Image = (Image)resources.GetObject("btnNetworkClose.Image");
-            btnNetworkClose.Location = new Point(62, 0);
-            btnNetworkClose.Name = "btnNetworkClose";
-            btnNetworkClose.Size = new Size(25, 25);
-            btnNetworkClose.TabIndex = 1;
-            btnNetworkClose.UseVisualStyleBackColor = true;
-            // 
-            // btnNetworkMin
-            // 
-            btnNetworkMin.Dock = DockStyle.Left;
-            btnNetworkMin.FlatStyle = FlatStyle.Flat;
-            btnNetworkMin.Image = (Image)resources.GetObject("btnNetworkMin.Image");
-            btnNetworkMin.Location = new Point(0, 0);
-            btnNetworkMin.Name = "btnNetworkMin";
-            btnNetworkMin.Size = new Size(25, 25);
-            btnNetworkMin.TabIndex = 2;
-            btnNetworkMin.UseVisualStyleBackColor = true;
-            // 
             // StudentNetworkCluster
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -365,11 +368,11 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             pnlBusinessCluster.ResumeLayout(false);
             pnlBusinessCluster.PerformLayout();
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
