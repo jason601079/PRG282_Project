@@ -172,7 +172,7 @@ namespace PRG282_Project.Presentation_Layer
 
 
             ///ADD applicant to student database
-            var student = new Student
+            var student = new PRG282_Project.Business_Logic_Layer.Student
             {
                 FirstName = firstName,
                 LastName = lastName,

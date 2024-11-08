@@ -91,7 +91,7 @@ namespace PRG282_Project.Presentation_Layer
                 string course = cmbCourse.SelectedItem?.ToString();
 
 
-                var student = new Student
+                var student = new PRG282_Project.Business_Logic_Layer.Student
                 {
                     FirstName = firstName,
                     LastName = lastName,

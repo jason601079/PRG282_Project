@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Xunit.Sdk;
+using PRG282_Project.Presentation_Layer.Student;
 
 namespace PRG282_Project
 {
@@ -125,7 +126,7 @@ namespace PRG282_Project
             else
             {
                 MessageBox.Show("Invalid Details or user does not exists");
-                
+
             }
 
         }
@@ -171,6 +172,13 @@ namespace PRG282_Project
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblLinkStudentForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudentMainForm studentForm = new StudentMainForm();
+            studentForm.Show();
+            this.Hide();
         }
     }
 }
