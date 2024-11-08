@@ -20,18 +20,26 @@ namespace PRG282_Project.Business_Logic_Layer
 
         public void AddStudent(Student student)
         {
-           
-            string lastStudentNumber = _studentRepository.GetLastStudentNumber();
-            student.StudentNumber = GenerateNextStudentNumber(lastStudentNumber);
-
-            
-            if (string.IsNullOrWhiteSpace(student.FirstName) || string.IsNullOrWhiteSpace(student.LastName))
+            try
             {
-                throw new ArgumentException("First name and last name are required.");
-            }
+                string lastStudentNumber = _studentRepository.GetLastStudentNumber();
+                student.StudentNumber = GenerateNextStudentNumber(lastStudentNumber);
 
-            // Call the data layer to insert the student
-            _studentRepository.InsertStudent(student);
+
+                if (string.IsNullOrWhiteSpace(student.FirstName) || string.IsNullOrWhiteSpace(student.LastName))
+                {
+                    throw new ArgumentException("First name and last name are required.");
+                }
+
+                // Call the data layer to insert the student
+                _studentRepository.InsertStudent(student);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         public string GenerateNextStudentNumber(string lastStudentNumber)

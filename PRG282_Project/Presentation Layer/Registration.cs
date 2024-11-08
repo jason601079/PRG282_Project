@@ -23,7 +23,7 @@ namespace PRG282_Project.Presentation_Layer
 
         //private readonly string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
         private readonly string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        public string studentpath = @"C:\Users\User\OneDrive\Desktop\Project_Prg282\Students.txt";
+        public string studentpath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
 
 
         public Registration(IStudentService studentService)
@@ -45,51 +45,85 @@ namespace PRG282_Project.Presentation_Layer
 
         }
 
+        private bool ValidateForm()
+        {
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text) ||
+                string.IsNullOrWhiteSpace(txtFirstName.Text) ||
+                cmbCourse.SelectedItem == null)
+            {
+                MessageBox.Show("Please fill in all fields, including selecting a course.");
+                return false;
+            }
+
+            if (nudAge.Value < 18)
+            {
+                MessageBox.Show("Cant have person younger than 18");
+                return false;
+            }
+
+
+            if (!radio_Male.Checked && !radio_Female.Checked)
+            {
+                MessageBox.Show("Please select a gender.");
+                return false;
+            }
+
+
+            return true;
+        }
+
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            
-            string firstName = txtFirstName.Text;
-            string lastName = txtLastName.Text;
+            bool valid = ValidateForm();
 
-           
-            string gender = radio_Male.Checked ? "Male" : radio_Female.Checked ? "Female" : null;
-
-           
-            int age = (int)nudAge.Value;
-
-            
-            string course = cmbCourse.SelectedItem?.ToString();
-
-            
-            var student = new Student
+            if (valid)
             {
-                FirstName = firstName,
-                LastName = lastName,
-                Gender = gender,
-                Age = age,
-                Course = course
-            };
-
-            
-            IStudentService studentService = new StudentService();
-            studentService.AddStudent(student);
-            _dbHelper.LoadStudentData(guna2DataGridView1);
-
-            //Adding to the Textfile
-            string lastStudentNumber = GetLastStudentNumber();
-            string studentNumber = GenerateNextStudentNumber(lastStudentNumber);
-
-            string studentData = $"{studentNumber},{student.FirstName},{student.LastName},{student.Gender},{student.Age},{student.Course}";
+                string firstName = txtFirstName.Text;
+                string lastName = txtLastName.Text;
 
 
-            try
-            {
-                File.AppendAllText(studentpath, studentData + Environment.NewLine);
+                string gender = radio_Male.Checked ? "Male" : radio_Female.Checked ? "Female" : null;
+
+
+                int age = (int)nudAge.Value;
+
+
+                string course = cmbCourse.SelectedItem?.ToString();
+
+
+                var student = new Student
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Gender = gender,
+                    Age = age,
+                    Course = course
+                };
+
+
+                IStudentService studentService = new StudentService();
+                studentService.AddStudent(student);
+                _dbHelper.LoadStudentData(guna2DataGridView1);
+
+                //Adding to the Textfile
+                string lastStudentNumber = GetLastStudentNumber();
+                string studentNumber = GenerateNextStudentNumber(lastStudentNumber);
+
+                string studentData = $"{studentNumber},{student.FirstName},{student.LastName},{student.Gender},{student.Age},{student.Course}";
+
+
+                try
+                {
+                    File.AppendAllText(studentpath, studentData + Environment.NewLine);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while saving to the text file: {ex.Message}");
+                }
+
+                MessageBox.Show("Details Captured Successfully");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while saving to the text file: {ex.Message}");
-            }
+            
 
         }
 

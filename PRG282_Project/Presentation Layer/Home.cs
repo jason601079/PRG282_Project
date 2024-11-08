@@ -197,8 +197,10 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            Login login = new Login();
             hideSubMenu();
-            this.Close();
+            this.Hide();
+            login.Show();
 
         }
 
