@@ -1,5 +1,6 @@
 using PRG282_Project.Business_Logic_Layer;
 using PRG282_Project.Presentation_Layer;
+using PRG282_Project.Presentation_Layer.Student;
 using System;
 using System.Windows.Forms;
 
@@ -24,14 +25,13 @@ namespace PRG282_Project
 
             //Application.Run(new Loading_Screen(studentService));
 
-            
+
 
             Application.Run(new Login());
             //Application.Run(new ApplicantViewer());
             //Application.Run(new ApplicantForm());
             //Application.Run(new Home());
-            
-
+          
         }
     }
 }

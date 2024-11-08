@@ -126,7 +126,7 @@ namespace PRG282_Project.Presentation_Layer
                 return;
             }
 
-            var updatedStudent = new Student
+            var updatedStudent = new PRG282_Project.Business_Logic_Layer.Student
             {
                 StudentNumber = _selectedStudentNumber,
                 FirstName = txtFirstName.Text,
@@ -156,7 +156,7 @@ namespace PRG282_Project.Presentation_Layer
             }
         }
 
-        private void UpdateStudentInTextFile(Student updatedStudent)
+        private void UpdateStudentInTextFile(PRG282_Project.Business_Logic_Layer.Student updatedStudent)
         {
             
 

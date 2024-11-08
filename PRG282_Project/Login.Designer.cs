@@ -41,6 +41,7 @@
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             label6 = new Label();
             pnlLogin = new Panel();
+            lblLinkStudentForm = new LinkLabel();
             linkLabel1 = new LinkLabel();
             btnLogin = new Button();
             panel6 = new Panel();
@@ -171,16 +172,17 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Broadway", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
             label6.Location = new Point(118, 45);
             label6.Name = "label6";
-            label6.Size = new Size(94, 55);
+            label6.Size = new Size(93, 55);
             label6.TabIndex = 1;
             label6.Text = "BC";
             // 
             // pnlLogin
             // 
+            pnlLogin.Controls.Add(lblLinkStudentForm);
             pnlLogin.Controls.Add(linkLabel1);
             pnlLogin.Controls.Add(btnLogin);
             pnlLogin.Controls.Add(panel6);
@@ -196,6 +198,20 @@
             pnlLogin.Size = new Size(583, 442);
             pnlLogin.TabIndex = 2;
             pnlLogin.Paint += pnlLogin_Paint;
+            // 
+            // lblLinkStudentForm
+            // 
+            lblLinkStudentForm.ActiveLinkColor = Color.Lime;
+            lblLinkStudentForm.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblLinkStudentForm.AutoSize = true;
+            lblLinkStudentForm.LinkColor = Color.White;
+            lblLinkStudentForm.Location = new Point(231, 378);
+            lblLinkStudentForm.Name = "lblLinkStudentForm";
+            lblLinkStudentForm.Size = new Size(241, 15);
+            lblLinkStudentForm.TabIndex = 11;
+            lblLinkStudentForm.TabStop = true;
+            lblLinkStudentForm.Text = "IF YOU ARE A STUDENT, PLEASE CLICK HERE";
+            lblLinkStudentForm.LinkClicked += lblLinkStudentForm_LinkClicked;
             // 
             // linkLabel1
             // 
@@ -485,5 +501,6 @@
         private Label label7;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Label label6;
+        private LinkLabel lblLinkStudentForm;
     }
 }
