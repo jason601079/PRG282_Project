@@ -8,7 +8,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
     public partial class ApplicantDetails : Form
     {
         private ApplicantManager applicantManager;
-       
+
         private string uploadedDocumentPath;
         private bool isFormValid;
 
@@ -18,7 +18,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             applicantManager = new ApplicantManager();
             uploadedDocumentPath = string.Empty;
 
-            
+
             txtSAIdNumber.TextChanged += InputFields_TextChanged;
             txtFirstName.TextChanged += InputFields_TextChanged;
             txtSurname.TextChanged += InputFields_TextChanged;
@@ -30,7 +30,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
 
         private void ApplicantDetails_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private string GetSelectedGender()
@@ -60,7 +60,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     uploadedDocumentPath = openFileDialog.FileName;
-                    lblDocumentPath.Text = uploadedDocumentPath; 
+                    lblDocumentPath.Text = uploadedDocumentPath;
                 }
             }
         }
@@ -74,7 +74,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             string gender = GetSelectedGender();
             string course = cmbCourses.SelectedItem?.ToString() ?? string.Empty;
 
-         
+
             // Call the business layer to save the applicant
             try
             {
@@ -85,25 +85,27 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             {
                 MessageBox.Show($"Error saving information: {ex.Message}");
             }
+
+
         }
 
         private void btnFormValidate_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
-                btnSave.Enabled = true; 
-                isFormValid = true; 
+                btnSave.Enabled = true;
+                isFormValid = true;
                 MessageBox.Show("Form is valid. You can proceed with saving the applicant information.");
             }
         }
 
         private void InputFields_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (isFormValid)
             {
-                btnSave.Enabled = false; 
-                isFormValid = false; 
+                btnSave.Enabled = false;
+                isFormValid = false;
             }
         }
 
@@ -143,7 +145,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
                 return false;
             }
 
-            return true; 
+            return true;
         }
 
         private bool IsValidEmail(string email)
@@ -157,6 +159,12 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             {
                 return false;
             }
+        }
+
+        private void btnApplicantQuiz_Click(object sender, EventArgs e)
+        {
+            ApplicantQuiz quiz = new ApplicantQuiz();
+            quiz.ShowDialog();
         }
     }
 }
