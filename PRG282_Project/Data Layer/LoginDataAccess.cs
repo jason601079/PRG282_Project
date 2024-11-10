@@ -10,7 +10,8 @@ namespace PRG282_Project.Data_Layer
 {
     public class LoginDataAccess
     {
-        private string filePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Admins.txt";
+        //private string filePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Admins.txt";
+        private string filePath = @"Admins.txt";
 
         public bool checkPassword(string username, string password)
         {

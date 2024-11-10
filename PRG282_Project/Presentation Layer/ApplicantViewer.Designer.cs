@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicantViewer));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label7 = new Label();
             dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -42,6 +44,8 @@
             txtApplicantID = new Guna.UI2.WinForms.Guna2TextBox();
             btnReject = new Button();
             btnAccept = new Button();
+            txtDisplayBursaryMark = new Guna.UI2.WinForms.Guna2TextBox();
+            lblBursaryMark = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -71,28 +75,28 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 4;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             dataGridView1.Location = new Point(0, 57);
             dataGridView1.Name = "dataGridView1";
@@ -124,7 +128,9 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 71, 200);
+            panel2.Controls.Add(lblBursaryMark);
             panel2.Controls.Add(label1);
+            panel2.Controls.Add(txtDisplayBursaryMark);
             panel2.Controls.Add(txtApplicantID);
             panel2.Controls.Add(btnReject);
             panel2.Controls.Add(btnAccept);
@@ -132,14 +138,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(866, 188);
             panel2.TabIndex = 4;
-            panel2.Paint += panel2_Paint;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(273, 14);
+            label1.Location = new Point(115, 12);
             label1.Name = "label1";
             label1.Size = new Size(308, 24);
             label1.TabIndex = 3;
@@ -157,7 +162,7 @@
             txtApplicantID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtApplicantID.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtApplicantID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtApplicantID.Location = new Point(375, 44);
+            txtApplicantID.Location = new Point(238, 42);
             txtApplicantID.Margin = new Padding(6);
             txtApplicantID.Name = "txtApplicantID";
             txtApplicantID.PasswordChar = '\0';
@@ -174,7 +179,7 @@
             btnReject.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReject.Image = (Image)resources.GetObject("btnReject.Image");
             btnReject.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReject.Location = new Point(507, 115);
+            btnReject.Location = new Point(469, 115);
             btnReject.Name = "btnReject";
             btnReject.Size = new Size(119, 48);
             btnReject.TabIndex = 1;
@@ -190,7 +195,7 @@
             btnAccept.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAccept.Image = (Image)resources.GetObject("btnAccept.Image");
             btnAccept.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAccept.Location = new Point(176, 115);
+            btnAccept.Location = new Point(334, 115);
             btnAccept.Name = "btnAccept";
             btnAccept.Size = new Size(119, 48);
             btnAccept.TabIndex = 0;
@@ -198,6 +203,39 @@
             btnAccept.TextAlign = ContentAlignment.MiddleRight;
             btnAccept.UseVisualStyleBackColor = true;
             btnAccept.Click += btnAccept_Click;
+            // 
+            // txtDisplayBursaryMark
+            // 
+            txtDisplayBursaryMark.CustomizableEdges = customizableEdges1;
+            txtDisplayBursaryMark.DefaultText = "";
+            txtDisplayBursaryMark.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtDisplayBursaryMark.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtDisplayBursaryMark.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtDisplayBursaryMark.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtDisplayBursaryMark.Enabled = false;
+            txtDisplayBursaryMark.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtDisplayBursaryMark.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtDisplayBursaryMark.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtDisplayBursaryMark.Location = new Point(613, 42);
+            txtDisplayBursaryMark.Margin = new Padding(6);
+            txtDisplayBursaryMark.Name = "txtDisplayBursaryMark";
+            txtDisplayBursaryMark.PasswordChar = '\0';
+            txtDisplayBursaryMark.PlaceholderText = "";
+            txtDisplayBursaryMark.SelectedText = "";
+            txtDisplayBursaryMark.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtDisplayBursaryMark.Size = new Size(57, 56);
+            txtDisplayBursaryMark.TabIndex = 2;
+            // 
+            // lblBursaryMark
+            // 
+            lblBursaryMark.AutoSize = true;
+            lblBursaryMark.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBursaryMark.ForeColor = Color.White;
+            lblBursaryMark.Location = new Point(482, 12);
+            lblBursaryMark.Name = "lblBursaryMark";
+            lblBursaryMark.Size = new Size(312, 24);
+            lblBursaryMark.TabIndex = 3;
+            lblBursaryMark.Text = "Selected Applicant Bursary Mark";
             // 
             // ApplicantViewer
             // 
@@ -229,5 +267,7 @@
         private Button btnReject;
         private Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtApplicantID;
+        private Label lblBursaryMark;
+        private Guna.UI2.WinForms.Guna2TextBox txtDisplayBursaryMark;
     }
 }

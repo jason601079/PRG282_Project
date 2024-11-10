@@ -66,7 +66,6 @@
             groupBox1 = new GroupBox();
             radioButtonFemale = new RadioButton();
             radioButtonMale = new RadioButton();
-            openFileDialog1 = new OpenFileDialog();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             btnFormValidate = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -336,10 +335,6 @@
             radioButtonMale.Text = "Male";
             radioButtonMale.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "openFileDialog1";
-            // 
             // btnSave
             // 
             btnSave.CustomizableEdges = customizableEdges15;
@@ -446,7 +441,6 @@
         private RadioButton radioButtonFemale;
         private RadioButton radioButtonMale;
         private Guna.UI2.WinForms.Guna2Button btnUploadDocument;
-        private OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnFormValidate;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;

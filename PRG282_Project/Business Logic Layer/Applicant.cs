@@ -16,6 +16,7 @@ namespace PRG282_Project.Business_Logic_Layer
         public string Email { get; }
         public string Gender { get; }
         public string DocumentPath { get; }
+        
 
         public Applicant(int applicantID, string saIdNumber, string firstName, string surname, string course, string email, string gender, string documentPath)
         {
