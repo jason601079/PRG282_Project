@@ -28,7 +28,7 @@ namespace PRG282_Project
             if (pnlProgressBar.Width >= 600)
             {
                 timerProgressBar.Stop();
-                Home form1 = new Home();
+                var form1 = new Login();
                 form1.Show();
                 this.Hide();
             }

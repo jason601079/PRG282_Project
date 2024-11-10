@@ -14,22 +14,10 @@ namespace PRG282_Project
         static void Main()
         {
             
-            ApplicationConfiguration.Initialize();
-
-            
+            ApplicationConfiguration.Initialize();            
             
             IStudentService studentService = new StudentService();
-
-
-
-            //Application.Run(new Loading_Screen(studentService));
-
-
-
-            Application.Run(new Login());
-            //Application.Run(new ApplicantViewer());
-            //Application.Run(new ApplicantForm());
-            //Application.Run(new Home());
+            Application.Run(new Loading_Screen(studentService));        
           
         }
     }

@@ -16,8 +16,7 @@ namespace PRG282_Project.Presentation_Layer
     {
         private DatabaseHelper _dbHelper;
         private string _selectedStudentNumber;
-        //public string fileName = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
-        //public string studentPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
+        
 
         public string fileName = @"Applicant.txt";
         public string studentPath = @"Students.txt";
@@ -25,9 +24,9 @@ namespace PRG282_Project.Presentation_Layer
         public ManageFrm()
         {
             InitializeComponent();
-            //string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
             //string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-            string connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
+           // string connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
 
             _dbHelper = new DatabaseHelper(connectionString);
         }
@@ -180,10 +179,6 @@ namespace PRG282_Project.Presentation_Layer
                 
                 File.WriteAllLines(fileName, lines);
             }
-            else
-            {
-                MessageBox.Show("Student not found in the text file.");
-            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -291,7 +286,7 @@ namespace PRG282_Project.Presentation_Layer
 
         private void txtStudentNumber_Enter(object sender, EventArgs e)
         {
-            if (txtStudentNumber.Text == "Enter a student number")
+            if (txtStudentNumber.Text == "Enter student ID")
             {
                 txtStudentNumber.Text = string.Empty;
                 txtStudentNumber.ForeColor = Color.Black;
@@ -300,10 +295,11 @@ namespace PRG282_Project.Presentation_Layer
 
         private void txtStudentNumber_Leave(object sender, EventArgs e)
         {
-            if (txtStudentNumber.Text == "Enter a student number")
+            if (txtStudentNumber.Text == "")
             {
                 txtStudentNumber.Text = string.Empty;
-                txtStudentNumber.ForeColor = Color.Black;
+                txtStudentNumber.ForeColor = Color.Gray;
+                txtStudentNumber.Text = "Enter student ID";
             }
         }
     }

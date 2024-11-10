@@ -19,14 +19,11 @@ namespace PRG282_Project.Presentation_Layer
     {
         private string selectedApplicantID;
         private string selectedApplicantMark;
-        //private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        //public string applicantPath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
-        //public string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
+        private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+     
 
-        //public string applicantPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
-        //public string studentsFilePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
         //private string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-        private string _connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
+        //private string _connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
 
 
         public string applicantPath = @"Applicant.txt";
@@ -120,18 +117,22 @@ namespace PRG282_Project.Presentation_Layer
                         {
                             try
                             {
-                                Process.Start(documentPath);
+                                var startInfo = new ProcessStartInfo
+                                {
+                                    FileName = documentPath,
+                                    UseShellExecute = true // Use the OS default application to open the file
+                                };
+                                Process.Start(startInfo);
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Could not open file: " + ex.Message);
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("File does not exist at the specified path.");
-                        }
+
                     }
+
+
                 }
                 catch (NullReferenceException)
                 {
