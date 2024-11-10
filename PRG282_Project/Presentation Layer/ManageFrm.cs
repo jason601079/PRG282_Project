@@ -16,14 +16,19 @@ namespace PRG282_Project.Presentation_Layer
     {
         private DatabaseHelper _dbHelper;
         private string _selectedStudentNumber;
-        public string fileName = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
-        public string studentPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
+        //public string fileName = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
+        //public string studentPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
+
+        public string fileName = @"Applicant.txt";
+        public string studentPath = @"Students.txt";
 
         public ManageFrm()
         {
             InitializeComponent();
             //string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            //string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
+
             _dbHelper = new DatabaseHelper(connectionString);
         }
 

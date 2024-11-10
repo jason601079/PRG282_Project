@@ -15,12 +15,16 @@ namespace PRG282_Project.Presentation_Layer
     public partial class DashBoardfrm : Form
     {
         private DatabaseHelper _dbHelper;
-        string FilePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\SummaryReport.txt";
+        //string FilePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\SummaryReport.txt";
+        string FilePath = @"SummaryReport.txt";
+
         public DashBoardfrm()
         {
             InitializeComponent();
             //string connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
-            string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            //string connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+            string connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
+
             _dbHelper = new DatabaseHelper(connectionString);
 
         }
@@ -76,8 +80,10 @@ namespace PRG282_Project.Presentation_Layer
         public void UpdateProgressBar()
         {
             // Define the connection string
-            string connectionString = "Server=TRENT\\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;"; // Update with your actual connection string
-            string query = @"
+            //string connectionString = "Server=TRENT\\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;"; // Update with your actual connection string
+            string connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
+
+        string query = @"
     SELECT 
         CAST(FLOOR((COUNT(CASE WHEN m.Pass = 1 THEN 1 END) * 100.0) / NULLIF(COUNT(*), 0) * 10) / 10 AS DECIMAL(10, 1)) AS PassPercentage
     FROM 

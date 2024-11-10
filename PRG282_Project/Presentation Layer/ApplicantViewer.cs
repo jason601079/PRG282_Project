@@ -18,17 +18,25 @@ namespace PRG282_Project.Presentation_Layer
     public partial class ApplicantViewer : Form
     {
         private string selectedApplicantID;
+        private string selectedApplicantMark;
         //private string _connectionString = @"Server=ANDYDEE\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
         //public string applicantPath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Applicant.txt";
         //public string studentsFilePath = @"C:\Users\taylo\Documents\PRG282\PRG282_Project\bin\Debug\Students.txt";
-        
-        public string applicantPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
-        public string studentsFilePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
-        private  string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+
+        //public string applicantPath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Applicant.txt";
+        //public string studentsFilePath = @"C:\Users\User\OneDrive\Desktop\PRG_Project\Students.txt";
+        //private string _connectionString = @"Server=TRENT\SQLEXPRESS;Database=Student Management System;Trusted_Connection=True;";
+        private string _connectionString = @"Data Source=RYZEN01\SQLEXPRESS;Initial Catalog=""Student Management System"";Integrated Security=True;Encrypt=False";
+
+
+        public string applicantPath = @"Applicant.txt";
+        public string studentsFilePath = @"Students.txt";
+
         public ApplicantViewer()
         {
             InitializeComponent();
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+
         }
 
         private void ApplicantViewer_Load(object sender, EventArgs e)
@@ -42,6 +50,7 @@ namespace PRG282_Project.Presentation_Layer
             dataGridView1.Columns.Add("Course", "Course");
             dataGridView1.Columns.Add("email", "Email");
             dataGridView1.Columns.Add("documentPath", "Document Path");
+            dataGridView1.Columns.Add("score", "Mark");
 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridView1.ColumnHeadersHeight = 30;
@@ -57,25 +66,15 @@ namespace PRG282_Project.Presentation_Layer
 
         private void LoadDataIntoDataGridView()
         {
-
-            
-
-
+            dataGridView1.Rows.Clear(); 
             if (File.Exists(applicantPath))
             {
-
                 var lines = File.ReadAllLines(applicantPath);
-
-
                 foreach (var line in lines)
                 {
-
                     var data = line.Split(',');
-
-
-                    if (data.Length == 7)
+                    if (data.Length == 8)
                     {
-
                         dataGridView1.Rows.Add(data);
                     }
                 }
@@ -84,45 +83,71 @@ namespace PRG282_Project.Presentation_Layer
             {
                 MessageBox.Show("File not found!");
             }
+
+            dataGridView1.ClearSelection(); 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-
-                selectedApplicantID = dataGridView1.Rows[e.RowIndex].Cells["applicantID"].Value.ToString();
-
-
-                txtApplicantID.Text = selectedApplicantID;
-
-
-                if (e.ColumnIndex == dataGridView1.Columns["documentPath"].Index)
+                try
                 {
-                    string documentPath = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    var applicantIDCell = dataGridView1.Rows[e.RowIndex].Cells["applicantID"];
+                    var scoreCell = dataGridView1.Rows[e.RowIndex].Cells["score"];
 
-                    if (File.Exists(documentPath))
+                    if (applicantIDCell?.Value != null && scoreCell?.Value != null)
                     {
-                        try
-                        {
-                            Process.Start(documentPath);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Could not open file: " + ex.Message);
-                        }
+                        selectedApplicantID = applicantIDCell.Value.ToString();
+                        selectedApplicantMark = scoreCell.Value.ToString();
+
+                        txtApplicantID.Text = selectedApplicantID;
+                        txtDisplayBursaryMark.Text = selectedApplicantMark;
                     }
                     else
                     {
-                        MessageBox.Show("File does not exist at the specified path.");
+                        MessageBox.Show("Invalid applicant data. Please check the selected row.");
+                        return;
                     }
+
+                    if (e.ColumnIndex == dataGridView1.Columns["documentPath"].Index)
+                    {
+                        var documentPathCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        string documentPath = documentPathCell?.Value?.ToString();
+
+                        if (!string.IsNullOrEmpty(documentPath) && File.Exists(documentPath))
+                        {
+                            try
+                            {
+                                Process.Start(documentPath);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Could not open file: " + ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("File does not exist at the specified path.");
+                        }
+                    }
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Please select a valid cell!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
         }
 
+
         private void btnReject_Click(object sender, EventArgs e)
         {
-           
+
             var lines = File.ReadAllLines(applicantPath).ToList();
 
 
@@ -136,8 +161,8 @@ namespace PRG282_Project.Presentation_Layer
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            
-            
+
+
             var lines = File.ReadAllLines(applicantPath).ToList();
 
             var applicantRecord = lines.FirstOrDefault(line => line.StartsWith(selectedApplicantID + ","));
@@ -232,9 +257,5 @@ namespace PRG282_Project.Presentation_Layer
             return "S" + numericPart.ToString("D3");
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

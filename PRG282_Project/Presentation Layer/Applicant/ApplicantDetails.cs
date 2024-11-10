@@ -1,6 +1,8 @@
 ﻿using PRG282_Project.Business_Logic_Layer;
 using PRG282_Project.Data_Layer;
 using System;
+using System.Diagnostics;
+using System.Text;
 using System.Windows.Forms;
 
 namespace PRG282_Project.Presentation_Layer.Applicant
@@ -30,7 +32,7 @@ namespace PRG282_Project.Presentation_Layer.Applicant
 
         private void ApplicantDetails_Load(object sender, EventArgs e)
         {
-
+            btnApplicantQuiz.Enabled = false;
         }
 
         private string GetSelectedGender()
@@ -74,20 +76,21 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             string gender = GetSelectedGender();
             string course = cmbCourses.SelectedItem?.ToString() ?? string.Empty;
 
-
             // Call the business layer to save the applicant
             try
             {
                 applicantManager.AddApplicant(saIdNumber, firstName, surname, course, email, gender, uploadedDocumentPath);
                 MessageBox.Show("Information saved successfully!");
+
+
+                btnApplicantQuiz.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error saving information: {ex.Message}");
             }
-
-
         }
+
 
         private void btnFormValidate_Click(object sender, EventArgs e)
         {
@@ -163,8 +166,54 @@ namespace PRG282_Project.Presentation_Layer.Applicant
 
         private void btnApplicantQuiz_Click(object sender, EventArgs e)
         {
-            ApplicantQuiz quiz = new ApplicantQuiz();
-            quiz.ShowDialog();
+            
+            int applicantID = ReadApplicantID(); 
+            if (applicantID > 0)
+            {
+                ApplicantQuiz quiz = new ApplicantQuiz(applicantID); 
+                quiz.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error: No valid applicant ID found.");
+            }
+            
+
         }
+
+        private int ReadApplicantID()
+        {
+            try
+            {
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Applicant.txt");
+
+                if (File.Exists(filePath))
+                {
+                    var allLines = File.ReadAllLines(filePath).Where(line => !string.IsNullOrWhiteSpace(line)).ToList();
+
+                    if (allLines.Any())
+                    {
+                        string lastLine = allLines.Last(); 
+                        string[] parts = lastLine.Split(',');
+
+                       
+                        if (parts.Length > 0 && int.TryParse(parts[0], out int applicantID))
+                        {
+                            
+                            return applicantID; 
+                        }
+                    }
+                }
+                MessageBox.Show("No valid applicant data found in the file.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading applicant ID: {ex.Message}");
+            }
+
+            return 0; 
+        }
+
+
     }
 }

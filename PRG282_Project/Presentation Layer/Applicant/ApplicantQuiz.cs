@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Guna.UI2.WinForms;
+using PRG282_Project.Business_Logic_Layer;
 
 namespace PRG282_Project.Presentation_Layer.Applicant
 {
@@ -18,13 +20,18 @@ namespace PRG282_Project.Presentation_Layer.Applicant
         private Guna2Button[] navButtons;
         private Guna2Button[] optionButtons;
         private Dictionary<int, (string SelectedAnswer, bool IsCorrect)> userAnswers = new Dictionary<int, (string, bool)>();
+        private string filePath = @"Applicant.txt";
+        private Applicant applicant; 
+        public int currentApplicantID;
+        private double percentageScore;
 
-        public ApplicantQuiz()
+
+
+        public ApplicantQuiz(int applicantID)
         {
             InitializeComponent();
-
             LoadQuizContent();
-
+            currentApplicantID = applicantID; 
         }
 
         private void ApplicantQuiz_Load(object sender, EventArgs e)
@@ -172,13 +179,9 @@ namespace PRG282_Project.Presentation_Layer.Applicant
                     }
                 }
             }
-            else
-            {
-                FinishQuiz();
-            }
         }
 
-        private void OptionButton_Click(object sender, EventArgs e)
+        public void OptionButton_Click(object sender, EventArgs e)
         {
             Guna2Button clickedButton = (Guna2Button)sender;
             string selectedAnswer = clickedButton.Text;
@@ -216,7 +219,9 @@ namespace PRG282_Project.Presentation_Layer.Applicant
 
             if (userAnswers.Count == questions.Count)
             {
-                FinishQuiz();
+                
+                FinishQuiz(currentApplicantID);
+                DisplayPieChart();
             }
             
 
@@ -249,27 +254,113 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             }
         }
 
-        private void FinishQuiz()
+        public void FinishQuiz(int applicantID)
         {
-            Login login = new Login();
-
-            double percentage = (double)score / questions.Count * 100;
-
-            if (questions.Count == 20)
+            percentageScore = ((double)score / questions.Count) * 100; 
+           
+            if (applicantID > 0)
             {
-                foreach (var control in panel_Main_Middle.Controls.OfType<Guna2Button>().ToList())
-                {
-                    panel_Main_Middle.Controls.Remove(control);
-                    control.Dispose();
-                }
-                MessageBox.Show($"Quiz completed!\n\nScore: {score}/{questions.Count}\n\nPercentage: {percentage:F1}%");
-                DisplayPieChart();
-
-            } 
+                WriteApplicant(applicantID);
+            }
+            else
+            {
+                MessageBox.Show("Error: Invalid Applicant ID.");
+            }
         }
+
+
+
+        public void WriteApplicant(int applicantID)
+        {
+            try
+            {
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Applicant.txt");
+
+                if (File.Exists(filePath))
+                {
+                    var allLines = File.ReadAllLines(filePath).ToList();
+
+                    for (int i = 0; i < allLines.Count; i++)
+                    {
+                        string[] parts = allLines[i].Split(',');
+
+                        if (parts.Length > 0 && int.TryParse(parts[0], out int id) && id == applicantID)
+                        {
+                            
+                            if (parts.Length >= 8)
+                            {
+                                parts[7] = $"{percentageScore:F1}%"; 
+                            }
+                            else
+                            {
+                                allLines[i] = $"{allLines[i]},{percentageScore:F1}%"; 
+                            }
+
+                            allLines[i] = string.Join(",", parts);
+                            break;
+                        }
+                    }
+
+                    File.WriteAllLines(filePath, allLines);
+                }
+                else
+                {
+                    MessageBox.Show("Applicant file not found!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error writing applicant percentage score: {ex.Message}");
+            }
+        }
+
+
+
+
+        public string ReadApplicant(int applicantID)
+        {
+            try
+            {
+
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] parts = line.Split(',');
+
+                        if (int.TryParse(parts[0], out int fileApplicantID))
+                        {
+                            if (fileApplicantID == applicantID)
+                            {
+                                return line; 
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Failed to parse ID from: {line}");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+
+            MessageBox.Show("Applicant not found after reading all lines.");
+            return null; 
+        }
+
+
+
 
         private void DisplayPieChart()
         {
+
+            panel_Main_Middle.Controls.Clear();
+
             Label label = new Label
             {
                 Size = new Size(250, 65),
