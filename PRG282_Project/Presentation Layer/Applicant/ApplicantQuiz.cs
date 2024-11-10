@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Guna.UI2.WinForms;
 using PRG282_Project.Business_Logic_Layer;
+
 
 namespace PRG282_Project.Presentation_Layer.Applicant
 {
@@ -275,32 +277,35 @@ namespace PRG282_Project.Presentation_Layer.Applicant
             try
             {
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Applicant.txt");
-
                 if (File.Exists(filePath))
                 {
                     var allLines = File.ReadAllLines(filePath).ToList();
-
                     for (int i = 0; i < allLines.Count; i++)
                     {
                         string[] parts = allLines[i].Split(',');
-
                         if (parts.Length > 0 && int.TryParse(parts[0], out int id) && id == applicantID)
                         {
-                            
-                            if (parts.Length >= 8)
+                            // Create a List<string> to make manipulation easier
+                            var partsList = parts.ToList();
+
+                            // Format score with invariant culture
+                            string formattedScore = percentageScore.ToString("F1", CultureInfo.InvariantCulture) + "%";
+
+                            // Update or append the score
+                            if (partsList.Count >= 8)
                             {
-                                parts[7] = $"{percentageScore:F1}%"; 
+                                partsList[7] = formattedScore;
                             }
                             else
                             {
-                                allLines[i] = $"{allLines[i]},{percentageScore:F1}%"; 
+                                partsList.Add(formattedScore);
                             }
 
-                            allLines[i] = string.Join(",", parts);
+                            // Join back into a single line
+                            allLines[i] = string.Join(",", partsList);
                             break;
                         }
                     }
-
                     File.WriteAllLines(filePath, allLines);
                 }
                 else
